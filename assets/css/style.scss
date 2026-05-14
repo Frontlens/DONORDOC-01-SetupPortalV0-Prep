@@ -3057,6 +3057,10 @@ main {
   position: relative;
   z-index: 10050;
   transition: none;
+
+  &.sticky-bar-hidden {
+    display: none;
+  }
 }
 
 .sticky-bar-placeholder {
