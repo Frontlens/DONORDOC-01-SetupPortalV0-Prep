@@ -311,6 +311,7 @@ function initStickyBar() {
   const DOCK_BOTTOM_ENTER_PX = 120;
   const DOCK_BOTTOM_EXIT_PX = 280;
   let latchBottom = false;
+  let activeState = null;
 
   function setStickyBarCssVar(px) {
     document.documentElement.style.setProperty(
@@ -349,15 +350,7 @@ function initStickyBar() {
     return "fixed";
   }
 
-  function syncLayout() {
-    if (root.classList.contains("sticky-bar-hidden")) {
-      setStickyBarCssVar(0);
-      syncHeroOverlapPadding();
-      return;
-    }
-
-    const nextState = computeNextState();
-
+  function applyState(nextState) {
     placeholder.style.height = "0px";
     placeholder.classList.remove("is-active");
     footer.style.paddingBottom = "";
@@ -386,13 +379,34 @@ function initStickyBar() {
       setStickyBarCssVar(hTop);
     }
 
+    activeState = nextState;
     syncHeroOverlapPadding();
+  }
+
+  function syncLayout() {
+    if (root.classList.contains("sticky-bar-hidden")) {
+      if (activeState !== "hidden") {
+        setStickyBarCssVar(0);
+        syncHeroOverlapPadding();
+        activeState = "hidden";
+      }
+      return;
+    }
+
+    const nextState = computeNextState();
+    if (nextState === activeState) return;
+    applyState(nextState);
+  }
+
+  function forceSync() {
+    activeState = null;
+    syncLayout();
   }
 
   const throttledSync = throttle(syncLayout, 50);
   window.addEventListener("scroll", throttledSync, { passive: true });
-  window.addEventListener("resize", syncLayout);
-  window.addEventListener("load", syncLayout);
+  window.addEventListener("resize", forceSync);
+  window.addEventListener("load", forceSync);
   syncLayout();
 }
 
