@@ -50,12 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
   initNavScroll();
   initMobileMenu();
   initSwipers();
-  initFlipCards();
+  initServicesReveal();
   initBackToTop();
   initCustomSelects();
   initBlogSection();
   initDropdownBehaviors();
-  initNavLinkEffects();
   initLazyImages();
   initImageBlurUp();
   initFooterYear();
@@ -436,7 +435,7 @@ function initStickyHeader() {
 
       header.classList.toggle("sticky", !entry.isIntersecting);
       if (!entry.isIntersecting) {
-        header.style.background = "#d7f0db";
+        header.style.background = "#fff";
         header.style.boxShadow = "0 1px 2px 0 rgba(0, 0, 0, 0.05)";
       } else {
         header.style.background = "transparent";
@@ -474,7 +473,7 @@ function initNavScroll() {
   );
 
   const navLinks = document.querySelectorAll(
-    '#navbarSupportedContent .navbar-nav a[href^="#"]:not([href="#"]), #offcanvasNavbar .nav.navbar-nav.flex-column a[href^="#"]:not([href="#"])',
+    '#navbarSupportedContent a[href^="#"]:not([href="#"]), #offcanvasNavbar a[href^="#"]:not([href="#"])',
   );
 
   const linkMap = {};
@@ -546,7 +545,7 @@ function initMobileMenu() {
   }
 
   const offcanvasLinks = document.querySelectorAll(
-    '.offcanvas-body li a[href^="#"]:not([href="#"])',
+    '#offcanvasNavbar a[href^="#"]:not([href="#"])',
   );
   offcanvasLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -601,26 +600,7 @@ function initSwipers() {
     },
   });
 
-  // Featured swiper
-  new Swiper(".featured-swiper", {
-    slidesPerView: 4,
-    spaceBetween: 0,
-    loop: true,
-    speed: 3000,
-    autoplay: {
-      delay: 0,
-      pauseOnMouseEnter: false,
-      disableOnInteraction: false,
-    },
-    grabCursor: true,
-    allowTouchMove: true,
-    passiveListeners: true,
-    breakpoints: {
-      500: { slidesPerView: 2 },
-      991: { slidesPerView: 3 },
-      1199: { slidesPerView: 4 },
-    },
-  });
+  // Featured swiper removed — Trust & Proof section is static
 
   // Doctors swiper - disable autoplay by default to improve performance
   const doctorsSwiper = new Swiper(".doctors-swiper", {
@@ -722,51 +702,84 @@ function initSwiperAutoplayInView(swipers) {
   });
 }
 
-function initFlipCards() {
-  const flips = document.querySelectorAll(".flip");
-  if (!flips.length) return;
+function initServicesReveal() {
+  const section = document.querySelector(".services-section");
+  if (!section) return;
 
-  flips.forEach((flip) => {
-    const card = flip.querySelector(".card");
-    const learnMoreBtn = flip.querySelector(".learn-more-btn");
+  const cards = Array.from(section.querySelectorAll(".service-card"));
+  if (!cards.length) return;
 
-    if (!learnMoreBtn) return;
+  const mq = window.matchMedia("(max-width: 1023.98px)");
+  const ROW_STAGGER_MS = 120;
+  const observers = [];
 
-    learnMoreBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      resetOtherFlipCards(flips, card);
-      flipCard(card, learnMoreBtn);
-    });
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
-    document.addEventListener("click", (e) => {
-      if (!flip.contains(e.target) && card.classList.contains("flipped")) {
-        resetCard(card, learnMoreBtn);
-      }
-    });
-  });
-
-  function resetOtherFlipCards(allFlips, currentCard) {
-    allFlips.forEach((otherFlip) => {
-      const otherCard = otherFlip.querySelector(".card");
-      const otherBtn = otherFlip.querySelector(".learn-more-btn");
-      if (
-        otherCard !== currentCard &&
-        otherCard.classList.contains("flipped")
-      ) {
-        resetCard(otherCard, otherBtn);
-      }
+  function resetCards() {
+    cards.forEach((card) => {
+      card.classList.remove("is-reveal-pending", "is-revealed");
+      card.style.removeProperty("--reveal-delay");
     });
   }
 
-  function flipCard(card, btn) {
-    btn.style.opacity = "0";
-    setTimeout(() => card.classList.add("flipped"), 200);
+  function disconnectObservers() {
+    observers.splice(0).forEach((observer) => observer.disconnect());
   }
 
-  function resetCard(card, btn) {
-    card.classList.remove("flipped");
-    if (btn) btn.style.opacity = "1";
+  function revealRow(rowCards) {
+    rowCards.forEach((card) => {
+      card.classList.add("is-revealed");
+      card.classList.remove("is-reveal-pending");
+    });
   }
+
+  function setupReveal() {
+    disconnectObservers();
+    resetCards();
+
+    if (!mq.matches || prefersReducedMotion) {
+      revealRow(cards);
+      return;
+    }
+
+    const columns = 2;
+    const rows = new Map();
+
+    cards.forEach((card, index) => {
+      const rowIndex = Math.floor(index / columns);
+      if (!rows.has(rowIndex)) rows.set(rowIndex, []);
+      rows.get(rowIndex).push(card);
+    });
+
+    rows.forEach((rowCards, rowIndex) => {
+      rowCards.forEach((card) => {
+        card.classList.add("is-reveal-pending");
+        card.style.setProperty(
+          "--reveal-delay",
+          `${rowIndex * ROW_STAGGER_MS}ms`,
+        );
+      });
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            revealRow(rowCards);
+            obs.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+      );
+
+      observer.observe(rowCards[0]);
+      observers.push(observer);
+    });
+  }
+
+  setupReveal();
+  mq.addEventListener("change", setupReveal);
 }
 
 function initBackToTop() {
@@ -1029,32 +1042,6 @@ function initDropdownBehaviors() {
         });
       });
     }
-  }
-}
-
-function initNavLinkEffects() {
-  const mainNavLinks = document.querySelectorAll(
-    "#navbarSupportedContent .navbar-nav.ms-auto > .nav-item > .nav-link",
-  );
-  if (!mainNavLinks.length) return;
-
-  if (window.innerWidth >= 992) {
-    mainNavLinks.forEach((link) => {
-      link.style.transition = "opacity 0.3s ease";
-    });
-
-    mainNavLinks.forEach((link) => {
-      link.addEventListener("mouseenter", () => {
-        mainNavLinks.forEach((other) => {
-          other.style.opacity = other === link ? "1" : "0.3";
-        });
-      });
-      link.addEventListener("mouseleave", () => {
-        mainNavLinks.forEach((l) => {
-          l.style.opacity = "1";
-        });
-      });
-    });
   }
 }
 

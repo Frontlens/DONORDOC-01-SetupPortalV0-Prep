@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
       name="description"
       content="Stay healthy with our health insurance plan"
     />
-    <title>Big Health Template - Standard</title>
+    <title>DONORDOC-01 V1 - Standard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -109,25 +109,17 @@
                 </div>
               </div>
 
-              <div
-                class="sticky-bar-divider"
-                aria-hidden="true"
-              ></div>
+              <div class="sticky-bar-divider" aria-hidden="true"></div>
 
               <div class="sticky-bar-pricing sticky-bar-col">
-                <span class="sticky-bar-pricing-label"
-                  >Introductory Price</span
-                >
+                <span class="sticky-bar-pricing-label">Introductory Price</span>
                 <span class="sticky-bar-price-row">
                   <span class="sticky-bar-price">$129 <small>USD</small></span>
                   <del class="sticky-bar-was">$249 USD</del>
                 </span>
               </div>
 
-              <div
-                class="sticky-bar-divider"
-                aria-hidden="true"
-              ></div>
+              <div class="sticky-bar-divider" aria-hidden="true"></div>
 
               <div class="sticky-bar-right sticky-bar-col">
                 <div class="sticky-bar-perks">
@@ -187,7 +179,7 @@
     <header id="header" class="">
       <div class="container">
         <nav class="navbar navbar-expand-ipad-pro navbar-light">
-          <div class="p-0 container-fluid">
+          <div class="p-0 container-fluid navbar-inner">
             <a href="#health-cta" class="navbar-brand"
               ><img
                 loading="lazy"
@@ -202,10 +194,27 @@
               aria-controls="offcanvasNavbar"
               aria-label="Toggle navigation"
             >
-              <span></span><span></span><span></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+                aria-hidden="true"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 6l16 0"></path>
+                <path d="M4 12l16 0"></path>
+                <path d="M4 18l16 0"></path>
+              </svg>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto">
+              <ul class="navbar-nav navbar-nav-main">
                 <li class="nav-item">
                   <a class="nav-link active" href="#health-cta">Home</a>
                 </li>
@@ -216,22 +225,59 @@
                   <a class="nav-link" href="#services-cta">Services</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#testimonials-cta">
-                    Testimonials
-                  </a>
+                  <a class="nav-link" href="#testimonials-cta">Testimonials</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#morehelp-cta">Blogs</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#appointment-cta"
-                    >Book an Appointment</a
-                  >
+                <li class="nav-item nav-item-advisor">
+                  <a class="nav-link nav-link-advisor" href="#appointment-cta">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+                      ></path>
+                    </svg>
+                    Book an Appointment
+                  </a>
                 </li>
+              </ul>
+              <ul class="navbar-nav navbar-nav-actions">
                 <li class="nav-item">
-                  <a class="btn btn-primary btn-default" href="#pricing-cta"
-                    >Pricing</a
+                  <a
+                    class="btn btn-primary btn-default btn-nav-cta navbar-btn"
+                    href="#pricing-cta"
                   >
+                    Compare Plans
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M5 12l14 0"></path>
+                      <path d="M13 18l6 -6"></path>
+                      <path d="M13 6l6 6"></path>
+                    </svg>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -241,149 +287,356 @@
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
             >
-              <div class="offcanvas-body">
-                <ul class="nav navbar-nav flex-column align-items-center">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#health-cta">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#about-cta">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#services-cta">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#testimonials-cta">
-                      Testimonials
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#morehelp-cta">Blogs</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#appointment-cta"
-                      >Book an Appointment</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="btn btn-primary btn-default" href="#pricing-cta"
-                      >Pricing</a
-                    >
-                  </li>
-                </ul>
-
-                <h4 class="mt-5 heading-four">Follow us</h4>
-                <ul class="nav justify-content-center">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"
-                      >
-                        <path
-                          stroke="none"
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        ></path>
-                        <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
-                        <path
-                          d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"
-                      >
-                        <path
-                          stroke="none"
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        ></path>
-                        <path
-                          d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"
-                      >
-                        <path
-                          stroke="none"
-                          d="M0 0h24v24H0z"
-                          fill="none"
-                        ></path>
-                        <path d="M8 11v5"></path>
-                        <path d="M8 8v.01"></path>
-                        <path d="M12 16v-5"></path>
-                        <path d="M16 16v-3a2 2 0 1 0 -4 0"></path>
-                        <path
-                          d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
-                        />
-                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                        <path d="M16.5 7.5v.01" />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
+              <div class="offcanvas-header">
+                <a href="#health-cta" class="logo-link">
+                  <img
+                    loading="lazy"
+                    src="assets/img/donordoc-new-logo.webp"
+                    alt="Health plan logo"
+                    class="logo-img"
+                  />
+                </a>
+                <button
+                  type="button"
+                  class="mobile-nav-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+                    aria-hidden="true"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M18 6l-12 12"></path>
+                    <path d="M6 6l12 12"></path>
+                  </svg>
+                </button>
               </div>
-              <div class="offcanvas-footer justify-content-center">
-                <p>
-                  Designed by
-                  <a href="https://frontlens.com" rel="author">FRONTLENS LLC</a>
-                </p>
+              <div class="offcanvas-body">
+                <ul class="mobile-nav-list">
+                  <li>
+                    <a class="mobile-nav-link active" href="#health-cta">
+                      <span class="mobile-nav-icon"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="22"
+                          height="22"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                          <path
+                            d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"
+                          ></path>
+                          <path
+                            d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"
+                          ></path></svg
+                      ></span>
+                      <span class="mobile-nav-text">Home</span>
+                      <span class="mobile-nav-chevron"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M9 6l6 6l-6 6"></path></svg
+                      ></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="mobile-nav-link" href="#about-cta">
+                      <span class="mobile-nav-icon"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="22"
+                          height="22"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                          <path
+                            d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"
+                          ></path></svg
+                      ></span>
+                      <span class="mobile-nav-text">About</span>
+                      <span class="mobile-nav-chevron"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M9 6l6 6l-6 6"></path></svg
+                      ></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="mobile-nav-link" href="#services-cta">
+                      <span class="mobile-nav-icon"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="22"
+                          height="22"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path
+                            d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"
+                          ></path></svg
+                      ></span>
+                      <span class="mobile-nav-text">Services</span>
+                      <span class="mobile-nav-chevron"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M9 6l6 6l-6 6"></path></svg
+                      ></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="mobile-nav-link" href="#testimonials-cta">
+                      <span class="mobile-nav-icon"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="22"
+                          height="22"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M8 9h8"></path>
+                          <path d="M8 13h6"></path>
+                          <path
+                            d="M12 21l-3 -3h-3a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6"
+                          ></path></svg
+                      ></span>
+                      <span class="mobile-nav-text">Testimonials</span>
+                      <span class="mobile-nav-chevron"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M9 6l6 6l-6 6"></path></svg
+                      ></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="mobile-nav-link" href="#morehelp-cta">
+                      <span class="mobile-nav-icon"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="22"
+                          height="22"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.75"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                          <path
+                            d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                          ></path>
+                          <path d="M9 9l1 0"></path>
+                          <path d="M9 13l6 0"></path>
+                          <path d="M9 17l6 0"></path></svg
+                      ></span>
+                      <span class="mobile-nav-text">Blogs</span>
+                      <span class="mobile-nav-chevron"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M9 6l6 6l-6 6"></path></svg
+                      ></span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="mobile-nav-divider"></div>
+                <a class="mobile-nav-advisor" href="#appointment-cta">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+                    ></path>
+                  </svg>
+                  Book an Appointment
+                </a>
+                <a
+                  class="btn btn-primary btn-default btn-mobile-cta"
+                  href="#pricing-cta"
+                >
+                  <span class="btn-mobile-cta-label">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-align-box-left-middle"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14"
+                      />
+                      <path d="M9 15h-2" />
+                      <path d="M13 12h-6" />
+                      <path d="M11 9h-4" />
+                    </svg>
+                    Compare Plans
+                  </span>
+                  <svg
+                    class="btn-mobile-cta-arrow"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 12l14 0"></path>
+                    <path d="M13 18l6 -6"></path>
+                    <path d="M13 6l6 6"></path>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -393,15 +646,15 @@
 
     <main>
       <section
-        class="section-health bg-gradient-green-soft"
+        class="section-health"
         id="health-cta"
         data-section-key="health-cta"
         aria-labelledby="health-heading"
       >
         <div class="container">
-          <div class="row justify-content-center gx-md-5 gy-md-0 gy-3">
-            <div class="col-ipad-pro-6 col-12">
-              <div class="overline-container">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <div class="hero-badge">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -412,7 +665,7 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-heartbeat overline-icon"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-heartbeat"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path
@@ -420,22 +673,86 @@
                   />
                   <path d="M3 13h2l2 3l2 -6l1 3h3" />
                 </svg>
-                <span class="overline-text"
-                  >Health insurance tailored to your needs</span
-                >
+                <span>Health insurance tailored to your needs</span>
               </div>
-              <h1 id="health-heading" class="heading-primary">
-                Stay healthy with our health insurance plan
+
+              <h1 id="health-heading" class="hero-heading">
+                Compare Health Insurance Plans
+                <span class="hero-heading-accent">With Confidence</span>
               </h1>
-              <p class="health-description">
-                The best insurance plan to help you save more while you get
-                healthier. We're here to guide you and recommend the best plan
-                for you.
+
+              <p class="hero-description">
+                We help you understand your options, compare plans, and find
+                coverage that fits your health needs and budget.
               </p>
-              <div class="cta-group" role="group" aria-label="Call to actions">
-                <a href="#pricing-cta" class="btn btn-default">Start plan</a>
-                <a href="#about-cta" class="btn btn-outline">
-                  Learn more
+
+              <ul class="hero-benefits">
+                <li>
+                  <span class="hero-benefit-icon" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        fill="currentColor"
+                        fill-rule="evenodd"
+                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                  Personalized plan guidance
+                </li>
+                <li>
+                  <span class="hero-benefit-icon" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        fill="currentColor"
+                        fill-rule="evenodd"
+                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                  Multiple trusted carriers
+                </li>
+                <li>
+                  <span class="hero-benefit-icon" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        fill="currentColor"
+                        fill-rule="evenodd"
+                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </span>
+                  Ongoing support after enrollment
+                </li>
+              </ul>
+
+              <div
+                class="hero-cta-group"
+                role="group"
+                aria-label="Call to actions"
+              >
+                <a href="#pricing-cta" class="btn btn-default">
+                  Compare Plans
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -445,127 +762,95 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
+                    aria-hidden="true"
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M13 18l6 -6" />
-                    <path d="M13 6l6 6" />
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 12l14 0"></path>
+                    <path d="M13 18l6 -6"></path>
+                    <path d="M13 6l6 6"></path>
                   </svg>
                 </a>
-              </div>
-              <div class="gap-4 flex-center check-text">
-                <div class="gap-2 flex-center">
+                <a
+                  href="#appointment-cta"
+                  class="btn btn-outline hero-btn-advisor"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-check stroke-primary"
+                    aria-hidden="true"
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l5 5l10 -10" />
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+                    ></path>
                   </svg>
-                  <span>No hidden fees</span>
-                </div>
-                <div class="gap-2 flex-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-check stroke-primary"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l5 5l10 -10" />
-                  </svg>
-                  <span>Real support, Anytime</span>
-                </div>
+                  Talk to an Advisor
+                </a>
               </div>
+
+              <p class="hero-trust">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"
+                  ></path>
+                  <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+                  <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+                </svg>
+                Secure. Private. No obligation.
+              </p>
             </div>
 
-            <div
-              class="mb-5 col-ipad-pro-6 mb-ipad-pro-0 col-12 hero-img-container"
-            >
-              <div
-                class="health-img-box d-flex position-relative h-100"
-                role="group"
-                aria-label="Health related visuals"
-              >
+            <div class="hero-visual" aria-hidden="true">
+              <div class="hero-dots"></div>
+              <div class="hero-image-wrap">
                 <img
-                  loading="lazy"
-                  src="assets/img/banner-img-1.webp"
-                  class="health-img health-img--1"
-                  alt="People together smiling"
-                />
-                <img
-                  loading="lazy"
-                  src="assets/img/banner-img-2.webp"
-                  class="health-img health-img--2"
-                  alt="Friendly woman doctor with stethoscope"
-                />
-                <img
-                  loading="lazy"
-                  src="assets/img/banner-img-3.webp"
-                  class="health-img health-img--3"
-                  alt="Woman running in park"
+                  loading="eager"
+                  src="assets/img/hero-image.webp"
+                  class="hero-image"
+                  alt=""
                 />
               </div>
-
-              <div class="header-swiper swiper d-none">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="assets/img/banner-img-1.webp"
-                      alt="1"
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="assets/img/banner-img-2.webp"
-                      alt="2"
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="assets/img/banner-img-3.webp"
-                      alt="3"
-                    />
-                  </div>
-
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="assets/img/banner-img-1.webp"
-                      alt="1-clone"
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="assets/img/banner-img-2.webp"
-                      alt="2-clone"
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      loading="lazy"
-                      src="assets/img/banner-img-3.webp"
-                      alt="3-clone"
-                    />
-                  </div>
+              <div class="hero-float-card">
+                <div class="hero-float-card-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M3.378 5.082C3 5.62 3 7.22 3 10.417v1.574c0 5.638 4.239 8.375 6.899 9.536c.721.315 1.082.473 2.101.473c1.02 0 1.38-.158 2.101-.473C16.761 20.365 21 17.63 21 11.991v-1.574c0-3.198 0-4.797-.378-5.335c-.377-.537-1.88-1.052-4.887-2.081l-.573-.196C13.595 2.268 12.812 2 12 2s-1.595.268-3.162.805L8.265 3c-3.007 1.03-4.51 1.545-4.887 2.082M15.06 10.5a.75.75 0 0 0-1.12-.999l-3.011 3.374l-.87-.974a.75.75 0 0 0-1.118 1l1.428 1.6a.75.75 0 0 0 1.119 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="hero-float-card-text">
+                  <span class="hero-float-card-lead">Your health.</span>
+                  <span class="hero-float-card-accent">Your choice.</span>
+                  <span>We're here to help.</span>
                 </div>
               </div>
             </div>
@@ -574,82 +859,173 @@
       </section>
 
       <section
-        class="section-featured"
+        class="section-trust-proof"
         id="featured"
         data-section-key="featured"
-        aria-labelledby="featured-heading"
+        aria-label="Trust and proof"
       >
         <div class="container">
-          <h1 id="featured-heading" class="heading-featured-in">
-            As featured in
-          </h1>
+          <div class="trust-stats-card">
+            <div class="trust-stat">
+              <div class="trust-stat-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M17 19.5c0-1.657-2.239-3-5-3s-5 1.343-5 3m14-3c0-1.23-1.234-2.287-3-2.75M3 16.5c0-1.23 1.234-2.287 3-2.75m12-4.014a3 3 0 1 0-4-4.472M6 9.736a3 3 0 0 1 4-4.472m2 8.236a3 3 0 1 1 0-6a3 3 0 0 1 0 6"
+                  ></path>
+                </svg>
+              </div>
+              <p class="trust-stat-value">50,000+</p>
+              <p class="trust-stat-label">Families Served</p>
+            </div>
+            <div class="trust-stat">
+              <div class="trust-stat-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"
+                  ></path>
+                  <path d="M9 12l2 2l4 -4"></path>
+                </svg>
+              </div>
+              <p class="trust-stat-value">25+</p>
+              <p class="trust-stat-label">Top Insurance Carriers</p>
+            </div>
+            <div class="trust-stat">
+              <div class="trust-stat-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 3.75c-3.241 0-5.756 2.03-6.185 4.5H8a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H5A2.75 2.75 0 0 1 2.25 14v-3a2.75 2.75 0 0 1 2.035-2.656C4.667 4.84 8.074 2.25 12 2.25s7.333 2.59 7.715 6.094A2.75 2.75 0 0 1 21.75 11v3a2.75 2.75 0 0 1-2.045 2.659A4.75 4.75 0 0 1 15 20.75h-1.145a2 2 0 1 1 0-1.5H15a3.25 3.25 0 0 0 3.163-2.5H16a.75.75 0 0 1-.75-.75V9a.75.75 0 0 1 .75-.75h2.185c-.429-2.47-2.944-4.5-6.185-4.5m-7 6c-.69 0-1.25.56-1.25 1.25v3c0 .69.56 1.25 1.25 1.25h2.25v-5.5zM20.25 11c0-.69-.56-1.25-1.25-1.25h-2.25v5.5H19c.69 0 1.25-.56 1.25-1.25z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <p class="trust-stat-value">U.S. Based</p>
+              <p class="trust-stat-label">Support Team</p>
+            </div>
+            <div class="trust-stat">
+              <div class="trust-stat-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M12.854 3.5a.979.979 0 0 0-1.708 0q-.3.546-.577 1.106a27 27 0 0 0-1.48 3.656c-.139.431-.551.73-1.023.743a29.4 29.4 0 0 0-4.267.425c-.774.136-1.065 1.018-.515 1.556q.188.185.38.365a32 32 0 0 0 3.03 2.527c.367.269.518.73.378 1.152a27 27 0 0 0-1.14 4.927c-.1.755.708 1.288 1.41.928a28.6 28.6 0 0 0 3.98-2.472a1.15 1.15 0 0 1 1.356 0a28.5 28.5 0 0 0 3.98 2.472c.701.36 1.51-.173 1.41-.928q-.058-.425-.127-.845a27 27 0 0 0-1.013-4.082c-.14-.422.01-.883.378-1.152a31.5 31.5 0 0 0 3.41-2.892c.55-.538.26-1.42-.515-1.556a29 29 0 0 0-4.267-.425a1.1 1.1 0 0 1-1.023-.743a27 27 0 0 0-2.057-4.761"
+                  ></path>
+                </svg>
+              </div>
+              <p class="trust-stat-value">4.9/5</p>
+              <p class="trust-stat-label">Customer Rating</p>
+            </div>
+          </div>
 
-          <div class="swiper featured-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a
-                  href="https://techcrunch.com/"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
+          <div class="trust-benefits">
+            <div class="trust-benefit">
+              <span class="trust-benefit-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
                 >
-                  <img
-                    loading="lazy"
-                    src="assets/img/techcrunch.webp"
-                    alt="TechCrunch featured our company"
-                  />
-                </a>
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </span>
+              <div class="trust-benefit-text">
+                <p class="trust-benefit-title">No hidden fees</p>
+                <p class="trust-benefit-desc">
+                  Transparent information, clear pricing.
+                </p>
               </div>
-              <div class="swiper-slide">
-                <a
-                  href="https://www.businessinsider.com/"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
+            </div>
+            <div class="trust-benefit">
+              <span class="trust-benefit-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
                 >
-                  <img
-                    loading="lazy"
-                    src="assets/img/business-insider.webp"
-                    alt="Business Insider mentioned us"
-                  />
-                </a>
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </span>
+              <div class="trust-benefit-text">
+                <p class="trust-benefit-title">Real support, anytime</p>
+                <p class="trust-benefit-desc">
+                  Speak with a real person when you need help.
+                </p>
               </div>
-              <div class="swiper-slide">
-                <a
-                  href="https://www.nytimes.com/"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
+            </div>
+            <div class="trust-benefit">
+              <span class="trust-benefit-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
                 >
-                  <img
-                    loading="lazy"
-                    src="assets/img/the-new-york-times.webp"
-                    alt="Coverage by The New York Times"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a
-                  href="https://www.forbes.com/"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                >
-                  <img
-                    loading="lazy"
-                    src="assets/img/forbes.webp"
-                    alt="Forbes magazine spotlight"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a
-                  href="https://www.usatoday.com/"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                >
-                  <img
-                    loading="lazy"
-                    src="assets/img/usa-today.webp"
-                    alt="USA Today recognition"
-                  />
-                </a>
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </span>
+              <div class="trust-benefit-text">
+                <p class="trust-benefit-title">Guidance you can trust</p>
+                <p class="trust-benefit-desc">
+                  Licensed advisors. Better health decisions.
+                </p>
               </div>
             </div>
           </div>
@@ -663,60 +1039,30 @@
         aria-labelledby="about-heading"
       >
         <div class="container">
-          <div id="tabOrMobOnly" class="card">
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-5 col-12">
-                <img
-                  loading="lazy"
-                  src="assets/img/about-us.webp"
-                  alt="Nurse checking patient's pulse."
-                  class="card-img-top"
-                />
+          <div class="about-grid">
+            <div class="about-content">
+              <div class="about-label-group">
+                <p class="about-label">About DONORDOC</p>
+                <span class="about-label-line" aria-hidden="true"></span>
               </div>
-              <div class="col-lg-12 col-md-12 col-sm-7 col-12">
-                <div class="card-body">
-                  <p class="heading-four">About us</p>
-                  <h1 id="about-heading">
-                    Look nowhere else, and take advantage of our health plan
-                  </h1>
-                  <p class="general-text-size">
-                    Choosing a health plan shouldn't feel overwhelming. That's
-                    why we focus on transparent coverage, straightforward
-                    options, and support you can trust. Our goal is to help you
-                    make confident decisions today while protecting what matters
-                    most tomorrow.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            id="desktopOnly"
-            class="row align-items-center justify-content-center gx-md-5 gy-md-0 gy-3"
-          >
-            <div class="col-md-6 col-12">
-              <figure>
-                <img
-                  loading="lazy"
-                  class="img-fluid"
-                  src="assets/img/about-us.webp"
-                  alt="Nurse checking patient's pulse."
-                />
-              </figure>
-            </div>
-
-            <div class="col-md-6 col-12">
-              <p class="heading-four">About us</p>
               <h1 id="about-heading">
-                Look nowhere else, and take advantage of our health plan
+                Helping You Navigate Health Coverage With Confidence
               </h1>
-              <p class="general-text-size">
-                Choosing a health plan shouldn't feel overwhelming. That's why
-                we focus on transparent coverage, straightforward options, and
-                support you can trust. Our goal is to help you make confident
-                decisions today while protecting what matters most tomorrow.
+              <p class="about-description">
+                We make health insurance easier to understand by helping
+                individuals and families compare options, choose coverage
+                confidently, and get support when they need it most.
               </p>
             </div>
+
+            <figure class="about-visual">
+              <img
+                loading="lazy"
+                class="about-image"
+                src="assets/img/about-image.webp"
+                alt="A family meeting with a health coverage advisor"
+              />
+            </figure>
           </div>
         </div>
       </section>
@@ -728,891 +1074,230 @@
         aria-labelledby="services-heading"
       >
         <div class="container">
-          <div class="overline-container" style="justify-content: center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-ambulance overline-icon"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-              <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-              <path
-                d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
+          <header class="services-header">
+            <p class="services-label">How We Can Help</p>
+            <h1 id="services-heading">
+              Helping You Find Coverage<br
+                class="services-break-mobile"
+                aria-hidden="true"
               />
-              <path d="M6 10h4m-2 -2v4" />
-            </svg>
-            <span class="overline-text">We can help in many ways</span>
+              That
+              <span class="services-heading-accent">Fits Your Life</span>
+            </h1>
+            <p class="services-description">
+              Explore the types of health coverage our licensed<br
+                class="services-break-mobile"
+                aria-hidden="true"
+              />
+              advisors can help you understand and compare.
+            </p>
+          </header>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 512 512"
+                  class="icon service-card__icon-svg"
+                >
+                  <path d="M0 0h512v512H0z" fill="none" />
+                  <path
+                    fill="currentColor"
+                    d="M110.037 23.27c-1.32.075-2.665.417-4.014 1.073L79 41.943l10.5 21.58l30.525-10.405c13.04-6.344 2.762-30.57-9.988-29.847zm110.926 0c-12.75-.723-23.027 23.504-9.988 29.848L241.5 63.523l10.5-21.58l-27.023-17.6c-1.35-.656-2.695-.998-4.014-1.072zM65.475 51.473L28.5 69.96v5.563c0 42.4 16.395 98.962 41.02 146.164c12.315 23.6 26.693 44.793 42.67 60.504c13.498 13.274 28.41 22.913 44.398 25.585c1.247 64.995 17.26 110.633 42.027 140.044c25.804 30.642 61.022 42.836 95.446 40.685c53.712-3.357 106.658-40.218 127.342-92.984a79.7 79.7 0 0 1-18.777-2.27c-19.496 43.688-64.946 74.494-109.686 77.29c-29.577 1.85-58.36-7.957-80.555-34.314c-21.268-25.256-36.55-66.5-37.793-128.483c15.92-2.713 30.77-12.33 44.22-25.552c15.975-15.71 30.353-36.903 42.667-60.503c24.625-47.202 41.02-103.764 41.02-146.164V69.96l-36.975-18.488l-8.05 16.1l26.763 13.384c-1.344 37.38-16.41 89.65-38.717 132.403c-11.685 22.398-25.307 42.205-39.33 55.995s-28.065 21.168-40.69 21.168s-26.666-7.378-40.69-21.168s-27.645-33.597-39.33-55.997c-22.308-42.753-37.374-95.02-38.718-132.402l26.763-13.383l-8.05-16.1zM421.5 253.522c-34.348 0-62 27.652-62 62c0 34.35 27.652 62 62 62s62-27.65 62-62c0-34.348-27.652-62-62-62m0 30c17.567 0 32 14.434 32 32s-14.433 32-32 32s-32-14.433-32-32c0-17.566 14.433-32 32-32m0 18c-7.84 0-14 6.162-14 14c0 7.84 6.16 14 14 14s14-6.16 14-14c0-7.838-6.16-14-14-14"
+                  />
+                </svg>
+              </div>
+              <div class="service-card__body">
+                <h2 class="service-card__title">Preventive Care</h2>
+                <p class="service-card__desc">
+                  <span class="service-card__desc-full"
+                    >Stay ahead of health issues with routine screenings and
+                    wellness visits.</span
+                  >
+                  <span class="service-card__desc-short"
+                    >Stay ahead with routine screenings and wellness
+                    visits.</span
+                  >
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="icon service-card__icon-svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <g fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" d="M22 22H2" />
+                    <path
+                      d="M17 22V6c0-1.886 0-2.828-.586-3.414S14.886 2 13 2h-2c-1.886 0-2.828 0-3.414.586S7 4.114 7 6v16m14 0V8.5c0-1.404 0-2.107-.337-2.611a2 2 0 0 0-.552-.552C19.607 5 18.904 5 17.5 5M3 22V8.5c0-1.404 0-2.107.337-2.611a2 2 0 0 1 .552-.552C4.393 5 5.096 5 6.5 5"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      d="M12 22v-3m-2-7h4m-8.5-1H7m-1.5 3H7m10-3h1.5M17 14h1.5m-13-6H7m10 0h1.5M10 15h4"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9V5m2 2h-4"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div class="service-card__body">
+                <h2 class="service-card__title">Hospital Coverage</h2>
+                <p class="service-card__desc">
+                  Financial protection for unexpected medical events and
+                  hospital stays.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div
+                class="service-card__icon service-card__icon--lg"
+                aria-hidden="true"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="icon service-card__icon-svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    fill="currentColor"
+                    d="M8.625 20q-1.927 0-3.276-1.349T4 15.375q0-.933.358-1.784q.358-.852 1.004-1.499l6.73-6.73q.646-.647 1.498-1.004Q14.443 4 15.376 4q1.927 0 3.276 1.349T20 8.625q0 .933-.358 1.785q-.357.851-1.003 1.498l-6.731 6.73q-.646.646-1.498 1.004T8.625 20m6.304-5.804L17.95 11.2q.5-.5.775-1.175t.275-1.4q0-1.5-1.063-2.562T15.375 5q-.725 0-1.4.275T12.8 6.05L9.804 9.071zM8.625 19q.725 0 1.4-.275t1.175-.775l2.996-3.021l-5.125-5.125L6.05 12.8q-.5.5-.775 1.175T5 15.375q0 1.5 1.063 2.563T8.625 19"
+                  />
+                </svg>
+              </div>
+              <div class="service-card__body">
+                <h2 class="service-card__title">Prescription Coverage</h2>
+                <p class="service-card__desc">
+                  Access to affordable medications when you need them.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 256 256"
+                  class="icon service-card__icon-svg"
+                >
+                  <path d="M0 0h256v256H0z" fill="none" />
+                  <path
+                    fill="currentColor"
+                    d="M122 16V8a6 6 0 0 1 12 0v8a6 6 0 0 1-12 0m78 30a6 6 0 0 0 4.24-1.76l8-8a6 6 0 1 0-8.48-8.48l-8 8A6 6 0 0 0 200 46M51.76 44.24a6 6 0 0 0 8.48-8.48l-8-8a6 6 0 0 0-8.48 8.48ZM137 74.08a6 6 0 1 0-2 11.84c20 3.34 35 21.44 35 42.08a6 6 0 0 0 12 0c0-26.43-19.35-49.61-45-53.92M230 176v24a14 14 0 0 1-14 14H40a14 14 0 0 1-14-14v-24a14 14 0 0 1 14-14h2v-34a86 86 0 0 1 86-86h.65c47.06.35 85.35 39.38 85.35 87v33h2a14 14 0 0 1 14 14M54 162h148v-33c0-41-32.94-74.7-73.44-75H128a74 74 0 0 0-74 74Zm164 14a2 2 0 0 0-2-2H40a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h176a2 2 0 0 0 2-2Z"
+                  />
+                </svg>
+              </div>
+              <div class="service-card__body">
+                <h2 class="service-card__title">Emergency Coverage</h2>
+                <p class="service-card__desc">
+                  Protection for urgent and unexpected medical situations.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div
+                class="service-card__icon service-card__icon--lg"
+                aria-hidden="true"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  class="icon service-card__icon-svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    fill="currentColor"
+                    d="M13 3c3.88 0 7 3.14 7 7c0 2.8-1.63 5.19-4 6.31V21H9v-3H8c-1.11 0-2-.89-2-2v-3H4.5c-.42 0-.66-.5-.42-.81L6 9.66A7.003 7.003 0 0 1 13 3m0-2C8.41 1 4.61 4.42 4.06 8.9L2.5 11h-.03l-.02.03c-.55.76-.62 1.76-.19 2.59c.36.69 1 1.17 1.74 1.32V16c0 1.85 1.28 3.42 3 3.87V23h11v-5.5c2.5-1.67 4-4.44 4-7.5c0-4.97-4.04-9-9-9m4 7.83c0 1.54-1.36 2.77-3.42 4.64L13 14l-.58-.53C10.36 11.6 9 10.37 9 8.83c0-1.2.96-2.19 2.16-2.2h.04c.69 0 1.35.31 1.8.83c.45-.52 1.11-.83 1.8-.83c1.2-.01 2.2.96 2.2 2.16z"
+                  />
+                </svg>
+              </div>
+              <div class="service-card__body">
+                <h2 class="service-card__title">Mental Health Coverage</h2>
+                <p class="service-card__desc">
+                  Support for emotional and behavioral health needs.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div
+                class="service-card__icon service-card__icon--lg"
+                aria-hidden="true"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 48 48"
+                  class="icon service-card__icon-svg"
+                >
+                  <path d="M0 0h48v48H0z" fill="none" />
+                  <g
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  >
+                    <path
+                      d="m16.649 9.326l.055-.24c.105-.446.277-1.102.632-1.748c.362-.658.923-1.325 1.803-1.764c.877-.437 1.976-.6 3.335-.42c1.5.2 4.513.696 7.175 2.05c2.677 1.362 5.185 3.705 5.185 7.607c0 2.016-.78 4.179-1.536 5.589c-.363.678-.794 1.326-1.226 1.675c-.099.08-.24.18-.415.25a8.004 8.004 0 0 1-15.05.738l-.024.004l-.355-.431L17 22l-.772.636l-.001-.002l-.002-.002l-.005-.007l-.017-.02a7 7 0 0 1-.247-.327a14 14 0 0 1-.61-.924c-.47-.778-1.037-1.886-1.4-3.179c-.362-1.293-.528-2.809-.148-4.373c.37-1.522 1.243-3.02 2.824-4.358zm1.68 12.638a6.003 6.003 0 0 0 11.564-.833l.113.038a2 2 0 0 1-.006-.17c0-1.655-.23-2.81-.444-3.53a7 7 0 0 0-.139-.416l-.041.002h-.04a11.5 11.5 0 0 1-2.232-.17c-1.717-.29-4.042-1.014-6.78-2.691q-.09.201-.18.453c-.196.555-.357 1.214-.496 1.91c-.123.613-.224 1.23-.32 1.808l-.037.228c-.103.62-.206 1.229-.326 1.67c-.21.766-.424 1.31-.636 1.7m-1.4-1.863a11 11 0 0 1-1.056-2.465c-.299-1.066-.409-2.22-.131-3.361c.27-1.11.923-2.277 2.266-3.383c.242-.164.352-.384.382-.443v-.001a2 2 0 0 0 .126-.337c.032-.114.067-.27.1-.41l.035-.157c.095-.403.218-.842.438-1.243c.214-.388.507-.72.943-.937c.438-.219 1.116-.369 2.178-.227c1.453.193 4.186.656 6.532 1.85c2.33 1.185 4.092 2.979 4.092 5.824c0 1.31-.44 2.8-.97 3.975c-.1-.766-.244-1.392-.392-1.888a8 8 0 0 0-.385-1.037a5 5 0 0 0-.19-.365l-.017-.027l-.006-.01l-.003-.005l-.002-.003l-.84.54l.84-.54l-.37-.574l-.662.133l-.014.003l-.097.013a5 5 0 0 1-.448.03a9.5 9.5 0 0 1-1.84-.144c-1.613-.272-3.983-1.013-6.862-2.93l-.7-.467l-.579.61c-.477.502-.801 1.187-1.038 1.854c-.242.685-.425 1.45-.572 2.184a53 53 0 0 0-.332 1.88l-.038.224c-.107.651-.194 1.148-.282 1.47q-.054.199-.106.364m13.881.422l.004-.002zm.004-.002l-.004.002z"
+                    />
+                    <path
+                      d="M17.914 28.855c-.212-.422-.473-.943-.914-.842c-5.404 1.23-11 4.781-11 8.557V42h36v-5.43c0-2.974-3.472-5.809-7.587-7.48l-.005-.01l-.014-.027l-.033.016c-1.093-.44-2.231-.8-3.361-1.056c-.503-.115-1.023.577-1.25 1.01H18zm13.489 1.32q.656.182 1.301.407c.012.342-.014.746-.07 1.158a8 8 0 0 1-.272 1.26H31a1 1 0 0 0-.894.553l-1 2A1 1 0 0 0 29 36v2a1 1 0 0 0 1 1h2v-2h-1v-.764L31.618 35h2.764L35 36.236V37h-1v2h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-.106-.447l-1-2A1 1 0 0 0 35 33h-.566a11 11 0 0 0 .248-1.609c.975.461 1.881.99 2.666 1.562C39.27 34.355 40 35.667 40 36.57V40H8v-3.43c0-.903.73-2.215 2.652-3.617c.966-.705 2.119-1.343 3.355-1.871a10.2 10.2 0 0 0 .381 2.354l.008.028a3 3 0 1 0 1.956-.444l-.044-.144a8 8 0 0 1-.235-1.136a7 7 0 0 1-.07-1.171q.005-.126.015-.224q.18-.056.36-.107l.415.786h14.164zM16 37.016c.538 0 1-.44 1-1.015c0-.574-.462-1.015-1-1.015s-1 .44-1 1.015c0 .574.462 1.015 1 1.015"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div class="service-card__body">
+                <h2 class="service-card__title">Specialist Care</h2>
+                <p class="service-card__desc">
+                  Access to specialized care and treatment options.
+                </p>
+              </div>
+            </article>
           </div>
-          <p class="heading-four">Services</p>
-          <h1 id="services-heading">The Best Medical Agency</h1>
-          <div class="row g-md-5 gy-md-0 gy-5">
-            <div class="col-xxl-4 col-custom-6 col-12">
-              <div class="flip">
-                <div class="card">
-                  <div class="card-body front">
-                    <div class="service-box-info">
-                      <h4>Preventive Care</h4>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-stethoscope"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M6 4h-1a2 2 0 0 0 -2 2v3.5h0a5.5 5.5 0 0 0 11 0v-3.5a2 2 0 0 0 -2 -2h-1"
-                        />
-                        <path d="M8 15a6 6 0 1 0 12 0v-3" />
-                        <path d="M11 3v2" />
-                        <path d="M6 3v2" />
-                        <path d="M20 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                      </svg>
-                      <div class="rating">
-                        RATED 5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <a
-                      href="javascript:void(0)"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                  <div class="card-body back">
-                    <div class="service-box-info">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-stethoscope"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M6 4h-1a2 2 0 0 0 -2 2v3.5h0a5.5 5.5 0 0 0 11 0v-3.5a2 2 0 0 0 -2 -2h-1"
-                        />
-                        <path d="M8 15a6 6 0 1 0 12 0v-3" />
-                        <path d="M11 3v2" />
-                        <path d="M6 3v2" />
-                        <path d="M20 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                      </svg>
-                      <h4>Preventive Care</h4>
-                      <div class="rating">
-                        5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="service-list">
-                      <div>
-                        <span>1200</span>
-                        <span>Checkups</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Vaccination</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Screenings</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Health Counseling</span>
-                        <span class="year">2025</span>
-                      </div>
-                    </div>
-                    <a
-                      href="#health-cta"
-                      class="btn btn-default-2 no-effect btn-arrow"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l14 0" />
-                        <path d="M13 18l6 -6" />
-                        <path d="M13 6l6 6" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#health-cta"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-4 col-custom-6 col-12">
-              <div class="flip">
-                <div class="card">
-                  <div class="card-body front">
-                    <div class="service-box-info">
-                      <h4>Hospital Coverage</h4>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-ambulance"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path
-                          d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
-                        />
-                        <path d="M6 10h4m-2 -2v4" />
-                      </svg>
-                      <div class="rating">
-                        RATED 4.5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <a
-                      href="javascript:void(0)"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                  <div class="card-body back">
-                    <div class="service-box-info">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-ambulance"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path
-                          d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
-                        />
-                        <path d="M6 10h4m-2 -2v4" />
-                      </svg>
-                      <h4>Hospital Coverage</h4>
-                      <div class="rating">
-                        4.5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="service-list">
-                      <div>
-                        <span>1200</span>
-                        <span>Indemnity Insurance</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Cash Benefits</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Cost Coverage</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Living Expenses</span>
-                        <span class="year">2025</span>
-                      </div>
-                    </div>
 
-                    <a
-                      href="#health-cta"
-                      class="btn btn-default-2 no-effect btn-arrow"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l14 0" />
-                        <path d="M13 18l6 -6" />
-                        <path d="M13 6l6 6" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#health-cta"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-4 col-custom-6 col-12">
-              <div class="flip">
-                <div class="card">
-                  <div class="card-body front">
-                    <div class="service-box-info">
-                      <h4>Prescription Coverage</h4>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="icon icon-tabler icons-tabler-filled icon-tabler-pill"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M20.207 3.793a5.95 5.95 0 0 1 0 8.414l-8 8a5.95 5.95 0 0 1 -8.414 -8.414l8 -8a5.95 5.95 0 0 1 8.414 0m-7 1.414l-4.294 4.293l5.586 5.586l4.294 -4.292a3.95 3.95 0 1 0 -5.586 -5.586"
-                        />
-                      </svg>
-                      <div class="rating">
-                        RATED 5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <a
-                      href="javascript:void(0)"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                  <div class="card-body back">
-                    <div class="service-box-info">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="icon icon-tabler icons-tabler-filled icon-tabler-pill"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M20.207 3.793a5.95 5.95 0 0 1 0 8.414l-8 8a5.95 5.95 0 0 1 -8.414 -8.414l8 -8a5.95 5.95 0 0 1 8.414 0m-7 1.414l-4.294 4.293l5.586 5.586l4.294 -4.292a3.95 3.95 0 1 0 -5.586 -5.586"
-                        />
-                      </svg>
-                      <h4>Prescription Coverage</h4>
-                      <div class="rating">
-                        5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="service-list">
-                      <div>
-                        <span>1200</span>
-                        <span>Health Insurance Plans</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Medicare Part D</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Formulary</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Cost Sharing</span>
-                        <span class="year">2025</span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="#health-cta"
-                      class="btn btn-default-2 no-effect btn-arrow"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l14 0" />
-                        <path d="M13 18l6 -6" />
-                        <path d="M13 6l6 6" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#health-cta"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-4 col-custom-6 col-12">
-              <div class="flip">
-                <div class="card">
-                  <div class="card-body front">
-                    <div class="service-box-info">
-                      <h4>Emergency</h4>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-ambulance"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path
-                          d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
-                        />
-                        <path d="M6 10h4m-2 -2v4" />
-                      </svg>
-                      <div class="rating">
-                        RATED 5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <a
-                      href="javascript:void(0)"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                  <div class="card-body back">
-                    <div class="service-box-info">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-ambulance"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path
-                          d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
-                        />
-                        <path d="M6 10h4m-2 -2v4" />
-                      </svg>
-                      <h4>Emergency</h4>
-                      <div class="rating">
-                        5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="service-list">
-                      <div>
-                        <span>1200</span>
-                        <span>Trauma Care</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Cardiac Emergency</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Stroke Management</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Emergency Surgery</span>
-                        <span class="year">2025</span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="#health-cta"
-                      class="btn btn-default-2 no-effect btn-arrow"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l14 0" />
-                        <path d="M13 18l6 -6" />
-                        <path d="M13 6l6 6" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#health-cta"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-4 col-custom-6 col-12">
-              <div class="flip">
-                <div class="card">
-                  <div class="card-body front">
-                    <div class="service-box-info">
-                      <h4>Mental Health</h4>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-report-medical"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
-                        />
-                        <path
-                          d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                        />
-                        <path d="M10 14l4 0" />
-                        <path d="M12 12l0 4" />
-                      </svg>
-                      <div class="rating">
-                        RATED 5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <a
-                      href="javascript:void(0)"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                  <div class="card-body back">
-                    <div class="service-box-info">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-report-medical"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"
-                        />
-                        <path
-                          d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                        />
-                        <path d="M10 14l4 0" />
-                        <path d="M12 12l0 4" />
-                      </svg>
-                      <h4>Mental Health</h4>
-                      <div class="rating">
-                        5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="service-list">
-                      <div>
-                        <span>1200</span>
-                        <span>Trauma Care</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Cardiac Emergency</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Stroke Management</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Emergency Surgery</span>
-                        <span class="year">2025</span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="#health-cta"
-                      class="btn btn-default-2 no-effect btn-arrow"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l14 0" />
-                        <path d="M13 18l6 -6" />
-                        <path d="M13 6l6 6" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#health-cta"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xxl-4 col-custom-6 col-12">
-              <div class="flip">
-                <div class="card">
-                  <div class="card-body front">
-                    <div class="service-box-info">
-                      <h4>Specialist Care</h4>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-face-mask"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M5 14.5h-.222c-1.535 0 -2.778 -1.12 -2.778 -2.5s1.243 -2.5 2.778 -2.5h.222"
-                        />
-                        <path
-                          d="M19 14.5h.222c1.534 0 2.778 -1.12 2.778 -2.5s-1.244 -2.5 -2.778 -2.5h-.222"
-                        />
-                        <path d="M9 10h6" />
-                        <path d="M9 14h6" />
-                        <path
-                          d="M12.55 18.843l5 -1.429a2 2 0 0 0 1.45 -1.923v-6.981a2 2 0 0 0 -1.45 -1.923l-5 -1.429a2 2 0 0 0 -1.1 0l-5 1.429a2 2 0 0 0 -1.45 1.922v6.982a2 2 0 0 0 1.45 1.923l5 1.429a2 2 0 0 0 1.1 0z"
-                        />
-                      </svg>
-                      <div class="rating">
-                        RATED 5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <a
-                      href="javascript:void(0)"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                  <div class="card-body back">
-                    <div class="service-box-info">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-face-mask"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M5 14.5h-.222c-1.535 0 -2.778 -1.12 -2.778 -2.5s1.243 -2.5 2.778 -2.5h.222"
-                        />
-                        <path
-                          d="M19 14.5h.222c1.534 0 2.778 -1.12 2.778 -2.5s-1.244 -2.5 -2.778 -2.5h-.222"
-                        />
-                        <path d="M9 10h6" />
-                        <path d="M9 14h6" />
-                        <path
-                          d="M12.55 18.843l5 -1.429a2 2 0 0 0 1.45 -1.923v-6.981a2 2 0 0 0 -1.45 -1.923l-5 -1.429a2 2 0 0 0 -1.1 0l-5 1.429a2 2 0 0 0 -1.45 1.922v6.982a2 2 0 0 0 1.45 1.923l5 1.429a2 2 0 0 0 1.1 0z"
-                        />
-                      </svg>
-                      <h4>Specialist Care</h4>
-                      <div class="rating">
-                        5
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          class="icon icon-tabler icons-tabler-filled icon-tabler-star"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path
-                            d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="service-list">
-                      <div>
-                        <span>1200</span>
-                        <span>Cardiology</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Neurology</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Oncology</span>
-                        <span class="year">2025</span>
-                      </div>
-                      <div>
-                        <span>1200</span>
-                        <span>Orthopedic and more</span>
-                        <span class="year">2025</span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="#health-cta"
-                      class="btn btn-default-2 no-effect btn-arrow"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l14 0" />
-                        <path d="M13 18l6 -6" />
-                        <path d="M13 6l6 6" />
-                      </svg>
-                    </a>
-                    <a
-                      href="#health-cta"
-                      class="btn learn-more-btn btn-default"
-                    >
-                      Learn more
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="services-cta">
+            <a
+              href="#pricing-cta"
+              class="btn btn-outline services-cta-btn no-effect"
+            >
+              Learn more about all coverage options
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
+                aria-hidden="true"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M5 12l14 0" />
+                <path d="M13 18l6 -6" />
+                <path d="M13 6l6 6" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -2187,7 +1872,7 @@
                 Finding the right doctor makes all the difference. Our
                 healthcare professionals focus on understanding your needs,
                 providing thoughtful care, and helping you make confident
-                decisions about your health—today and in the long term.
+                decisions about your healthâ€”today and in the long term.
               </p>
               <form action="" class="findDocform">
                 <div class="row g-1">
@@ -2266,10 +1951,10 @@
                       </svg>
                     </div>
                     <p>
-                      “Choosing the right health plan felt overwhelming at
+                      â€œChoosing the right health plan felt overwhelming at
                       first, but the guidance I received made everything clear.
                       I finally feel confident about my coverage and supported
-                      in my healthcare decisions.”
+                      in my healthcare decisions.â€
                     </p>
                     <div>
                       <h4 class="patient-name">Emily Carter</h4>
@@ -2308,10 +1993,10 @@
                       </svg>
                     </div>
                     <p>
-                      “What I appreciated most was how transparent and easy the
-                      process was. I found a plan that fits my needs without
+                      â€œWhat I appreciated most was how transparent and easy
+                      the process was. I found a plan that fits my needs without
                       hidden surprises, and the support team was always
-                      available when I had questions.”
+                      available when I had questions.â€
                     </p>
                     <div>
                       <h4 class="patient-name">Sofia Martinez</h4>
@@ -2350,10 +2035,10 @@
                       </svg>
                     </div>
                     <p>
-                      “Having reliable health coverage gives me real peace of
+                      â€œHaving reliable health coverage gives me real peace of
                       mind. From finding the right plan to understanding my
                       options, the experience was straightforward and reassuring
-                      from start to finish.”
+                      from start to finish.â€
                     </p>
                     <div>
                       <h4 class="patient-name">Daniel Thompson</h4>
@@ -2500,7 +2185,7 @@
                         Making Sense of Health Coverage Options
                       </h4>
                       <p>
-                        Understanding health coverage doesn’t have to be
+                        Understanding health coverage doesnâ€™t have to be
                         complicated. This article breaks down common options and
                         explains how to choose a plan that aligns with your
                         lifestyle and healthcare needs.
