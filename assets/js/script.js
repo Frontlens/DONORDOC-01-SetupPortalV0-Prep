@@ -459,6 +459,7 @@ function initNavScroll() {
     featured: "#health-cta",
     "about-cta": "#about-cta",
     "services-cta": "#services-cta",
+    "how-it-works-cta": "#services-cta",
     "pricing-cta": "#services-cta",
     "doctors-cta": "#services-cta",
     "find-doctor-cta": "#services-cta",
