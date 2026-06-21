@@ -1670,172 +1670,570 @@
         data-section-key="pricing-cta"
         aria-labelledby="solution-heading"
       >
-        <div class="container">
-          <div class="overline-container" style="justify-content: center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-star overline-icon"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-              />
-            </svg>
-            <span class="overline-text">Rated for excellent service</span>
+        <div class="pricing-bg" aria-hidden="true">
+          <div class="pricing-bg-cluster pricing-bg-cluster--left">
+            <span class="pricing-bg-wave"></span>
+            <span class="pricing-bg-dots"></span>
           </div>
-          <p class="heading-four">Our Solutions</p>
-          <h1 id="solution-heading">The Best Medical Programs</h1>
-          <div class="swiper-container">
+          <div class="pricing-bg-cluster pricing-bg-cluster--right">
+            <span class="pricing-bg-wave"></span>
+            <span class="pricing-bg-dots"></span>
+          </div>
+        </div>
+
+        <div class="container">
+          <header class="pricing-header">
+            <p class="pricing-label">Coverage Options &amp; Pricing</p>
+            <h2 id="solution-heading" class="pricing-heading">
+              <span class="pricing-heading-desktop">
+                Find Coverage That
+                <span class="pricing-heading-accent"> Fits Your Needs</span>
+              </span>
+              <span class="pricing-heading-mobile">
+                Find Coverage<br aria-hidden="true" />
+                That <span class="pricing-heading-accent">Fits Your</span
+                ><br aria-hidden="true" />
+                <span class="pricing-heading-accent">Needs</span>
+              </span>
+            </h2>
+            <p class="pricing-description">
+              <span class="pricing-description-desktop">
+                Simple, transparent pricing for personalized guidance<br
+                  aria-hidden="true"
+                />
+                from licensed advisors you can trust.
+              </span>
+              <span class="pricing-description-mobile">
+                Simple, transparent pricing<br aria-hidden="true" />
+                for personalized guidance<br aria-hidden="true" />
+                from licensed advisors<br aria-hidden="true" />
+                you can trust.
+              </span>
+            </p>
+          </header>
+
+          <div class="pricing-carousel">
             <div class="swiper pricing-swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="card">
-                    <header class="card-header price-info__img-01">
-                      <p class="plan-name">Pregnancy Care</p>
-                      <div class="flex-paragraph">
-                        <p class="plan-price">$49</p>
-                        <p class="plan-text">/year</p>
+                  <article class="pricing-card">
+                    <div class="pricing-card__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <g fill="none" stroke="currentColor" stroke-width="1.5">
+                          <path d="M16 7a4 4 0 1 1-8 0a4 4 0 0 1 8 0Z" />
+                          <path
+                            stroke-linejoin="round"
+                            d="M14 14h-4a5 5 0 0 0-5 5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2a5 5 0 0 0-5-5Z"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <h3 class="pricing-card__title">Individual Coverage</h3>
+                    <p class="pricing-card__desc">
+                      Ideal for individuals looking for personal health
+                      coverage.
+                    </p>
+                    <ul class="pricing-card__features">
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Compare top health plans
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Licensed advisor guidance
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Enrollment support
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Carrier recommendations
+                      </li>
+                    </ul>
+                    <div class="pricing-card__price">
+                      <div class="pricing-card__price-inner">
+                        <span class="pricing-card__price-label"
+                          >Starting at</span
+                        >
+                        <div class="pricing-card__price-row">
+                          <span class="pricing-card__price-amount">$49</span>
+                          <span class="pricing-card__price-period">/month</span>
+                        </div>
+                        <a href="#" class="btn btn-default pricing-card__btn">
+                          Get Started
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l14 0" />
+                            <path d="M13 18l6 -6" />
+                            <path d="M13 6l6 6" />
+                          </svg>
+                        </a>
                       </div>
-                    </header>
-                    <div class="card-body">
-                      <ul class="gap-4 my-2 nav flex-column">
-                        <li class="nav-item">Emergency Medical Treatment</li>
-                        <li class="nav-item">Highly Experienced Doctors</li>
-                        <li class="nav-item">Highest Success Rate</li>
-                        <li class="nav-item">Telephone Service</li>
-                      </ul>
                     </div>
-
-                    <div class="card-footer">
-                      <a href="#" class="mb-3 btn btn-default">Apply now</a>
-                    </div>
-                  </div>
+                    <p class="pricing-card-footnote">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                          d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"
+                        />
+                        <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                        <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+                      </svg>
+                      Secure. Private. No obligation.
+                    </p>
+                  </article>
                 </div>
 
                 <div class="swiper-slide">
-                  <div class="card">
-                    <header class="card-header price-info__img-02">
-                      <p class="plan-name">Health Checkup</p>
-                      <div class="flex-paragraph">
-                        <p class="plan-price">$99</p>
-                        <p class="plan-text">/year</p>
+                  <article class="pricing-card pricing-card--featured">
+                    <span class="pricing-card__badge">Most Popular</span>
+                    <div class="pricing-card__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 32 32"
+                      >
+                        <path d="M0 0h32v32H0z" fill="none" />
+                        <path
+                          fill="currentColor"
+                          d="M20 30h-3a2 2 0 0 1-2-2v-5h2v5h3v-5h2v-4a1 1 0 0 0-1-1h-8.72l-2-6H4a1 1 0 0 0-1 1v6h2v9h4v-7h2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a2 2 0 0 1-2-2v-6a3.003 3.003 0 0 1 3-3h6.28a2 2 0 0 1 1.897 1.367L13.72 16H21a3.003 3.003 0 0 1 3 3v4a2 2 0 0 1-2 2v3a2 2 0 0 1-2 2m8 0h-2V19h3v-6a1 1 0 0 0-1-1h-4v-2h4a3.003 3.003 0 0 1 3 3v6a2 2 0 0 1-2 2h-1ZM7 9a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4m0-6a2 2 0 1 0 2 2a2 2 0 0 0-2-2m18 6a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4m0-6a2 2 0 1 0 2 2a2 2 0 0 0-2-2"
+                        />
+                        <path
+                          fill="currentColor"
+                          d="M18.5 15a3.5 3.5 0 1 1 3.5-3.5a3.504 3.504 0 0 1-3.5 3.5m0-5a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5"
+                        />
+                      </svg>
+                    </div>
+                    <h3 class="pricing-card__title">Family Coverage</h3>
+                    <p class="pricing-card__desc">
+                      Comprehensive coverage options for you and your loved
+                      ones.
+                    </p>
+                    <ul class="pricing-card__features">
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Family plan comparisons
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Dependent coverage review
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Enrollment assistance
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Ongoing support
+                      </li>
+                    </ul>
+                    <div class="pricing-card__price">
+                      <div class="pricing-card__price-inner">
+                        <span class="pricing-card__price-label"
+                          >Starting at</span
+                        >
+                        <div class="pricing-card__price-row">
+                          <span class="pricing-card__price-amount">$99</span>
+                          <span class="pricing-card__price-period">/month</span>
+                        </div>
+                        <a href="#" class="btn btn-default pricing-card__btn">
+                          Get Started
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l14 0" />
+                            <path d="M13 18l6 -6" />
+                            <path d="M13 6l6 6" />
+                          </svg>
+                        </a>
                       </div>
-                    </header>
-                    <div class="card-body">
-                      <ul class="gap-4 my-2 nav flex-column">
-                        <li class="nav-item">Emergency Medical Treatment</li>
-                        <li class="nav-item">Highly Experienced Doctors</li>
-                        <li class="nav-item">Highest Success Rate</li>
-                        <li class="nav-item">Telephone Service</li>
-                      </ul>
                     </div>
-
-                    <div class="card-footer">
-                      <a href="#" class="mb-3 btn btn-default">Apply now</a>
-                    </div>
-                  </div>
+                  </article>
                 </div>
 
                 <div class="swiper-slide">
-                  <div class="card">
-                    <header class="card-header price-info__img-03">
-                      <p class="plan-name">Dental Care</p>
-                      <div class="flex-paragraph">
-                        <p class="plan-price">$149</p>
-                        <p class="plan-text">/year</p>
+                  <article class="pricing-card">
+                    <div class="pricing-card__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <g fill="none" stroke="currentColor" stroke-width="1.5">
+                          <path
+                            d="M3 10.417c0-3.198 0-4.797.378-5.335c.377-.537 1.88-1.052 4.887-2.081l.573-.196C10.405 2.268 11.188 2 12 2s1.595.268 3.162.805l.573.196c3.007 1.029 4.51 1.544 4.887 2.081C21 5.62 21 7.22 21 10.417v1.574c0 5.638-4.239 8.375-6.899 9.536C13.38 21.842 13.02 22 12 22s-1.38-.158-2.101-.473C7.239 20.365 3 17.63 3 11.991z"
+                          />
+                          <path
+                            d="M10.861 8.363C11.368 7.454 11.621 7 12 7s.632.454 1.139 1.363l.13.235c.145.259.217.388.329.473s.252.117.532.18l.254.058c.984.222 1.476.334 1.593.71c.117.377-.218.769-.889 1.553l-.174.203c-.19.223-.285.334-.328.472s-.029.287 0 .584l.026.27c.102 1.047.152 1.57-.154 1.803s-.767.02-1.688-.403l-.239-.11c-.261-.12-.392-.181-.531-.181s-.27.06-.531.18l-.239.11c-.92.425-1.382.637-1.688.404s-.256-.756-.154-1.802l.026-.271c.029-.297.043-.446 0-.584s-.138-.25-.328-.472l-.174-.203c-.67-.784-1.006-1.176-.889-1.553c.117-.376.609-.488 1.593-.71l.254-.058c.28-.063.42-.095.532-.18s.184-.214.328-.473z"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <h3 class="pricing-card__title">Premium Guidance</h3>
+                    <p class="pricing-card__desc">
+                      Personalized support and expert advice for complete peace
+                      of mind.
+                    </p>
+                    <ul class="pricing-card__features">
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Everything in Family Coverage
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Priority advisor support
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Annual coverage reviews
+                      </li>
+                      <li>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-5.186-2.419a1 1 0 1 0-1.628-1.162l-4.314 6.04l-2.165-2.166a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.52-.126z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        Dedicated assistance
+                      </li>
+                    </ul>
+                    <div class="pricing-card__price">
+                      <div class="pricing-card__price-inner">
+                        <span class="pricing-card__price-label"
+                          >Starting at</span
+                        >
+                        <div class="pricing-card__price-row">
+                          <span class="pricing-card__price-amount">$149</span>
+                          <span class="pricing-card__price-period">/month</span>
+                        </div>
+                        <a href="#" class="btn btn-default pricing-card__btn">
+                          Get Started
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l14 0" />
+                            <path d="M13 18l6 -6" />
+                            <path d="M13 6l6 6" />
+                          </svg>
+                        </a>
                       </div>
-                    </header>
-
-                    <div class="card-body">
-                      <ul class="gap-4 my-2 nav flex-column">
-                        <li class="nav-item">Emergency Medical Treatment</li>
-                        <li class="nav-item">Highly Experienced Doctors</li>
-                        <li class="nav-item">Highest Success Rate</li>
-                        <li class="nav-item">Telephone Service</li>
-                      </ul>
                     </div>
-
-                    <div class="card-footer">
-                      <a href="#" class="mb-3 btn btn-default">Apply now</a>
-                    </div>
-                  </div>
+                  </article>
                 </div>
-
-                <div class="swiper-slide">
-                  <div class="card">
-                    <header class="card-header price-info__img-04">
-                      <p class="plan-name">Operation</p>
-                      <div class="flex-paragraph">
-                        <p class="plan-price">$199</p>
-                        <p class="plan-text">/year</p>
-                      </div>
-                    </header>
-
-                    <div class="card-body">
-                      <ul class="gap-4 my-2 nav flex-column">
-                        <li class="nav-item">Emergency Medical Treatment</li>
-                        <li class="nav-item">Highly Experienced Doctors</li>
-                        <li class="nav-item">Highest Success Rate</li>
-                        <li class="nav-item">Telephone Service</li>
-                      </ul>
-                    </div>
-
-                    <div class="card-footer">
-                      <a href="#" class="mb-3 btn btn-default">Apply now</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="arrow-btn pricing-nav">
-                <button type="button" class="left-btn pricing-prev">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left size-6"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M5 12l6 6" />
-                    <path d="M5 12l6 -6" />
-                  </svg>
-                </button>
-                <button type="button" class="right-btn pricing-next">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right size-6"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M13 18l6 -6" />
-                    <path d="M13 6l6 6" />
-                  </svg>
-                </button>
               </div>
             </div>
+
+            <div class="pricing-nav">
+              <button
+                type="button"
+                class="pricing-prev"
+                aria-label="Previous pricing plan"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l14 0" />
+                  <path d="M5 12l6 6" />
+                  <path d="M5 12l6 -6" />
+                </svg>
+              </button>
+              <div class="swiper-pagination pricing-pagination"></div>
+              <button
+                type="button"
+                class="pricing-next"
+                aria-label="Next pricing plan"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l14 0" />
+                  <path d="M13 18l6 -6" />
+                  <path d="M13 6l6 6" />
+                </svg>
+              </button>
+            </div>
           </div>
+
+          <aside class="pricing-advisor-cta">
+            <div class="pricing-advisor-cta__icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  fill="currentColor"
+                  d="M18.72 14.76c.35-.85.54-1.76.54-2.76c0-.72-.11-1.41-.3-2.05c-.65.15-1.33.23-2.04.23A9.07 9.07 0 0 1 9.5 6.34a9.2 9.2 0 0 1-4.73 4.88c-.04.25-.04.52-.04.78A7.27 7.27 0 0 0 12 19.27c1.05 0 2.06-.23 2.97-.64c.57 1.09.83 1.63.81 1.63c-1.64.55-2.91.82-3.78.82c-2.42 0-4.73-.95-6.43-2.66a9 9 0 0 1-2.24-3.69H2v-4.55h1.09a9.09 9.09 0 0 1 15.33-4.6a9 9 0 0 1 2.47 4.6H22v4.55h-.06L18.38 18l-5.3-.6v-1.67h4.83zm-9.45-2.99c.3 0 .59.12.8.34a1.136 1.136 0 0 1 0 1.6c-.21.21-.5.33-.8.33c-.63 0-1.14-.5-1.14-1.13s.51-1.14 1.14-1.14m5.45 0c.63 0 1.13.51 1.13 1.14s-.5 1.13-1.13 1.13s-1.14-.5-1.14-1.13a1.14 1.14 0 0 1 1.14-1.14"
+                />
+              </svg>
+            </div>
+            <div class="pricing-advisor-cta__text">
+              <p class="pricing-advisor-cta__title">
+                Need help choosing the right option?
+              </p>
+              <p class="pricing-advisor-cta__desc">
+                Talk to a licensed advisor and get answers tailored to your
+                needs.
+              </p>
+            </div>
+            <a href="#" class="btn pricing-advisor-cta__btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+                />
+              </svg>
+              Talk to an Advisor
+            </a>
+          </aside>
         </div>
       </section>
 

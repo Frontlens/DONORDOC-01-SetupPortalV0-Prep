@@ -631,15 +631,20 @@ function initSwipers() {
   // Pricing swiper - disable autoplay by default
   const pricingSwiper = new Swiper(".pricing-swiper", {
     slidesPerView: 3,
-    spaceBetween: 10,
-    loop: true,
+    spaceBetween: 24,
+    loop: false,
+    initialSlide: 1,
     grabCursor: true,
     allowTouchMove: true,
-    speed: 800, // Reduced from 3000
+    speed: 600,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
-      enabled: false, // Disabled by default
+      enabled: false,
+    },
+    pagination: {
+      el: ".pricing-pagination",
+      clickable: true,
     },
     navigation: {
       nextEl: ".pricing-next",
@@ -647,9 +652,16 @@ function initSwipers() {
     },
     passiveListeners: true,
     breakpoints: {
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      992: { slidesPerView: 3 },
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        centeredSlides: true,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        centeredSlides: false,
+      },
     },
   });
 

@@ -814,8 +814,7 @@ main .section-health .hero-image {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .section-health .hero-float-card {
   position: absolute;
@@ -897,8 +896,7 @@ main .section-health .hero-float-card-text .hero-float-card-accent {
     -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.35) 0%, transparent 70%);
   }
   main .section-health .hero-image {
-    -o-object-position: center top;
-       object-position: center top;
+    object-position: center top;
   }
   main .section-health .hero-heading {
     font-size: 36px;
@@ -1153,10 +1151,8 @@ main .section-about .about-image {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 1024px) {
   main .section-about .about-content {
@@ -1173,8 +1169,7 @@ main .section-about .about-image {
     width: 100%;
     height: 100%;
     aspect-ratio: 5/4;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (min-width: 1200px) {
@@ -2395,8 +2390,9 @@ main .section-pricing .pricing-advisor-cta {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 28px 32px;
-  background: #f2f7f3;
+  padding: 24px 28px;
+  background: #f1f3f5;
+  border: 1px solid #e9ecef;
   border-radius: 16px;
 }
 main .section-pricing .pricing-advisor-cta__icon {
@@ -2407,7 +2403,7 @@ main .section-pricing .pricing-advisor-cta__icon {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: #d7f0db;
+  background: #ebf7ed;
   color: #37b24d;
 }
 main .section-pricing .pricing-advisor-cta__icon svg {
@@ -2560,12 +2556,12 @@ main .section-pricing .pricing-advisor-cta__btn:hover {
     height: 40px;
   }
   main .section-pricing .pricing-advisor-cta {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
-    padding: 20px 18px;
+    text-align: left;
+    padding: 16px;
+    gap: 12px;
     border-radius: 12px;
-    gap: 16px;
   }
   main .section-pricing .pricing-advisor-cta__icon {
     width: 60px;
@@ -2576,16 +2572,20 @@ main .section-pricing .pricing-advisor-cta__btn:hover {
     height: 28px;
   }
   main .section-pricing .pricing-advisor-cta__title {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.3;
   }
   main .section-pricing .pricing-advisor-cta__desc {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.45;
   }
   main .section-pricing .pricing-advisor-cta__btn {
-    width: 100%;
+    width: auto;
+    flex-shrink: 0;
     justify-content: center;
-    font-size: 14px;
-    padding: 12px 20px;
+    font-size: 13px;
+    padding: 10px 14px;
+    white-space: nowrap;
   }
 }
 @media (max-width: 575.98px) {
@@ -2598,6 +2598,15 @@ main .section-pricing .pricing-advisor-cta__btn:hover {
   }
   main .section-pricing .pricing-card__price-amount {
     font-size: 30px;
+  }
+  main .section-pricing .pricing-advisor-cta__btn {
+    font-size: 12px;
+    padding: 9px 12px;
+    gap: 6px;
+  }
+  main .section-pricing .pricing-advisor-cta__btn svg {
+    width: 16px;
+    height: 16px;
   }
 }
 main .doctor-section {
@@ -2624,8 +2633,7 @@ main .doctor-section .card .card-body {
 main .doctor-section .card .card-body img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 4/3;
   border-radius: 9px 0 0 9px;
 }
@@ -2843,8 +2851,7 @@ main .section-testimonial .card .card-body .circle-container .img-wrapper {
 main .section-testimonial .card .card-body .circle-container .img-wrapper img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .section-testimonial .card .card-body h4 {
   font-size: 24px;
@@ -2952,8 +2959,7 @@ main .blog-section .card .card-footer .post-author img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 2px solid #ddd;
 }
 main .blog-section .card .card-footer .post-author h6 {
@@ -3277,7 +3283,6 @@ main .blog-section .blog-image-loading::after {
     height: 148.2px;
   }
   main .appointment-form-section .btn-outline {
-    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -3317,7 +3322,6 @@ main .blog-section .blog-image-loading::after {
     margin: 0;
   }
   main .appointment-form-section .btn-outline {
-    width: -moz-max-content;
     width: max-content;
   }
   main .section-health .health-img-box {
@@ -3432,8 +3436,7 @@ main .blog-section .blog-image-loading::after {
   }
   main .blog-section .card .card-img-top {
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -3497,8 +3500,7 @@ main .blog-section .blog-image-loading::after {
   }
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 }
 @media (max-width: 767.98px) {
@@ -3553,8 +3555,7 @@ main .blog-section .blog-image-loading::after {
   }
   main .blog-section .card .card-img-top {
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -3572,7 +3573,6 @@ main .blog-section .blog-image-loading::after {
     text-align: center;
   }
   main .appointment-form-section .btn-outline {
-    width: -moz-max-content;
     width: max-content;
   }
   #footer .site-footer .row {
@@ -3590,8 +3590,7 @@ main .blog-section .blog-image-loading::after {
   }
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
   main .section-health {
     padding: 50px 0 50px 0;
@@ -4065,4 +4064,6 @@ main .blog-section .blog-image-loading::after {
     padding: 12px 18px;
     font-size: 14px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
