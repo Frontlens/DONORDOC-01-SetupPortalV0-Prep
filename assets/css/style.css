@@ -2467,6 +2467,10 @@ main .section-pricing .pricing-advisor-cta__btn:hover {
   main .section-pricing .pricing-description-mobile {
     display: block;
   }
+  main .section-pricing .pricing-description-mobile {
+    font-size: 12px;
+    line-height: 1.5;
+  }
   main .section-pricing .pricing-header {
     margin-bottom: 32px;
   }
