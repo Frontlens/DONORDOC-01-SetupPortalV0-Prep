@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initAppointmentMode();
   initSectionVisibility();
   initAppointmentPickers();
+  initConsultationSection();
 
   window.addEventListener("load", () => {
     if (location.hash == "#health-cta") window.scrollTo(0, 0);
@@ -235,6 +236,131 @@ function initAppointmentPickers() {
     }
   } catch (err) {
     console.error("initAppointmentPickers error:", err);
+  }
+}
+
+function initConsultationSection() {
+  try {
+    const section = document.getElementById("consultation-cta");
+    if (!section) return;
+
+    if (typeof window.FLDatePicker === "function") {
+      const dateEl = document.getElementById("consultation-date");
+      const timeEl = document.getElementById("consultation-time");
+
+      if (dateEl) {
+        new window.FLDatePicker(dateEl, {
+          type: "date",
+          placeholder: "Select date",
+          disablePast: true,
+          closeOnSelect: false,
+          closeOnSelectDelay: 400,
+        });
+      }
+
+      if (timeEl) {
+        new window.FLDatePicker(timeEl, {
+          type: "time",
+          timeStep: 15,
+          placeholder: "Select time",
+          closeOnSelect: false,
+          closeOnSelectDelay: 400,
+          disabledTimes: DISABLED_APPOINTMENT_TIMES,
+        });
+      }
+    }
+
+    const selects = section.querySelectorAll(".consultation-select");
+    let activeSelect = null;
+
+    selects.forEach((select) => {
+      const selected = select.querySelector(".selected");
+      const options = select.querySelector(".options");
+      if (!selected || !options) return;
+
+      selected.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        if (select === activeSelect) {
+          options.classList.remove("show-drop");
+          activeSelect = null;
+          return;
+        }
+
+        closeAllDropdowns(selects, select);
+        options.classList.add("show-drop");
+        activeSelect = select;
+      });
+
+      selected.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          selected.click();
+        }
+      });
+
+      select.querySelectorAll(".option").forEach((option) => {
+        option.addEventListener("click", function (e) {
+          e.stopPropagation();
+          selected.textContent = this.textContent;
+          selected.classList.remove("is-placeholder");
+          options.classList.remove("show-drop");
+          activeSelect = null;
+        });
+      });
+    });
+
+    document.addEventListener("click", function () {
+      if (!activeSelect) return;
+      const options = activeSelect.querySelector(".options");
+      if (options) options.classList.remove("show-drop");
+      activeSelect = null;
+    });
+
+    const form = section.querySelector(".consultation-form");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const coverage =
+          section
+            .querySelector("#consultation-coverage .selected")
+            ?.textContent.trim() || "";
+        const contactMethod =
+          section
+            .querySelector("#consultation-contact .selected")
+            ?.textContent.trim() || "";
+
+        const payload = {
+          date:
+            section
+              .querySelector("#consultation-date .fl-picker-input")
+              ?.value.trim() || "",
+          time:
+            section
+              .querySelector("#consultation-time .fl-picker-input")
+              ?.value.trim() || "",
+          coverageType: coverage,
+          contactMethod,
+          firstName:
+            section.querySelector("#consultation-first-name")?.value.trim() ||
+            "",
+          lastName:
+            section.querySelector("#consultation-last-name")?.value.trim() ||
+            "",
+          email:
+            section.querySelector("#consultation-email")?.value.trim() || "",
+          phone:
+            section.querySelector("#consultation-phone")?.value.trim() || "",
+          notes:
+            section.querySelector("#consultation-notes")?.value.trim() || "",
+        };
+
+        alert(JSON.stringify(payload, null, 2));
+      });
+    }
+  } catch (err) {
+    console.error("initConsultationSection error:", err);
   }
 }
 
