@@ -814,7 +814,8 @@ main .section-health .hero-image {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main .section-health .hero-float-card {
   position: absolute;
@@ -896,7 +897,8 @@ main .section-health .hero-float-card-text .hero-float-card-accent {
     -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.35) 0%, transparent 70%);
   }
   main .section-health .hero-image {
-    object-position: center top;
+    -o-object-position: center top;
+       object-position: center top;
   }
   main .section-health .hero-heading {
     font-size: 36px;
@@ -1151,8 +1153,10 @@ main .section-about .about-image {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 @media (min-width: 1024px) {
   main .section-about .about-content {
@@ -1169,7 +1173,8 @@ main .section-about .about-image {
     width: 100%;
     height: 100%;
     aspect-ratio: 5/4;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (min-width: 1200px) {
@@ -2090,8 +2095,10 @@ main .section-consultation .consultation-visual-img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .section-consultation .consultation-form-col {
   display: flex;
@@ -2221,10 +2228,16 @@ main .section-consultation .consultation-field__control .fl-picker-input {
   box-shadow: none;
   font-family: inherit;
 }
+main .section-consultation .consultation-input::-moz-placeholder, main .section-consultation .consultation-select .selected::-moz-placeholder, main .section-consultation .consultation-field__control .fl-picker-input::-moz-placeholder {
+  color: #adb5bd;
+}
 main .section-consultation .consultation-input::placeholder,
 main .section-consultation .consultation-select .selected::placeholder,
 main .section-consultation .consultation-field__control .fl-picker-input::placeholder {
   color: #adb5bd;
+}
+main .section-consultation .consultation-input:-moz-placeholder, main .section-consultation .consultation-select .selected:-moz-placeholder, main .section-consultation .consultation-field__control .fl-picker-input:-moz-placeholder {
+  color: #868e96;
 }
 main .section-consultation .consultation-input:placeholder-shown,
 main .section-consultation .consultation-select .selected:placeholder-shown,
@@ -2263,7 +2276,9 @@ main .section-consultation .consultation-select {
   position: relative;
   flex: 1;
   min-width: 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 main .section-consultation .consultation-select .selected {
   cursor: pointer;
@@ -3119,7 +3134,8 @@ main .doctor-section .card .card-body {
 main .doctor-section .card .card-body img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   aspect-ratio: 4/3;
   border-radius: 9px 0 0 9px;
 }
@@ -3261,120 +3277,383 @@ main .find-a-doc-section .findDocform input[type=submit]:hover {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
 }
-main .section-testimonial {
-  padding: 50px 0;
+main .section-testimonials {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  background: #f8f9fa;
 }
-main .section-testimonial h1,
-main .section-testimonial p {
+main .section-testimonials .testimonials-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+main .section-testimonials .testimonials-bg-cluster {
+  position: absolute;
+  pointer-events: none;
+}
+main .section-testimonials .testimonials-bg-cluster--left {
+  top: 48px;
+  left: 24px;
+}
+main .section-testimonials .testimonials-bg-cluster--right {
+  top: 48px;
+  right: 24px;
+}
+main .section-testimonials .testimonials-bg-dots {
+  display: block;
+  width: 56px;
+  height: 72px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='2' fill='%23ced4da'/%3E%3C/svg%3E");
+  background-size: 12px 12px;
+  background-repeat: repeat;
+  opacity: 0.85;
+}
+main .section-testimonials .testimonials-bg-blob {
+  position: absolute;
+  display: block;
+  background: #ebf7ed;
+  border-radius: 98% 72% 98% 22%/82% 78% 84% 46%;
+  opacity: 0.65;
+  z-index: -1;
+}
+main .section-testimonials .testimonials-bg-blob--left {
+  width: 280px;
+  height: 340px;
+  top: -18%;
+  left: -160px;
+}
+main .section-testimonials .testimonials-bg-blob--right {
+  width: 220px;
+  height: 360px;
+  top: 38%;
+  right: -8%;
+  transform: rotate(180deg);
+}
+main .section-testimonials .testimonials-bg-wave {
+  display: none;
+}
+main .section-testimonials .testimonials-bg-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+main .section-testimonials .testimonials-bg-wave__back {
+  fill: rgba(223, 233, 216, 0.6235294118);
+  opacity: 0.45;
+}
+main .section-testimonials .testimonials-bg-wave__front {
+  fill: #dfe9d8;
+  opacity: 0.55;
+}
+main .section-testimonials .container {
+  position: relative;
+  z-index: 1;
+}
+main .section-testimonials .testimonials-header {
   text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
 }
-main .section-testimonial p {
-  font-size: 20px;
+main .section-testimonials .testimonials-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: #ebf7ed;
+  color: #37b24d;
+}
+main .section-testimonials .testimonials-badge svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+main .section-testimonials .testimonials-heading {
+  margin: 0 0 18px;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+}
+main .section-testimonials .testimonials-heading-mobile {
+  display: none;
+}
+main .section-testimonials .testimonials-heading-dark {
+  color: #1a1a1a;
+}
+main .section-testimonials .testimonials-heading-accent {
+  color: #37b24d;
+}
+main .section-testimonials .testimonials-description {
+  margin: 0;
+  font-size: 18px;
   line-height: 1.6;
-  margin-bottom: 14px;
+  color: #666;
 }
-main .section-testimonial p.heading-four {
-  font-size: 24px;
+main .section-testimonials .testimonials-carousel {
+  position: relative;
 }
-main .section-testimonial h1 {
-  font-size: 35px;
-  line-height: 1.05;
-  margin-bottom: 32px;
-  color: #333;
-  font-weight: bold;
+main .section-testimonials .testimonial-swiper {
+  overflow: visible;
 }
-main .section-testimonial .card {
-  background-color: transparent;
-  border: 0;
+main .section-testimonials .testimonial-swiper .swiper-wrapper {
+  align-items: stretch;
 }
-main .section-testimonial .card .card-body {
-  padding: 30px 0;
+main .section-testimonials .swiper-slide {
+  height: auto;
+  display: flex;
+}
+main .section-testimonials .testimonial-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 70%;
-}
-main .section-testimonial .card .card-body .circle-container {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 5px solid #ccc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 15px;
-  position: relative;
-}
-main .section-testimonial .card .card-body .circle-container:hover {
-  border-color: #37b24d;
-}
-main .section-testimonial .card .card-body .circle-container:hover svg {
-  background-color: #37b24d;
-  color: #fff;
-}
-main .section-testimonial .card .card-body .circle-container svg {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 64px;
-  width: 64px;
-  background-color: #f1f3f5;
-  color: #37b24d;
-  padding: 10px;
-  border: none;
-  border-radius: 50%;
-  left: 0;
-  margin: 0 auto;
-  transform: translate(0, 50%) rotate(180deg);
-}
-main .section-testimonial .card .card-body .circle-container .img-wrapper {
   width: 100%;
-  height: 100%;
-  border-radius: 50%;
+  min-height: 100%;
+  padding: 28px 24px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
-main .section-testimonial .card .card-body .circle-container .img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-main .section-testimonial .card .card-body h4 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  padding-top: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: none;
-  border-top: 1px solid #f1f3f5;
-}
-main .section-testimonial .card .card-body .patient-profession {
-  font-style: italic;
-  color: #37b24d;
-  margin-bottom: 0;
-}
-main .section-testimonial .swiper-pagination {
-  margin-top: 30px;
-  position: relative;
+main .section-testimonials .testimonial-card__stars {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 20px;
+  color: #37b24d;
 }
-main .section-testimonial .swiper-pagination .swiper-pagination-bullet {
-  opacity: 1;
-  width: 20px;
-  height: 20px;
-  background-color: #f1f3f5;
+main .section-testimonials .testimonial-card__stars svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+main .section-testimonials .testimonial-card__quote-icon {
+  position: relative;
+  align-self: flex-start;
+  color: #d7f0db;
+  opacity: 0.95;
+  pointer-events: none;
+}
+main .section-testimonials .testimonial-card__quote-icon svg {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+main .section-testimonials .testimonial-card__text {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #333;
+  font-style: normal;
+}
+main .section-testimonials .testimonial-card__divider {
+  margin-top: auto;
+  margin-bottom: 20px;
+  height: 1px;
+  background: #e9ecef;
+}
+main .section-testimonials .testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+main .section-testimonials .testimonial-card__avatar {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .section-testimonials .testimonial-card__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+main .section-testimonials .testimonial-card__name {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1a1a1a;
+}
+main .section-testimonials .testimonial-card__role {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #868e96;
+}
+main .section-testimonials .testimonial-card__status {
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #37b24d;
+}
+main .section-testimonials .testimonials-nav {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+main .section-testimonials .testimonials-nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: #fff;
   border: 1px solid #37b24d;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
-main .section-testimonial .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #37b24d;
-  width: 40px;
-  height: 40px;
+main .section-testimonials .testimonials-nav button svg {
+  color: #37b24d;
+}
+main .section-testimonials .testimonials-nav button:hover {
+  background: #37b24d;
+}
+main .section-testimonials .testimonials-nav button:hover svg {
+  color: #fff;
+}
+main .section-testimonials .testimonials-pagination {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+}
+main .section-testimonials .testimonials-pagination .swiper-pagination-bullet {
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  background: #dee2e6;
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+main .section-testimonials .testimonials-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #37b24d;
+  transform: scale(1.25);
+}
+@media (max-width: 991.98px) {
+  main .section-testimonials {
+    padding: 60px 0;
+  }
+  main .section-testimonials .testimonials-bg-cluster--left {
+    top: auto;
+    left: 16px;
+    bottom: 72px;
+  }
+  main .section-testimonials .testimonials-bg-cluster--right {
+    display: none;
+  }
+  main .section-testimonials .testimonials-bg-blob {
+    display: none;
+  }
+  main .section-testimonials .testimonials-bg-wave {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    pointer-events: none;
+  }
+  main .section-testimonials .testimonials-heading-desktop {
+    display: none;
+  }
+  main .section-testimonials .testimonials-heading-mobile {
+    display: block;
+  }
+  main .section-testimonials .testimonials-header {
+    margin-bottom: 32px;
+  }
+  main .section-testimonials .testimonials-badge {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+    background: #ebf7ed;
+    color: #37b24d;
+    box-shadow: none;
+  }
+  main .section-testimonials .testimonials-badge svg {
+    width: 18px;
+    height: 18px;
+  }
+  main .section-testimonials .testimonials-heading {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+  main .section-testimonials .testimonials-description {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  main .section-testimonials .testimonials-nav {
+    display: flex;
+    margin-bottom: 5rem;
+  }
+  main .section-testimonials .testimonial-card {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 24px 20px 20px;
+  }
+  main .section-testimonials .testimonial-card__stars {
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+  main .section-testimonials .testimonial-card__stars svg {
+    width: 16px;
+    height: 16px;
+  }
+  main .section-testimonials .testimonial-card__quote-icon svg {
+    width: 56px;
+    height: 56px;
+  }
+  main .section-testimonials .testimonial-card__text {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  main .section-testimonials .testimonial-card__name {
+    font-size: 15px;
+  }
+  main .section-testimonials .testimonial-card__role {
+    font-size: 13px;
+  }
+  main .section-testimonials .testimonial-card__status {
+    font-size: 12px;
+  }
+  main .section-testimonials .testimonial-card__avatar {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media (max-width: 576.98px) {
+  main .section-testimonials {
+    padding: 48px 0;
+  }
+  main .section-testimonials .testimonials-heading {
+    font-size: 24px;
+  }
+  main .section-testimonials .testimonials-description {
+    font-size: 14px;
+  }
+  main .section-testimonials .testimonial-card {
+    max-width: 100%;
+  }
 }
 main .blog-section {
   padding: 50px 0;
@@ -3445,7 +3724,8 @@ main .blog-section .card .card-footer .post-author img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 2px solid #ddd;
 }
 main .blog-section .card .card-footer .post-author h6 {
@@ -3698,7 +3978,6 @@ main .blog-section .blog-image-loading::after {
   }
   .heading-four,
   main .find-a-doc-section p.heading-four,
-  main .section-testimonial p.heading-four,
   main .blog-section p.heading-four,
   main .blog-section .card .card-body h4 {
     font-size: 20px;
@@ -3706,12 +3985,10 @@ main .blog-section .blog-image-loading::after {
   main .section-pricing .pricing-heading,
   main .doctor-section h1,
   main .find-a-doc-section h1,
-  main .section-testimonial h1,
   main .blog-section h1 {
     font-size: 25px;
   }
-  main .find-a-doc-section p,
-  main .section-testimonial p {
+  main .find-a-doc-section p {
     font-size: 16px;
   }
   main .appointment-form-section .custom-form {
@@ -3735,9 +4012,6 @@ main .blog-section .blog-image-loading::after {
   main .doctor-section .card .card-body .doctorInfo .doctor-contact a svg {
     width: 35px;
     height: 35px;
-  }
-  main .section-testimonial .card .card-body {
-    width: 90%;
   }
   main .blog-section .card .card-body p {
     font-size: 13px;
@@ -3769,6 +4043,7 @@ main .blog-section .blog-image-loading::after {
     height: 148.2px;
   }
   main .appointment-form-section .btn-outline {
+    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -3808,6 +4083,7 @@ main .blog-section .blog-image-loading::after {
     margin: 0;
   }
   main .appointment-form-section .btn-outline {
+    width: -moz-max-content;
     width: max-content;
   }
   main .section-health .health-img-box {
@@ -3856,7 +4132,6 @@ main .blog-section .blog-image-loading::after {
   main .section-pricing .pricing-heading,
   main .doctor-section h1,
   main .find-a-doc-section h1,
-  main .section-testimonial h1,
   main .blog-section h1 {
     font-size: 20px;
   }
@@ -3879,7 +4154,6 @@ main .blog-section .blog-image-loading::after {
   }
   .heading-four,
   main .find-a-doc-section p.heading-four,
-  main .section-testimonial p.heading-four,
   main .blog-section p.heading-four,
   main .blog-section .card .card-body h4 {
     font-size: 16px;
@@ -3890,7 +4164,7 @@ main .blog-section .blog-image-loading::after {
   main .section-pricing,
   main .doctor-section,
   main .find-a-doc-section,
-  main .section-testimonial,
+  main .section-testimonials,
   main .blog-section,
   #footer .footer-section {
     padding: 25px 0;
@@ -3898,15 +4172,11 @@ main .blog-section .blog-image-loading::after {
   main .appointment-form-section {
     padding: 45px 0;
   }
-  main .section-testimonial .swiper-pagination {
-    margin-top: 10px;
-  }
   #footer .footer-section .heading-four {
     margin: 20px 0 15px;
   }
   .heading-four,
   main .find-a-doc-section p.heading-four,
-  main .section-testimonial p.heading-four,
   main .blog-section p.heading-four {
     text-align: center;
   }
@@ -3922,7 +4192,8 @@ main .blog-section .blog-image-loading::after {
   }
   main .blog-section .card .card-img-top {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -3986,7 +4257,8 @@ main .blog-section .blog-image-loading::after {
   }
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
-    object-position: top;
+    -o-object-position: top;
+       object-position: top;
   }
 }
 @media (max-width: 767.98px) {
@@ -4032,7 +4304,6 @@ main .blog-section .blog-image-loading::after {
   }
   .heading-four,
   main .find-a-doc-section p.heading-four,
-  main .section-testimonial p.heading-four,
   main .blog-section p.heading-four {
     text-align: center;
   }
@@ -4041,7 +4312,8 @@ main .blog-section .blog-image-loading::after {
   }
   main .blog-section .card .card-img-top {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -4059,6 +4331,7 @@ main .blog-section .blog-image-loading::after {
     text-align: center;
   }
   main .appointment-form-section .btn-outline {
+    width: -moz-max-content;
     width: max-content;
   }
   #footer .site-footer .row {
@@ -4076,7 +4349,8 @@ main .blog-section .blog-image-loading::after {
   }
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
-    object-position: top;
+    -o-object-position: top;
+       object-position: top;
   }
   main .section-health {
     padding: 50px 0 50px 0;
@@ -4111,7 +4385,6 @@ main .blog-section .blog-image-loading::after {
   }
   .heading-four,
   main .find-a-doc-section p.heading-four,
-  main .section-testimonial p.heading-four,
   main .blog-section p.heading-four,
   main .blog-section .card .card-body h4 {
     font-size: 13px;
@@ -4145,7 +4418,6 @@ main .blog-section .blog-image-loading::after {
   main .section-pricing .pricing-heading,
   main .doctor-section h1,
   main .find-a-doc-section h1,
-  main .section-testimonial h1,
   main .blog-section h1 {
     font-size: 19px;
   }
@@ -4157,10 +4429,6 @@ main .blog-section .blog-image-loading::after {
   }
   #footer .site-footer p {
     font-size: 13px;
-  }
-  main .section-testimonial .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    width: 30px;
-    height: 30px;
   }
 }
 @media (max-width: 519.98px) {
@@ -4550,4 +4818,4 @@ main .blog-section .blog-image-loading::after {
     padding: 12px 18px;
     font-size: 14px;
   }
-}
+}/*# sourceMappingURL=style.css.map */

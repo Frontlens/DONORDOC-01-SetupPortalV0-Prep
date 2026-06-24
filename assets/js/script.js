@@ -794,24 +794,37 @@ function initSwipers() {
   // Testimonials swiper
   const testimonialsSwiper = new Swiper(".testimonial-swiper", {
     slidesPerView: 1,
+    spaceBetween: 24,
     loop: true,
     grabCursor: true,
     allowTouchMove: true,
-    speed: 800, // Reduced from 3000
+    speed: 600,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
-      enabled: false, // Disabled by default
+      enabled: false,
     },
     pagination: {
-      el: ".testimonial-swiper .swiper-pagination",
+      el: ".testimonials-pagination",
       clickable: true,
     },
     navigation: {
       nextEl: ".testimonials-next",
-      prevEl: ".testmonials-prev",
+      prevEl: ".testimonials-prev",
     },
     passiveListeners: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        centeredSlides: true,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        centeredSlides: false,
+      },
+    },
   });
 
   // Enable autoplay only when swipers are in viewport for better performance
