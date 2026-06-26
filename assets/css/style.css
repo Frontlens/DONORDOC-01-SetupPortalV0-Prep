@@ -2332,20 +2332,14 @@ main .section-consultation .consultation-submit {
   padding: 16px 24px;
   border: none;
   border-radius: 10px;
-  background: #37b24d;
-  color: #fff;
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 main .section-consultation .consultation-submit svg {
   flex-shrink: 0;
-  color: #fff;
-}
-main .section-consultation .consultation-submit:hover {
-  background: #2f9e44;
+  color: inherit;
 }
 main .section-consultation .consultation-secure {
   display: flex;
@@ -3990,26 +3984,11 @@ main .section-faq .faq-cta-btn {
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
   gap: 8px;
   padding: 14px 22px;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 500;
-  color: #fff;
-  text-decoration: none;
-  background: #37b24d;
-  border: none;
-  transition: background-color 200ms ease, box-shadow 200ms ease;
-}
-main .section-faq .faq-cta-btn svg {
-  flex-shrink: 0;
-}
-main .section-faq .faq-cta-btn:hover {
-  color: #fff;
-  background: #2f9e44;
-  box-shadow: 0 4px 14px rgba(55, 178, 77, 0.35);
 }
 @media (hover: hover) and (min-width: 992px) {
   main .section-faq .faq-item:not(.is-open):hover {
@@ -4501,7 +4480,7 @@ main .blog-section .blog-image-loading::after {
 }
 .section-final-cta .half-circle img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center top;
@@ -4519,7 +4498,7 @@ main .blog-section .blog-image-loading::after {
   max-width: calc(100% + 30px);
   z-index: 0;
   border-radius: 215px 215px 0 0;
-  background: #d7f0db;
+  background: linear-gradient(to right, #d7f0db 0%, #d7f0db 40%, rgba(215, 240, 219, 0.35) 65%, transparent 85%);
   pointer-events: none;
 }
 .section-final-cta .final-cta-btn {
