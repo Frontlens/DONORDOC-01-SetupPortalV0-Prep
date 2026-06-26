@@ -1338,15 +1338,15 @@ main .services-section .service-card__icon {
 }
 main .services-section .service-card__icon svg,
 main .services-section .service-card__icon .service-card__icon-svg {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   color: #37b24d;
   display: block;
 }
 main .services-section .service-card__icon--lg svg,
 main .services-section .service-card__icon--lg .service-card__icon-svg {
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
 }
 main .services-section .service-card__body {
   flex: 1;
@@ -1415,18 +1415,18 @@ main .services-section .services-cta-btn:hover, main .services-section .services
     transition-delay: var(--reveal-delay, 0ms);
   }
   main .services-section .service-card__icon {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
   }
   main .services-section .service-card__icon svg,
   main .services-section .service-card__icon .service-card__icon-svg {
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
   }
   main .services-section .service-card__icon--lg svg,
   main .services-section .service-card__icon--lg .service-card__icon-svg {
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
   }
   main .services-section .service-card__title {
     font-size: 16px;
