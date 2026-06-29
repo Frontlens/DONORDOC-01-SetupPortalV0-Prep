@@ -6,6 +6,45 @@ Copyright (c) 2025 FRONTLENS LLC. All rights reserved.
 */
 @import url("./utils/bootstrap.css");
 
+// ── Section header typography tokens ───────────────────────────
+$fs-section-label: 14px;
+$fs-section-label-sm: 12px;
+$fs-section-heading: 42px;
+$fs-section-heading-md: 28px;
+$fs-section-heading-sm: 24px;
+$fs-section-desc: 18px;
+$fs-section-desc-md: 16px;
+
+// (color tokens to be added here in a later phase)
+
+@mixin section-label {
+  font-size: $fs-section-label;
+
+  @media (max-width: 575.98px) {
+    font-size: $fs-section-label-sm;
+  }
+}
+
+@mixin section-heading {
+  font-size: $fs-section-heading;
+
+  @media (max-width: 1023.98px) {
+    font-size: $fs-section-heading-md;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: $fs-section-heading-sm;
+  }
+}
+
+@mixin section-description {
+  font-size: $fs-section-desc;
+
+  @media (max-width: 1023.98px) {
+    font-size: $fs-section-desc-md;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -1348,7 +1387,7 @@ main {
 
     .about-label {
       margin: 0;
-      font-size: 14px;
+      @include section-label;
       font-weight: 500;
       letter-spacing: 0.75px;
       text-transform: uppercase;
@@ -1366,7 +1405,7 @@ main {
 
     h1 {
       margin: 0;
-      font-size: 42px;
+      @include section-heading;
       font-weight: 600;
       line-height: 1.15;
       letter-spacing: -0.5px;
@@ -1375,7 +1414,7 @@ main {
 
     .about-description {
       margin: 0;
-      font-size: 18px;
+      @include section-description;
       font-weight: 400;
       line-height: 1.65;
       color: #555;
@@ -1440,7 +1479,6 @@ main {
 
       h1 {
         order: 2;
-        font-size: 32px;
       }
 
       .about-visual {
@@ -1451,19 +1489,10 @@ main {
       .about-description {
         order: 4;
         max-width: none;
-        font-size: 16px;
       }
     }
 
     @media (max-width: 575.98px) {
-      h1 {
-        font-size: 28px;
-      }
-
-      .about-label {
-        font-size: 13px;
-      }
-
       .about-visual {
         aspect-ratio: 4 / 3;
       }
@@ -1532,7 +1561,7 @@ main {
 
     .services-label {
       margin: 0 0 16px;
-      font-size: 14px;
+      @include section-label;
       font-weight: 600;
       letter-spacing: 0.75px;
       text-transform: uppercase;
@@ -1542,7 +1571,7 @@ main {
     h1 {
       max-width: 580px;
       margin: 0 auto 20px;
-      font-size: 42px;
+      @include section-heading;
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.5px;
@@ -1562,7 +1591,7 @@ main {
       max-width: 500px;
       margin: 0 auto;
       padding: 0 12px;
-      font-size: 18px;
+      @include section-description;
       line-height: 1.6;
       color: #666;
       text-align: center;
@@ -1741,12 +1770,10 @@ main {
 
       h1 {
         max-width: none;
-        font-size: 28px;
       }
 
       .services-description {
         max-width: none;
-        font-size: 16px;
       }
 
       .services-cta {
@@ -1771,15 +1798,6 @@ main {
       }
     }
 
-    @media (max-width: 576.98px) {
-      h1 {
-        font-size: 24px;
-      }
-
-      .services-label {
-        font-size: 12px;
-      }
-    }
   }
 
   .section-how-it-works {
@@ -1793,7 +1811,7 @@ main {
 
     .hiw-label {
       margin: 0 0 16px;
-      font-size: 14px;
+      @include section-label;
       font-weight: 600;
       letter-spacing: 0.75px;
       text-transform: uppercase;
@@ -1802,7 +1820,7 @@ main {
 
     .hiw-heading {
       margin: 0 auto 20px;
-      font-size: 42px;
+      @include section-heading;
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.5px;
@@ -1837,7 +1855,7 @@ main {
       max-width: 620px;
       margin: 0 auto;
       padding: 0 12px;
-      font-size: 18px;
+      @include section-description;
       line-height: 1.6;
       color: #666;
     }
@@ -2132,10 +2150,6 @@ main {
         margin-bottom: 36px;
       }
 
-      .hiw-heading {
-        font-size: 28px;
-      }
-
       .hiw-heading-desktop {
         display: none;
       }
@@ -2146,7 +2160,6 @@ main {
 
       .hiw-description {
         max-width: none;
-        font-size: 16px;
       }
 
       .hiw-flow {
@@ -2341,16 +2354,6 @@ main {
         line-height: 1.35;
       }
     }
-
-    @media (max-width: 576.98px) {
-      .hiw-label {
-        font-size: 12px;
-      }
-
-      .hiw-heading {
-        font-size: 24px;
-      }
-    }
   }
 
   .section-consultation {
@@ -2366,7 +2369,7 @@ main {
 
     .consultation-heading {
       margin: 0 0 20px;
-      font-size: 42px;
+      @include section-heading;
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.5px;
@@ -2387,7 +2390,7 @@ main {
 
     .consultation-description {
       margin: 0 0 32px;
-      font-size: 18px;
+      @include section-description;
       line-height: 1.65;
       color: #666;
       max-width: 520px;
@@ -2839,7 +2842,6 @@ main {
       }
 
       .consultation-heading {
-        font-size: 28px;
         margin-bottom: 12px;
       }
 
@@ -2857,7 +2859,6 @@ main {
       }
 
       .consultation-description {
-        font-size: 16px;
         margin-bottom: 20px;
         max-width: none;
       }
@@ -3183,7 +3184,7 @@ main {
 
     .pricing-label {
       margin: 0 0 16px;
-      font-size: 14px;
+      @include section-label;
       font-weight: 500;
       letter-spacing: 0.75px;
       text-transform: uppercase;
@@ -3192,7 +3193,7 @@ main {
 
     .pricing-heading {
       margin: 0 0 20px;
-      font-size: 42px;
+      @include section-heading;
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.5px;
@@ -3213,7 +3214,7 @@ main {
 
     .pricing-description {
       margin: 0;
-      font-size: 18px;
+      @include section-description;
       line-height: 1.6;
       color: #666;
     }
@@ -3545,7 +3546,6 @@ main {
       }
 
       .pricing-description-mobile {
-        font-size: 12px;
         line-height: 1.5;
       }
 
@@ -3554,17 +3554,14 @@ main {
       }
 
       .pricing-label {
-        font-size: 12px;
         margin-bottom: 12px;
       }
 
       .pricing-heading {
-        font-size: 28px;
         margin-bottom: 14px;
       }
 
       .pricing-description {
-        font-size: 15px;
         line-height: 1.55;
       }
 
@@ -3696,10 +3693,6 @@ main {
     }
 
     @media (max-width: 575.98px) {
-      .pricing-heading {
-        font-size: 26px;
-      }
-
       .pricing-card {
         max-width: 100%;
         padding: 22px 18px 18px;
@@ -4015,7 +4008,7 @@ main {
 
     .testimonials-heading {
       margin: 0 0 18px;
-      font-size: 42px;
+      @include section-heading;
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.5px;
@@ -4036,7 +4029,7 @@ main {
 
     .testimonials-description {
       margin: 0;
-      font-size: 18px;
+      @include section-description;
       line-height: 1.6;
       color: #666;
     }
@@ -4273,12 +4266,10 @@ main {
       }
 
       .testimonials-heading {
-        font-size: 28px;
         margin-bottom: 14px;
       }
 
       .testimonials-description {
-        font-size: 15px;
         line-height: 1.55;
       }
 
@@ -4336,14 +4327,6 @@ main {
 
     @media (max-width: 576.98px) {
       padding: 48px 0;
-
-      .testimonials-heading {
-        font-size: 24px;
-      }
-
-      .testimonials-description {
-        font-size: 14px;
-      }
 
       .testimonial-card {
         max-width: 100%;
@@ -4470,7 +4453,7 @@ main {
 
     .faq-label {
       margin: 0;
-      font-size: 13px;
+      @include section-label;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -4487,7 +4470,7 @@ main {
 
     .faq-heading {
       margin: 0 0 16px;
-      font-size: 34px;
+      @include section-heading;
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.4px;
@@ -4504,7 +4487,7 @@ main {
 
     .faq-description {
       margin: 0;
-      font-size: 16px;
+      @include section-description;
       line-height: 1.6;
       color: #666;
     }
@@ -4784,14 +4767,6 @@ main {
         align-items: center;
       }
 
-      .faq-heading {
-        font-size: 42px;
-      }
-
-      .faq-description {
-        font-size: 18px;
-      }
-
       .faq-bg-blob--left {
         width: 420px;
         height: 480px;
@@ -4877,12 +4852,10 @@ main {
       }
 
       .faq-heading {
-        font-size: 28px;
         margin-bottom: 12px;
       }
 
       .faq-description {
-        font-size: 15px;
         line-height: 1.55;
       }
 
@@ -4972,14 +4945,6 @@ main {
       .faq-header-icon-wrap {
         width: 72px;
         height: 72px;
-      }
-
-      .faq-heading {
-        font-size: 24px;
-      }
-
-      .faq-description {
-        font-size: 14px;
       }
 
       .faq-item {
@@ -5234,7 +5199,7 @@ main {
   }
 
   .final-cta-badge-text {
-    font-size: 12px;
+    font-size: $fs-section-label-sm;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -5243,7 +5208,7 @@ main {
 
   .final-cta-heading {
     margin: 0 0 16px;
-    font-size: 42px;
+    @include section-heading;
     font-weight: 700;
     line-height: 1.12;
     letter-spacing: -0.5px;
@@ -5261,7 +5226,7 @@ main {
   .final-cta-description {
     margin: 0;
     max-width: 520px;
-    font-size: 16px;
+    @include section-description;
     line-height: 1.65;
     color: #666;
   }
@@ -5485,7 +5450,6 @@ main {
     }
 
     .final-cta-heading {
-      font-size: 24px;
       margin-bottom: 10px;
       line-height: 1.15;
     }
@@ -5499,7 +5463,6 @@ main {
     }
 
     .final-cta-description {
-      font-size: 14px;
       line-height: 1.55;
       max-width: none;
     }
@@ -5511,10 +5474,6 @@ main {
     .final-cta-badge-icon {
       width: 26px;
       height: 26px;
-    }
-
-    .final-cta-badge-text {
-      font-size: 11px;
     }
 
     .final-cta-features {
@@ -6093,13 +6052,6 @@ main {
     font-size: 20px;
   }
 
-  main .section-pricing .pricing-heading,
-  main .doctor-section h1,
-  main .find-a-doc-section h1,
-  main .blog-section h1 {
-    font-size: 25px;
-  }
-
   main .find-a-doc-section p {
     font-size: 16px;
   }
@@ -6262,13 +6214,6 @@ main {
 }
 
 @media (max-width: 991.98px) {
-
-  main .section-pricing .pricing-heading,
-  main .doctor-section h1,
-  main .find-a-doc-section h1,
-  main .blog-section h1 {
-    font-size: 20px;
-  }
 
   .heading-primary,
   .health-description {
@@ -6602,13 +6547,6 @@ main {
 
   main .appointment-form-section .custom-form .form-title {
     font-size: 25px;
-  }
-
-  main .section-pricing .pricing-heading,
-  main .doctor-section h1,
-  main .find-a-doc-section h1,
-  main .blog-section h1 {
-    font-size: 19px;
   }
 
   main .blog-section .card .card-footer {

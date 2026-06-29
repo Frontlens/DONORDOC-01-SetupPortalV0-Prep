@@ -1142,6 +1142,13 @@ main .section-about .about-visual {
 main .section-about .about-label {
   margin: 0;
   font-size: 14px;
+}
+@media (max-width: 575.98px) {
+  main .section-about .about-label {
+    font-size: 12px;
+  }
+}
+main .section-about .about-label {
   font-weight: 500;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -1158,6 +1165,18 @@ main .section-about .about-label-line {
 main .section-about h1 {
   margin: 0;
   font-size: 42px;
+}
+@media (max-width: 1023.98px) {
+  main .section-about h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  main .section-about h1 {
+    font-size: 24px;
+  }
+}
+main .section-about h1 {
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -1166,6 +1185,13 @@ main .section-about h1 {
 main .section-about .about-description {
   margin: 0;
   font-size: 18px;
+}
+@media (max-width: 1023.98px) {
+  main .section-about .about-description {
+    font-size: 16px;
+  }
+}
+main .section-about .about-description {
   font-weight: 400;
   line-height: 1.65;
   color: #555;
@@ -1225,7 +1251,6 @@ main .section-about .about-image {
   }
   main .section-about h1 {
     order: 2;
-    font-size: 32px;
   }
   main .section-about .about-visual {
     order: 3;
@@ -1234,16 +1259,9 @@ main .section-about .about-image {
   main .section-about .about-description {
     order: 4;
     max-width: none;
-    font-size: 16px;
   }
 }
 @media (max-width: 575.98px) {
-  main .section-about h1 {
-    font-size: 28px;
-  }
-  main .section-about .about-label {
-    font-size: 13px;
-  }
   main .section-about .about-visual {
     aspect-ratio: 4/3;
   }
@@ -1304,6 +1322,13 @@ main .services-section .services-header {
 main .services-section .services-label {
   margin: 0 0 16px;
   font-size: 14px;
+}
+@media (max-width: 575.98px) {
+  main .services-section .services-label {
+    font-size: 12px;
+  }
+}
+main .services-section .services-label {
   font-weight: 600;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -1313,6 +1338,18 @@ main .services-section h1 {
   max-width: 580px;
   margin: 0 auto 20px;
   font-size: 42px;
+}
+@media (max-width: 1023.98px) {
+  main .services-section h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  main .services-section h1 {
+    font-size: 24px;
+  }
+}
+main .services-section h1 {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -1330,6 +1367,13 @@ main .services-section .services-description {
   margin: 0 auto;
   padding: 0 12px;
   font-size: 18px;
+}
+@media (max-width: 1023.98px) {
+  main .services-section .services-description {
+    font-size: 16px;
+  }
+}
+main .services-section .services-description {
   line-height: 1.6;
   color: #666;
   text-align: center;
@@ -1474,11 +1518,9 @@ main .services-section .services-cta-btn:hover svg.icon-tabler-arrow-right, main
   }
   main .services-section h1 {
     max-width: none;
-    font-size: 28px;
   }
   main .services-section .services-description {
     max-width: none;
-    font-size: 16px;
   }
   main .services-section .services-cta {
     margin-top: 32px;
@@ -1498,14 +1540,6 @@ main .services-section .services-cta-btn:hover svg.icon-tabler-arrow-right, main
     transition: none;
   }
 }
-@media (max-width: 576.98px) {
-  main .services-section h1 {
-    font-size: 24px;
-  }
-  main .services-section .services-label {
-    font-size: 12px;
-  }
-}
 main .section-how-it-works {
   padding: 80px 0;
   background: #fff;
@@ -1517,6 +1551,13 @@ main .section-how-it-works .hiw-header {
 main .section-how-it-works .hiw-label {
   margin: 0 0 16px;
   font-size: 14px;
+}
+@media (max-width: 575.98px) {
+  main .section-how-it-works .hiw-label {
+    font-size: 12px;
+  }
+}
+main .section-how-it-works .hiw-label {
   font-weight: 600;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -1525,6 +1566,18 @@ main .section-how-it-works .hiw-label {
 main .section-how-it-works .hiw-heading {
   margin: 0 auto 20px;
   font-size: 42px;
+}
+@media (max-width: 1023.98px) {
+  main .section-how-it-works .hiw-heading {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  main .section-how-it-works .hiw-heading {
+    font-size: 24px;
+  }
+}
+main .section-how-it-works .hiw-heading {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -1555,6 +1608,13 @@ main .section-how-it-works .hiw-description {
   margin: 0 auto;
   padding: 0 12px;
   font-size: 18px;
+}
+@media (max-width: 1023.98px) {
+  main .section-how-it-works .hiw-description {
+    font-size: 16px;
+  }
+}
+main .section-how-it-works .hiw-description {
   line-height: 1.6;
   color: #666;
 }
@@ -1808,9 +1868,6 @@ main .section-how-it-works .hiw-summary-lines-mobile {
   main .section-how-it-works .hiw-header {
     margin-bottom: 36px;
   }
-  main .section-how-it-works .hiw-heading {
-    font-size: 28px;
-  }
   main .section-how-it-works .hiw-heading-desktop {
     display: none;
   }
@@ -1819,7 +1876,6 @@ main .section-how-it-works .hiw-summary-lines-mobile {
   }
   main .section-how-it-works .hiw-description {
     max-width: none;
-    font-size: 16px;
   }
   main .section-how-it-works .hiw-flow {
     display: block;
@@ -1983,14 +2039,6 @@ main .section-how-it-works .hiw-summary-lines-mobile {
     line-height: 1.35;
   }
 }
-@media (max-width: 576.98px) {
-  main .section-how-it-works .hiw-label {
-    font-size: 12px;
-  }
-  main .section-how-it-works .hiw-heading {
-    font-size: 24px;
-  }
-}
 main .section-consultation {
   padding: 80px 0;
   background: #fff;
@@ -2004,6 +2052,18 @@ main .section-consultation .consultation-grid {
 main .section-consultation .consultation-heading {
   margin: 0 0 20px;
   font-size: 42px;
+}
+@media (max-width: 1023.98px) {
+  main .section-consultation .consultation-heading {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  main .section-consultation .consultation-heading {
+    font-size: 24px;
+  }
+}
+main .section-consultation .consultation-heading {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -2021,6 +2081,13 @@ main .section-consultation .consultation-heading-line {
 main .section-consultation .consultation-description {
   margin: 0 0 32px;
   font-size: 18px;
+}
+@media (max-width: 1023.98px) {
+  main .section-consultation .consultation-description {
+    font-size: 16px;
+  }
+}
+main .section-consultation .consultation-description {
   line-height: 1.65;
   color: #666;
   max-width: 520px;
@@ -2411,7 +2478,6 @@ main .section-consultation .consultation-secure-icon svg {
     gap: 24px;
   }
   main .section-consultation .consultation-heading {
-    font-size: 28px;
     margin-bottom: 12px;
   }
   main .section-consultation .consultation-br-mobile {
@@ -2426,7 +2492,6 @@ main .section-consultation .consultation-secure-icon svg {
     margin-bottom: 16px;
   }
   main .section-consultation .consultation-description {
-    font-size: 16px;
     margin-bottom: 20px;
     max-width: none;
   }
@@ -2698,6 +2763,13 @@ main .section-pricing .pricing-header {
 main .section-pricing .pricing-label {
   margin: 0 0 16px;
   font-size: 14px;
+}
+@media (max-width: 575.98px) {
+  main .section-pricing .pricing-label {
+    font-size: 12px;
+  }
+}
+main .section-pricing .pricing-label {
   font-weight: 500;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -2706,6 +2778,18 @@ main .section-pricing .pricing-label {
 main .section-pricing .pricing-heading {
   margin: 0 0 20px;
   font-size: 42px;
+}
+@media (max-width: 1023.98px) {
+  main .section-pricing .pricing-heading {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  main .section-pricing .pricing-heading {
+    font-size: 24px;
+  }
+}
+main .section-pricing .pricing-heading {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -2723,6 +2807,13 @@ main .section-pricing .pricing-heading-accent {
 main .section-pricing .pricing-description {
   margin: 0;
   font-size: 18px;
+}
+@media (max-width: 1023.98px) {
+  main .section-pricing .pricing-description {
+    font-size: 16px;
+  }
+}
+main .section-pricing .pricing-description {
   line-height: 1.6;
   color: #666;
 }
@@ -3007,22 +3098,18 @@ main .section-pricing .pricing-advisor-cta__btn:hover {
     display: block;
   }
   main .section-pricing .pricing-description-mobile {
-    font-size: 12px;
     line-height: 1.5;
   }
   main .section-pricing .pricing-header {
     margin-bottom: 32px;
   }
   main .section-pricing .pricing-label {
-    font-size: 12px;
     margin-bottom: 12px;
   }
   main .section-pricing .pricing-heading {
-    font-size: 28px;
     margin-bottom: 14px;
   }
   main .section-pricing .pricing-description {
-    font-size: 15px;
     line-height: 1.55;
   }
   main .section-pricing .pricing-nav {
@@ -3128,9 +3215,6 @@ main .section-pricing .pricing-advisor-cta__btn:hover {
   }
 }
 @media (max-width: 575.98px) {
-  main .section-pricing .pricing-heading {
-    font-size: 26px;
-  }
   main .section-pricing .pricing-card {
     max-width: 100%;
     padding: 22px 18px 18px;
@@ -3404,6 +3488,18 @@ main .section-testimonials .testimonials-badge svg {
 main .section-testimonials .testimonials-heading {
   margin: 0 0 18px;
   font-size: 42px;
+}
+@media (max-width: 1023.98px) {
+  main .section-testimonials .testimonials-heading {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  main .section-testimonials .testimonials-heading {
+    font-size: 24px;
+  }
+}
+main .section-testimonials .testimonials-heading {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -3421,6 +3517,13 @@ main .section-testimonials .testimonials-heading-accent {
 main .section-testimonials .testimonials-description {
   margin: 0;
   font-size: 18px;
+}
+@media (max-width: 1023.98px) {
+  main .section-testimonials .testimonials-description {
+    font-size: 16px;
+  }
+}
+main .section-testimonials .testimonials-description {
   line-height: 1.6;
   color: #666;
 }
@@ -3624,11 +3727,9 @@ main .section-testimonials .testimonials-pagination .swiper-pagination-bullet.sw
     height: 18px;
   }
   main .section-testimonials .testimonials-heading {
-    font-size: 28px;
     margin-bottom: 14px;
   }
   main .section-testimonials .testimonials-description {
-    font-size: 15px;
     line-height: 1.55;
   }
   main .section-testimonials .testimonials-nav {
@@ -3673,12 +3774,6 @@ main .section-testimonials .testimonials-pagination .swiper-pagination-bullet.sw
 @media (max-width: 576.98px) {
   main .section-testimonials {
     padding: 48px 0;
-  }
-  main .section-testimonials .testimonials-heading {
-    font-size: 24px;
-  }
-  main .section-testimonials .testimonials-description {
-    font-size: 14px;
   }
   main .section-testimonials .testimonial-card {
     max-width: 100%;
@@ -3789,7 +3884,14 @@ main .section-faq .faq-label-group {
 }
 main .section-faq .faq-label {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
+}
+@media (max-width: 575.98px) {
+  main .section-faq .faq-label {
+    font-size: 12px;
+  }
+}
+main .section-faq .faq-label {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3804,7 +3906,19 @@ main .section-faq .faq-label-line {
 }
 main .section-faq .faq-heading {
   margin: 0 0 16px;
-  font-size: 34px;
+  font-size: 42px;
+}
+@media (max-width: 1023.98px) {
+  main .section-faq .faq-heading {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  main .section-faq .faq-heading {
+    font-size: 24px;
+  }
+}
+main .section-faq .faq-heading {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.4px;
@@ -3818,7 +3932,14 @@ main .section-faq .faq-heading-accent {
 }
 main .section-faq .faq-description {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
+}
+@media (max-width: 1023.98px) {
+  main .section-faq .faq-description {
+    font-size: 16px;
+  }
+}
+main .section-faq .faq-description {
   line-height: 1.6;
   color: #666;
 }
@@ -4052,12 +4173,6 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
   main .section-faq .faq-label-group {
     align-items: center;
   }
-  main .section-faq .faq-heading {
-    font-size: 42px;
-  }
-  main .section-faq .faq-description {
-    font-size: 18px;
-  }
   main .section-faq .faq-bg-blob--left {
     width: 420px;
     height: 480px;
@@ -4128,11 +4243,9 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
     margin-bottom: 28px;
   }
   main .section-faq .faq-heading {
-    font-size: 28px;
     margin-bottom: 12px;
   }
   main .section-faq .faq-description {
-    font-size: 15px;
     line-height: 1.55;
   }
   main .section-faq .faq-list {
@@ -4207,12 +4320,6 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
   main .section-faq .faq-header-icon-wrap {
     width: 72px;
     height: 72px;
-  }
-  main .section-faq .faq-heading {
-    font-size: 24px;
-  }
-  main .section-faq .faq-description {
-    font-size: 14px;
   }
   main .section-faq .faq-item {
     --faq-item-pad-x: 14px;
@@ -4435,6 +4542,18 @@ main .blog-section .blog-image-loading::after {
 .section-final-cta .final-cta-heading {
   margin: 0 0 16px;
   font-size: 42px;
+}
+@media (max-width: 1023.98px) {
+  .section-final-cta .final-cta-heading {
+    font-size: 28px;
+  }
+}
+@media (max-width: 575.98px) {
+  .section-final-cta .final-cta-heading {
+    font-size: 24px;
+  }
+}
+.section-final-cta .final-cta-heading {
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.5px;
@@ -4449,7 +4568,14 @@ main .blog-section .blog-image-loading::after {
 .section-final-cta .final-cta-description {
   margin: 0;
   max-width: 520px;
-  font-size: 16px;
+  font-size: 18px;
+}
+@media (max-width: 1023.98px) {
+  .section-final-cta .final-cta-description {
+    font-size: 16px;
+  }
+}
+.section-final-cta .final-cta-description {
   line-height: 1.65;
   color: #666;
 }
@@ -4636,7 +4762,6 @@ main .blog-section .blog-image-loading::after {
     display: none;
   }
   .section-final-cta .final-cta-heading {
-    font-size: 24px;
     margin-bottom: 10px;
     line-height: 1.15;
   }
@@ -4647,7 +4772,6 @@ main .blog-section .blog-image-loading::after {
     display: inline;
   }
   .section-final-cta .final-cta-description {
-    font-size: 14px;
     line-height: 1.55;
     max-width: none;
   }
@@ -4657,9 +4781,6 @@ main .blog-section .blog-image-loading::after {
   .section-final-cta .final-cta-badge-icon {
     width: 26px;
     height: 26px;
-  }
-  .section-final-cta .final-cta-badge-text {
-    font-size: 11px;
   }
   .section-final-cta .final-cta-features {
     align-self: stretch;
@@ -5146,12 +5267,6 @@ main .blog-section .blog-image-loading::after {
   main .blog-section .card .card-body h4 {
     font-size: 20px;
   }
-  main .section-pricing .pricing-heading,
-  main .doctor-section h1,
-  main .find-a-doc-section h1,
-  main .blog-section h1 {
-    font-size: 25px;
-  }
   main .find-a-doc-section p {
     font-size: 16px;
   }
@@ -5277,12 +5392,6 @@ main .blog-section .blog-image-loading::after {
   }
 }
 @media (max-width: 991.98px) {
-  main .section-pricing .pricing-heading,
-  main .doctor-section h1,
-  main .find-a-doc-section h1,
-  main .blog-section h1 {
-    font-size: 20px;
-  }
   .heading-primary,
   .health-description {
     margin-bottom: 10px;
@@ -5551,12 +5660,6 @@ main .blog-section .blog-image-loading::after {
   }
   main .appointment-form-section .custom-form .form-title {
     font-size: 25px;
-  }
-  main .section-pricing .pricing-heading,
-  main .doctor-section h1,
-  main .find-a-doc-section h1,
-  main .blog-section h1 {
-    font-size: 19px;
   }
   main .blog-section .card .card-footer {
     padding-right: 5px;
