@@ -109,7 +109,7 @@ footer {
 }
 
 .logo-img {
-    width: 200px;
+    width: 220px;
     height: auto;
 }
 
@@ -522,22 +522,31 @@ footer {
   nav {
     &.navbar-light .navbar-toggler {
       z-index: 2000;
-      background: transparent;
+      background: linear-gradient(to right, #37b24d, #1ea99d);
       border: none;
       box-shadow: none;
-      color: #333;
+      color: #fff;
       width: 44px;
-      height: 50px;
-      border-radius: 0;
+      height: 44px;
+      border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px;
+      padding: 0;
 
       svg {
         display: block;
-        width: 50px;
-        height: 50px;
+        width: 24px;
+        height: 24px;
+        stroke: #fff;
+      }
+
+      &:hover,
+      &:focus,
+      &:focus-visible {
+        background: linear-gradient(to right, #2e9a43, #178f86);
+        color: #fff;
+        box-shadow: none;
       }
     }
 
@@ -626,7 +635,7 @@ footer {
           align-items: center;
 
           img {
-            width: 150px;
+            width: 200px;
             max-width: 45vw;
             height: auto;
           }
@@ -806,6 +815,10 @@ main {
     transition: none;
     position: relative;
     overflow: hidden;
+
+    @media (min-width: 1024px) {
+      padding-bottom: 150px;
+    }
 
     .hero-grid {
       display: grid;
@@ -1108,6 +1121,10 @@ main {
     padding: 48px 0 64px;
     background: #f8f9fa;
 
+    @media (min-width: 1024px) {
+      padding-top: 0;
+    }
+
     .trust-stats-card {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1116,6 +1133,12 @@ main {
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
       padding: 36px 20px;
       margin-bottom: 28px;
+
+      @media (min-width: 1024px) {
+        position: relative;
+        z-index: 10;
+        margin-top: -86px;
+      }
     }
 
     .trust-stat {
@@ -1629,6 +1652,7 @@ main {
 
       svg {
         stroke: #37b24d;
+        transition: transform 0.3s ease;
       }
 
       &:hover,
@@ -1637,6 +1661,10 @@ main {
         background: #ebf7ed !important;
         border-color: #37b24d !important;
         color: #2b8a3e !important;
+
+        svg.icon-tabler-arrow-right {
+          transform: translateX(8px);
+        }
       }
     }
 
@@ -2432,19 +2460,20 @@ main {
 
     .consultation-visual-cluster {
       position: absolute;
-      inset: -24px -20px -16px -28px;
+      inset: -24px -20px 0 -28px;
       pointer-events: none;
       z-index: 0;
     }
 
     .consultation-visual-wave {
       position: absolute;
-      top: 20px;
+      top: 24px;
       left: -18px;
       right: -12px;
-      bottom: -16px;
+      bottom: 0;
       background: #ebf7ed;
       border-radius: 58% 72% 48% 82% / 82% 78% 54% 46%;
+      clip-path: inset(0 0 10% 0);
       opacity: 0.95;
     }
 
@@ -2478,6 +2507,7 @@ main {
       width: 100%;
       aspect-ratio: 5 / 4;
       border-radius: 58% 72% 48% 82% / 82% 78% 54% 46%;
+      clip-path: inset(0 0 10% 0);
       overflow: hidden;
       box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
     }
@@ -3355,6 +3385,18 @@ main {
       width: 100%;
       font-size: 16px;
       padding: 14px 24px;
+
+      svg {
+        transition: transform 0.3s ease;
+      }
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        svg {
+          transform: translateX(8px);
+        }
+      }
     }
 
     .pricing-nav {
@@ -4702,6 +4744,18 @@ main {
       border-radius: 10px;
       font-size: 15px;
       font-weight: 500;
+
+      svg {
+        transition: transform 0.3s ease;
+      }
+
+      &:hover,
+      &:active,
+      &:focus-visible {
+        svg {
+          transform: translateX(8px);
+        }
+      }
     }
 
     @media (hover: hover) and (min-width: 992px) {
@@ -5265,7 +5319,7 @@ main {
   .final-cta-action {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 14px;
     width: 100%;
   }
@@ -5321,7 +5375,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
+    max-width: 100%;
     padding: 16px 20px;
     border-radius: 12px;
     font-size: 16px;
@@ -6004,7 +6059,7 @@ main {
   }
 
   #header nav .navbar-brand img {
-    width: 150px;
+    width: 200px;
     max-width: 100%;
   }
 
@@ -6124,7 +6179,7 @@ main {
   }
 
   #header nav .offcanvas .offcanvas-header .logo-link img {
-    width: 130px;
+    width: 190px;
   }
 
   #header nav .offcanvas .offcanvas-body {
@@ -6368,7 +6423,7 @@ main {
   }
 
   #header nav .navbar-brand img {
-    width: 130px;
+    width: 190px;
   }
 
   .hideOnTablet {
@@ -6529,11 +6584,15 @@ main {
   }
 
   #header nav .navbar-brand {
-    width: 206px;
+    width: auto;
+  }
+
+  #header nav .navbar-brand img {
+    width: 185px;
   }
   #header nav.navbar-light .navbar-toggler {
     width: 40px;
-    height: 46px;
+    height: 40px;
   }
 
   .btn {

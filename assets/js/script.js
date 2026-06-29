@@ -587,14 +587,13 @@ function initNavScroll() {
     featured: "#health-cta",
     "about-cta": "#about-cta",
     "services-cta": "#services-cta",
-    "how-it-works-cta": "#services-cta",
+    "how-it-works-cta": "#how-it-works-cta",
     "pricing-cta": "#services-cta",
-    "doctors-cta": "#services-cta",
-    "find-doctor-cta": "#services-cta",
     "testimonials-cta": "#testimonials-cta",
-    "morehelp-cta": "#morehelp-cta",
-    "appointment-cta": "#appointment-cta",
-    "contact-cta": "#appointment-cta",
+    "faq-cta": "#faq-cta",
+    "consultation-cta": "#consultation-cta",
+    "final-cta": "#final-cta",
+    "contact-cta": "#consultation-cta",
   };
 
   const sections = Array.from(document.querySelectorAll("section[id]")).filter(
@@ -631,7 +630,7 @@ function initNavScroll() {
 
     const atBottom = scrollBottom >= docEl.scrollHeight - 2;
     if (atBottom) {
-      activeHash = "#appointment-cta";
+      activeHash = "#consultation-cta";
     } else {
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
@@ -731,31 +730,6 @@ function initSwipers() {
 
   // Featured swiper removed — Trust & Proof section is static
 
-  // Doctors swiper - disable autoplay by default to improve performance
-  const doctorsSwiper = new Swiper(".doctors-swiper", {
-    slidesPerView: 2,
-    spaceBetween: 40,
-    loop: true,
-    grabCursor: true,
-    allowTouchMove: true,
-    speed: 800, // Reduced from 3000 for better UX
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-      enabled: false, // Disabled by default to prevent scroll jank
-    },
-    navigation: {
-      nextEl: ".doctors-next",
-      prevEl: ".doctors-prev",
-    },
-    passiveListeners: true,
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      800: { slidesPerView: 2 },
-      992: { slidesPerView: 2 },
-    },
-  });
-
   // Pricing swiper - disable autoplay by default
   const pricingSwiper = new Swiper(".pricing-swiper", {
     slidesPerView: 3,
@@ -830,7 +804,7 @@ function initSwipers() {
   });
 
   // Enable autoplay only when swipers are in viewport for better performance
-  initSwiperAutoplayInView([doctorsSwiper, pricingSwiper, testimonialsSwiper]);
+  initSwiperAutoplayInView([pricingSwiper, testimonialsSwiper]);
 }
 
 // Enable swiper autoplay only when in viewport
@@ -1553,8 +1527,7 @@ function wireFooterAccordion(footer) {
     group.classList.remove("is-open");
     trigger.setAttribute("aria-expanded", "false");
 
-    panel.style.transition =
-      "height 350ms ease-out, opacity 350ms ease-out";
+    panel.style.transition = "height 350ms ease-out, opacity 350ms ease-out";
     panel.style.height = `${panel.scrollHeight}px`;
     panel.style.opacity = "1";
 
