@@ -432,7 +432,7 @@ footer {
   pointer-events: none;
 }
 #header nav.navbar-light .navbar-toggler {
-  z-index: 2000;
+  z-index: 2200;
   background: linear-gradient(to right, #37b24d, #1ea99d);
   border: none;
   box-shadow: none;
@@ -444,12 +444,45 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
-#header nav.navbar-light .navbar-toggler svg {
+#header nav.navbar-light .navbar-toggler .navbar-toggler-bars {
+  position: relative;
   display: block;
-  width: 24px;
-  height: 24px;
-  stroke: #fff;
+  width: 20px;
+  height: 14px;
+  background: none;
+  background-image: none;
+}
+#header nav.navbar-light .navbar-toggler .navbar-toggler-bars span {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background: #fff;
+  transition: transform 0.35s ease, top 0.35s ease, opacity 0.2s ease;
+}
+#header nav.navbar-light .navbar-toggler .navbar-toggler-bars span:nth-child(1) {
+  top: 0;
+}
+#header nav.navbar-light .navbar-toggler .navbar-toggler-bars span:nth-child(2) {
+  top: 6px;
+}
+#header nav.navbar-light .navbar-toggler .navbar-toggler-bars span:nth-child(3) {
+  top: 12px;
+}
+#header nav.navbar-light .navbar-toggler.opened .navbar-toggler-bars span:nth-child(1) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+#header nav.navbar-light .navbar-toggler.opened .navbar-toggler-bars span:nth-child(2) {
+  opacity: 0;
+}
+#header nav.navbar-light .navbar-toggler.opened .navbar-toggler-bars span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-45deg);
 }
 #header nav.navbar-light .navbar-toggler:hover, #header nav.navbar-light .navbar-toggler:focus, #header nav.navbar-light .navbar-toggler:focus-visible {
   background: linear-gradient(to right, #2e9a43, #178f86);
@@ -532,25 +565,7 @@ footer {
   height: auto;
 }
 #header nav .offcanvas .offcanvas-header .mobile-nav-close {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: transparent;
-  color: #adb5bd;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-#header nav .offcanvas .offcanvas-header .mobile-nav-close svg {
-  display: block;
-}
-#header nav .offcanvas .offcanvas-header .mobile-nav-close:hover {
-  color: #868e96;
+  display: none;
 }
 #header nav .offcanvas .offcanvas-body {
   display: flex;
@@ -897,15 +912,18 @@ main .section-health .hero-float-card-text .hero-float-card-accent {
   main .section-health .hero-image-wrap {
     position: absolute;
     right: -20%;
-    bottom: 0;
+    top: 15%;
     max-width: none;
     width: 75%;
     aspect-ratio: auto;
-    height: 70%;
+    height: 50%;
     border-radius: 0;
     box-shadow: none;
-    mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.35) 0%, transparent 70%);
-    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.35) 0%, transparent 70%);
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, transparent 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
+    -webkit-mask-composite: source-in, xor;
+            mask-composite: intersect;
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, transparent 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
   }
   main .section-health .hero-image {
     -o-object-position: center top;
@@ -4671,9 +4689,10 @@ main .blog-section .blog-image-loading::after {
   pointer-events: none;
 }
 .section-final-cta .final-cta-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   width: 80%;
   max-width: 100%;
   padding: 16px 20px;
@@ -4688,6 +4707,7 @@ main .blog-section .blog-image-loading::after {
 .section-final-cta .final-cta-btn-inner {
   display: inline-flex;
   align-items: center;
+  text-wrap: nowrap;
   gap: 10px;
 }
 .section-final-cta .final-cta-btn-arrow {
@@ -5318,10 +5338,6 @@ main .blog-section .blog-image-loading::after {
   }
   #header .container {
     border-bottom: 1px solid #e9ecef;
-  }
-  #header nav .navbar-toggler.opened {
-    visibility: hidden;
-    pointer-events: none;
   }
   #header nav .offcanvas .offcanvas-header .logo-link img {
     width: 190px;

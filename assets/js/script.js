@@ -666,29 +666,32 @@ function initMobileMenu() {
     ? bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement)
     : null;
 
-  if (toggler) {
-    toggler.addEventListener("click", () => {
-      toggler.classList.toggle("opened");
-    });
-  }
+  const setTogglerOpen = (isOpen) => {
+    if (!toggler) return;
+    toggler.classList.toggle("opened", isOpen);
+    toggler.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    toggler.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation" : "Toggle navigation",
+    );
+  };
 
   const offcanvasLinks = document.querySelectorAll(
     '#offcanvasNavbar a[href^="#"]:not([href="#"])',
   );
   offcanvasLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
+    link.addEventListener("click", () => {
       if (offcanvasInstance) {
         offcanvasInstance.hide();
       }
 
-      if (toggler) {
-        toggler.classList.remove("opened");
-      }
+      setTogglerOpen(false);
     });
   });
 
   if (offcanvasElement && stickyBarRoot) {
     offcanvasElement.addEventListener("show.bs.offcanvas", () => {
+      setTogglerOpen(true);
       stickyBarRoot.classList.add("sticky-bar-hidden");
       document.documentElement.style.setProperty("--sticky-bar-h", "0px");
     });
@@ -696,9 +699,7 @@ function initMobileMenu() {
 
   if (offcanvasElement) {
     offcanvasElement.addEventListener("hidden.bs.offcanvas", () => {
-      if (toggler) {
-        toggler.classList.remove("opened");
-      }
+      setTogglerOpen(false);
       if (stickyBarRoot) {
         stickyBarRoot.classList.remove("sticky-bar-hidden");
       }
