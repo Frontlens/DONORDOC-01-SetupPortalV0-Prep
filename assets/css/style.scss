@@ -3575,6 +3575,7 @@ main {
       }
 
       .pricing-card {
+        width: 80%;
         max-width: 320px;
         padding: 24px 20px 20px;
       }
@@ -3694,7 +3695,8 @@ main {
 
     @media (max-width: 575.98px) {
       .pricing-card {
-        max-width: 100%;
+        width: 80%;
+        max-width: 80%;
         padding: 22px 18px 18px;
       }
 

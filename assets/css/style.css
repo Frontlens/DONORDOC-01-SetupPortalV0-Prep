@@ -3120,6 +3120,7 @@ main .section-pricing .pricing-advisor-cta__btn:hover {
     padding-top: 12px;
   }
   main .section-pricing .pricing-card {
+    width: 80%;
     max-width: 320px;
     padding: 24px 20px 20px;
   }
@@ -3216,7 +3217,8 @@ main .section-pricing .pricing-advisor-cta__btn:hover {
 }
 @media (max-width: 575.98px) {
   main .section-pricing .pricing-card {
-    max-width: 100%;
+    width: 80%;
+    max-width: 80%;
     padding: 22px 18px 18px;
   }
   main .section-pricing .pricing-card__price-amount {
