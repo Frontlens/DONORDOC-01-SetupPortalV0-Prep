@@ -1,8 +1,7 @@
-/* 
-Template Name: DONORDOC-B01 
-Author: FRONTLENS LLC 
-License: For personal/business use only. Redistribution, resale, or sublicensing is strictly prohibited without written consent. 
-Copyright (c) 2025 FRONTLENS LLC. All rights reserved. 
+/*
+Website System Name: DONORDOC-01 V1
+Author: FRONTLENS LLC
+License: For personal/business use only. Redistribution, resale, or sublicensing is strictly Copyright (c) 2026 FRONTLENS LLC. All rights reserved.
 */
 
 // Preloader: show secondary background with primary-colored spinner until all assets are loaded
