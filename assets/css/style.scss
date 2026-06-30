@@ -4130,7 +4130,7 @@ main {
 
     .testimonial-card__text {
       margin: 0 0 24px;
-      font-size: 16px;
+      font-size: $fs-section-desc-md;
       line-height: 1.65;
       color: #333;
       font-style: normal;
@@ -4338,7 +4338,6 @@ main {
       }
 
       .testimonial-card__text {
-        font-size: 15px;
         margin-bottom: 20px;
       }
 
@@ -4666,7 +4665,7 @@ main {
 
       p {
         margin: 0;
-        font-size: 15px;
+        font-size: $fs-section-desc-md;
         line-height: 1.6;
         color: #555;
       }
@@ -4748,7 +4747,7 @@ main {
 
     .faq-cta-desc {
       margin: 0;
-      font-size: 15px;
+      font-size: $fs-section-desc-md;
       line-height: 1.5;
       color: #666;
     }
@@ -4842,10 +4841,6 @@ main {
         font-size: 17px;
       }
 
-      .faq-item-panel-content p {
-        font-size: 16px;
-      }
-
       .faq-cta {
         padding: 28px 32px;
       }
@@ -4923,10 +4918,6 @@ main {
         font-size: 15px;
       }
 
-      .faq-item-panel-content p {
-        font-size: 14px;
-      }
-
       .faq-item-panel-icon {
         width: 32px;
         height: 32px;
@@ -4959,10 +4950,6 @@ main {
 
       .faq-cta-title {
         font-size: 15px;
-      }
-
-      .faq-cta-desc {
-        font-size: 13px;
       }
 
       .faq-cta-btn {
@@ -5600,7 +5587,7 @@ main {
   .footer-brand-desc {
     margin: 0 0 24px;
     max-width: 320px;
-    font-size: 15px;
+    font-size: $fs-section-desc-md;
     line-height: 1.6;
     color: #666;
   }

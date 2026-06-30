@@ -3774,7 +3774,6 @@ main .section-testimonials .testimonials-pagination .swiper-pagination-bullet.sw
     height: 56px;
   }
   main .section-testimonials .testimonial-card__text {
-    font-size: 15px;
     margin-bottom: 20px;
   }
   main .section-testimonials .testimonial-card__name {
@@ -4079,7 +4078,7 @@ main .section-faq .faq-item-panel-content {
 }
 main .section-faq .faq-item-panel-content p {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: #555;
 }
@@ -4152,7 +4151,7 @@ main .section-faq .faq-cta-title {
 }
 main .section-faq .faq-cta-desc {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #666;
 }
@@ -4226,9 +4225,6 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
   main .section-faq .faq-item-question {
     font-size: 17px;
   }
-  main .section-faq .faq-item-panel-content p {
-    font-size: 16px;
-  }
   main .section-faq .faq-cta {
     padding: 28px 32px;
   }
@@ -4291,9 +4287,6 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
   main .section-faq .faq-item-question {
     font-size: 15px;
   }
-  main .section-faq .faq-item-panel-content p {
-    font-size: 14px;
-  }
   main .section-faq .faq-item-panel-icon {
     width: 32px;
     height: 32px;
@@ -4321,9 +4314,6 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
   }
   main .section-faq .faq-cta-title {
     font-size: 15px;
-  }
-  main .section-faq .faq-cta-desc {
-    font-size: 13px;
   }
   main .section-faq .faq-cta-btn {
     width: auto;
@@ -4878,7 +4868,7 @@ main .blog-section .blog-image-loading::after {
 #footer .footer-brand-desc {
   margin: 0 0 24px;
   max-width: 320px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: #666;
 }
