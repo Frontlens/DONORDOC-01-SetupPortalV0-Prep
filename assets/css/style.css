@@ -154,29 +154,6 @@ footer {
   box-shadow: none;
 }
 
-* {
-  transition: all 0.5s;
-}
-
-/* Blur-up images: start blurred with subtle skeleton, then fade-sharpen when loaded */
-/* When image is loaded, remove blur + shimmer smoothly */
-/* Keep transitions performant */
-#header-wrapper {
-  transition: transform 0.5s ease, top 0.5s ease;
-}
-#header-wrapper.slide-in {
-  transform: translateY(0);
-}
-#header-wrapper.sticky-top-custom {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transform: translateY(-100%);
-}
-#header-wrapper.sticky-top-custom.slide-in {
-  transform: translateY(0);
-}
-
 #header {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 9999;
@@ -342,9 +319,6 @@ footer {
   width: 200px;
   max-width: 45vw;
   height: auto;
-}
-#header nav .offcanvas .offcanvas-header .mobile-nav-close {
-  display: none;
 }
 #header nav .offcanvas .offcanvas-body {
   display: flex;
@@ -620,8 +594,7 @@ main .section-health .hero-image {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .section-health .hero-float-card {
   position: absolute;
@@ -700,14 +673,12 @@ main .section-health .hero-float-card-text .hero-float-card-accent {
     border-radius: 0;
     box-shadow: none;
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, transparent 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
-    -webkit-mask-composite: source-in, xor;
-            mask-composite: intersect;
+    mask-composite: intersect;
     -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, transparent 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
     -webkit-mask-composite: source-in;
   }
   main .section-health .hero-image {
-    -o-object-position: center top;
-       object-position: center top;
+    object-position: center top;
   }
   main .section-health .hero-heading {
     font-size: 36px;
@@ -1006,10 +977,8 @@ main .section-about .about-image {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 1024px) {
   main .section-about .about-content {
@@ -1026,8 +995,7 @@ main .section-about .about-image {
     width: 100%;
     height: 100%;
     aspect-ratio: 5/4;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (min-width: 1200px) {
@@ -1995,10 +1963,8 @@ main .section-consultation .consultation-visual-img {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 main .section-consultation .consultation-form-col {
   display: flex;
@@ -2128,16 +2094,10 @@ main .section-consultation .consultation-field__control .fl-picker-input {
   box-shadow: none;
   font-family: inherit;
 }
-main .section-consultation .consultation-input::-moz-placeholder, main .section-consultation .consultation-select .selected::-moz-placeholder, main .section-consultation .consultation-field__control .fl-picker-input::-moz-placeholder {
-  color: #adb5bd;
-}
 main .section-consultation .consultation-input::placeholder,
 main .section-consultation .consultation-select .selected::placeholder,
 main .section-consultation .consultation-field__control .fl-picker-input::placeholder {
   color: #adb5bd;
-}
-main .section-consultation .consultation-input:-moz-placeholder, main .section-consultation .consultation-select .selected:-moz-placeholder, main .section-consultation .consultation-field__control .fl-picker-input:-moz-placeholder {
-  color: #868e96;
 }
 main .section-consultation .consultation-input:placeholder-shown,
 main .section-consultation .consultation-select .selected:placeholder-shown,
@@ -2176,9 +2136,7 @@ main .section-consultation .consultation-select {
   position: relative;
   flex: 1;
   min-width: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 main .section-consultation .consultation-select .selected {
   cursor: pointer;
@@ -2314,8 +2272,7 @@ main .section-consultation .consultation-secure-icon svg {
   }
   main .section-consultation .consultation-visual--mobile .consultation-visual-img {
     aspect-ratio: 24/10;
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
   main .section-consultation .consultation-form {
     padding: 24px 20px 20px;
@@ -3134,8 +3091,7 @@ main .section-testimonials .testimonial-card__avatar {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .section-testimonials .testimonial-card__author-info {
   display: flex;
@@ -3885,8 +3841,7 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   grid-template-rows: auto auto;
   grid-template-areas: "copy side" "features side";
-  -moz-column-gap: 56px;
-       column-gap: 56px;
+  column-gap: 56px;
   row-gap: 36px;
   align-items: start;
 }
@@ -4045,10 +4000,8 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
 .section-final-cta .half-circle img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center top;
-     object-position: center top;
+  object-fit: cover;
+  object-position: center top;
   position: absolute;
   top: 0;
   left: 0;
@@ -4125,8 +4078,7 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
     grid-template-columns: minmax(0, 1fr) minmax(0, 150px);
     grid-template-rows: auto auto auto;
     grid-template-areas: "copy visual" "features features" "action action";
-    -moz-column-gap: 16px;
-         column-gap: 16px;
+    column-gap: 16px;
     row-gap: 24px;
   }
   .section-final-cta .final-cta-side {
@@ -5049,4 +5001,4 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
     font-size: 14px;
   }
 }
-/* ===== END PROMO STICKY BAR ===== *//*# sourceMappingURL=style.css.map */
+/* ===== END PROMO STICKY BAR ===== */

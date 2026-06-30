@@ -11,19 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://unpkg.com" />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <link rel="dns-prefetch" href="https://unpkg.com" />
-    <!-- <link
-      rel="preload"
-      href="./assets/css/combined.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link rel="stylesheet" href="./assets/css/combined.min.css"
-    /></noscript> -->
-    <!-- TEMP: Use non-minified style.css for development -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/fl-datepicker.css" />
     <link
@@ -40,8 +28,8 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     /></noscript>
-    <link rel="preload" href="assets/img/logo.webp" as="image" />
-    <link rel="preload" href="assets/img/banner-img-1.webp" as="image" />
+    <link rel="preload" href="assets/img/donordoc-new-logo.webp" as="image" />
+    <link rel="preload" href="assets/img/hero-image.webp" as="image" />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
@@ -277,7 +265,7 @@
               class="offcanvas offcanvas-end"
               tabindex="-1"
               id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel"
+              aria-label="Navigation menu"
             >
               <div class="offcanvas-header">
                 <a href="#health-cta" class="logo-link">
@@ -288,30 +276,6 @@
                     class="logo-img"
                   />
                 </a>
-                <button
-                  type="button"
-                  class="mobile-nav-close"
-                  data-nav-close
-                  aria-label="Close"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-                    aria-hidden="true"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M18 6l-12 12"></path>
-                    <path d="M6 6l12 12"></path>
-                  </svg>
-                </button>
               </div>
               <div class="offcanvas-body">
                 <ul class="mobile-nav-list">
@@ -4249,17 +4213,12 @@
     </button>
 
     <!-- Scripts -->
-    <script
-      defer
-      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
-    ></script>
     <!-- Swiper JS -->
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
     <script defer src="assets/js/fl-datepicker.js"></script>
-    <!-- <script defer src="assets/js/script.min.js"></script> -->
     <script defer src="assets/js/script.js"></script>
   </body>
 </html>

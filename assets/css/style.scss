@@ -231,57 +231,6 @@ footer {
   }
 }
 
-* {
-  transition: all 0.5s;
-}
-
-/* Blur-up images: start blurred with subtle skeleton, then fade-sharpen when loaded */
-// img.blur-up {
-//   filter: blur(12px);
-//   transform: scale(1.02);
-//   background: #f2f2f2;
-//   background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.35) 50%, rgba(0,0,0,0) 100%);
-//   background-size: 200% 100%;
-//   background-position: -200% 0;
-//   animation: shimmer 1.2s infinite;
-// }
-
-/* When image is loaded, remove blur + shimmer smoothly */
-// img.blur-up.is-loaded {
-//   filter: blur(0);
-//   transform: scale(1);
-//   background-image: none;
-//   animation: none;
-// }
-
-/* Keep transitions performant */
-// img.blur-up, img.blur-up.is-loaded {
-//   transition: filter 400ms ease, transform 400ms ease, background 200ms ease;
-// }
-
-// @keyframes shimmer {
-//   0% { background-position: -200% 0; }
-//   100% { background-position: 200% 0; }
-// }
-
-#header-wrapper {
-  transition: transform 0.5s ease, top 0.5s ease;
-
-  &.slide-in {
-    transform: translateY(0);
-  }
-
-  &.sticky-top-custom {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transform: translateY(-100%);
-    &.slide-in {
-      transform: translateY(0);
-    }
-  }
-}
-
 #header {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 9999;
@@ -486,10 +435,6 @@ footer {
             max-width: 45vw;
             height: auto;
           }
-        }
-
-        .mobile-nav-close {
-          display: none;
         }
       }
 
