@@ -2306,7 +2306,9 @@ main .section-consultation .consultation-secure-icon svg {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
   main .section-consultation .consultation-visual--mobile .consultation-visual-img {
-    aspect-ratio: 16/10;
+    aspect-ratio: 24/10;
+    -o-object-position: top;
+       object-position: top;
   }
   main .section-consultation .consultation-form {
     padding: 24px 20px 20px;

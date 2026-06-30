@@ -2671,7 +2671,8 @@ main {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 
         .consultation-visual-img {
-          aspect-ratio: 16 / 10;
+          aspect-ratio: 24 / 10;
+          object-position: top;
         }
       }
 
