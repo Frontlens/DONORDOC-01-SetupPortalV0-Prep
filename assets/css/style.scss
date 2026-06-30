@@ -311,6 +311,14 @@ footer {
     }
   }
 
+  &.mobile-nav-open {
+    z-index: 10060;
+
+    nav.navbar-light .navbar-toggler {
+      z-index: 10061;
+    }
+  }
+
   nav {
     &.navbar-light .navbar-toggler {
       z-index: 2200;
@@ -623,7 +631,8 @@ footer {
   }
 }
 
-.offcanvas.show {
+.offcanvas.show,
+.offcanvas.is-closing {
   visibility: visible !important;
 }
 

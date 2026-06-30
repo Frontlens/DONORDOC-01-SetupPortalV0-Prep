@@ -522,53 +522,106 @@ function initNavScroll() {
 }
 
 function initMobileMenu() {
-  const toggler = document.querySelector(".navbar-toggler");
-  const offcanvasElement = document.getElementById("offcanvasNavbar");
+  const toggler = document.querySelector("[data-nav-toggle]");
+  const offcanvas = document.getElementById("offcanvasNavbar");
+  const closeBtn = document.querySelector("[data-nav-close]");
   const stickyBarRoot = document.getElementById("sticky-bar-root");
-  const offcanvasInstance = offcanvasElement
-    ? bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement)
-    : null;
+  const header = document.getElementById("header");
 
-  const setTogglerOpen = (isOpen) => {
-    if (!toggler) return;
-    toggler.classList.toggle("opened", isOpen);
-    toggler.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  if (!toggler || !offcanvas) return;
+
+  let isOpen = false;
+  let isClosing = false;
+  let closeFallback = null;
+
+  const offcanvasLinks = offcanvas.querySelectorAll(
+    'a[href^="#"]:not([href="#"])',
+  );
+
+  const setTogglerOpen = (open) => {
+    toggler.classList.toggle("opened", open);
+    toggler.setAttribute("aria-expanded", open ? "true" : "false");
     toggler.setAttribute(
       "aria-label",
-      isOpen ? "Close navigation" : "Toggle navigation",
+      open ? "Close navigation" : "Toggle navigation",
     );
   };
 
-  const offcanvasLinks = document.querySelectorAll(
-    '#offcanvasNavbar a[href^="#"]:not([href="#"])',
-  );
-  offcanvasLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (offcanvasInstance) {
-        offcanvasInstance.hide();
-      }
+  const hidePromoBar = () => {
+    if (!stickyBarRoot) return;
+    stickyBarRoot.classList.add("sticky-bar-hidden");
+    document.documentElement.style.setProperty("--sticky-bar-h", "0px");
+  };
 
-      setTogglerOpen(false);
-    });
+  const restorePromoBar = () => {
+    if (!stickyBarRoot) return;
+    stickyBarRoot.classList.remove("sticky-bar-hidden");
+    window.dispatchEvent(new Event("resize"));
+  };
+
+  const finishClose = () => {
+    offcanvas.classList.remove("is-closing");
+    isClosing = false;
+    header?.classList.remove("mobile-nav-open");
+    restorePromoBar();
+  };
+
+  const open = () => {
+    if (isOpen || isClosing) return;
+
+    isOpen = true;
+    offcanvas.classList.remove("is-closing");
+    offcanvas.classList.add("show");
+    header?.classList.add("mobile-nav-open");
+    setTogglerOpen(true);
+    document.body.style.overflow = "hidden";
+    hidePromoBar();
+  };
+
+  const close = () => {
+    if (!isOpen || isClosing) return;
+
+    isClosing = true;
+    isOpen = false;
+
+    // Morph toggler back to burger immediately, before panel slide-out starts.
+    setTogglerOpen(false);
+    document.body.style.overflow = "";
+
+    offcanvas.classList.remove("show");
+    offcanvas.classList.add("is-closing");
+
+    const onCloseEnd = (event) => {
+      if (event && event.propertyName !== "transform") return;
+      offcanvas.removeEventListener("transitionend", onCloseEnd);
+      if (closeFallback) clearTimeout(closeFallback);
+      finishClose();
+    };
+
+    closeFallback = setTimeout(() => onCloseEnd(null), 1100);
+    offcanvas.addEventListener("transitionend", onCloseEnd);
+  };
+
+  const toggle = () => {
+    if (isOpen) close();
+    else open();
+  };
+
+  toggler.addEventListener("click", toggle);
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", close);
+  }
+
+  offcanvasLinks.forEach((link) => {
+    link.addEventListener("click", close);
   });
 
-  if (offcanvasElement && stickyBarRoot) {
-    offcanvasElement.addEventListener("show.bs.offcanvas", () => {
-      setTogglerOpen(true);
-      stickyBarRoot.classList.add("sticky-bar-hidden");
-      document.documentElement.style.setProperty("--sticky-bar-h", "0px");
-    });
-  }
-
-  if (offcanvasElement) {
-    offcanvasElement.addEventListener("hidden.bs.offcanvas", () => {
-      setTogglerOpen(false);
-      if (stickyBarRoot) {
-        stickyBarRoot.classList.remove("sticky-bar-hidden");
-      }
-      window.dispatchEvent(new Event("resize"));
-    });
-  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && isOpen) {
+      close();
+    }
+  });
 }
 
 function initSwipers() {

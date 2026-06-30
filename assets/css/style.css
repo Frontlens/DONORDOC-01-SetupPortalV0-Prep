@@ -204,6 +204,12 @@ footer {
   background-color: #fff;
   pointer-events: none;
 }
+#header.mobile-nav-open {
+  z-index: 10060;
+}
+#header.mobile-nav-open nav.navbar-light .navbar-toggler {
+  z-index: 10061;
+}
 #header nav.navbar-light .navbar-toggler {
   z-index: 2200;
   background: linear-gradient(to right, #37b24d, #1ea99d);
@@ -454,7 +460,8 @@ footer {
   }
 }
 
-.offcanvas.show {
+.offcanvas.show,
+.offcanvas.is-closing {
   visibility: visible !important;
 }
 
