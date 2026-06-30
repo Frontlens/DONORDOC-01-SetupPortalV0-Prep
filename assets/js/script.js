@@ -45,7 +45,6 @@ function throttle(func, limit) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  initStickyBar();
   initStickyHeader();
   initNavScroll();
   initMobileMenu();
@@ -277,133 +276,6 @@ function initFooterYear() {
   }
 }
 
-function getStickyBarTopOffsetPx() {
-  try {
-    const raw =
-      getComputedStyle(document.documentElement).getPropertyValue(
-        "--sticky-bar-h",
-      ) || "";
-    const n = parseFloat(raw.trim());
-    return Number.isFinite(n) ? n : 0;
-  } catch (_) {
-    return 0;
-  }
-}
-
-window.getStickyBarTopOffsetPx = getStickyBarTopOffsetPx;
-
-function initStickyBar() {
-  const root = document.getElementById("sticky-bar-root");
-  const bar = document.getElementById("sticky-bar");
-  const placeholder = root?.querySelector(".sticky-bar-placeholder");
-  const footer = document.getElementById("footer");
-  const hero = document.querySelector(".section-health");
-  const header = document.getElementById("header");
-
-  if (!root || !bar || !placeholder || !footer || !hero || !header) return;
-
-  const DOCK_BOTTOM_ENTER_PX = 120;
-  const DOCK_BOTTOM_EXIT_PX = 280;
-  let latchBottom = false;
-  let activeState = null;
-
-  function setStickyBarCssVar(px) {
-    document.documentElement.style.setProperty(
-      "--sticky-bar-h",
-      `${Math.max(0, px)}px`,
-    );
-  }
-
-  /** Match header overlap padding used by `initStickyHeader` */
-  function syncHeroOverlapPadding() {
-    hero.style.paddingTop = `${header.offsetHeight}px`;
-  }
-
-  function computeNextState() {
-    const heroRect = hero.getBoundingClientRect();
-    const docEl = document.documentElement;
-    const vv = window.visualViewport;
-    const vh =
-      vv && typeof vv.height === "number" ? vv.height : window.innerHeight;
-    const scrollBottom = window.scrollY + vh;
-
-    let nearDockBottom =
-      scrollBottom >= docEl.scrollHeight - DOCK_BOTTOM_ENTER_PX;
-
-    const belowDockBottomEscape =
-      scrollBottom < docEl.scrollHeight - DOCK_BOTTOM_EXIT_PX;
-
-    if (latchBottom) {
-      if (belowDockBottomEscape) latchBottom = false;
-    } else if (nearDockBottom) latchBottom = true;
-
-    const atHeroBand = heroRect.top >= -40;
-
-    if (latchBottom) return "bottom";
-    if (atHeroBand) return "top";
-    return "fixed";
-  }
-
-  function applyState(nextState) {
-    placeholder.style.height = "0px";
-    placeholder.classList.remove("is-active");
-    footer.style.paddingBottom = "";
-    footer.classList.remove("footer-sticky-bar-dock");
-    bar.classList.remove("sticky-bar-fixed", "sticky-bar-docked-bottom");
-    root.classList.remove("sticky-bar-root-bottom");
-
-    if (footer.contains(root)) {
-      header.before(root);
-    }
-
-    if (nextState === "bottom") {
-      footer.appendChild(root);
-      root.classList.add("sticky-bar-root-bottom");
-      bar.classList.add("sticky-bar-docked-bottom");
-      footer.classList.add("footer-sticky-bar-dock");
-      setStickyBarCssVar(0);
-    } else if (nextState === "fixed") {
-      bar.classList.add("sticky-bar-fixed");
-      const hFix = Math.max(bar.offsetHeight, 1);
-      placeholder.style.height = `${hFix}px`;
-      placeholder.classList.add("is-active");
-      setStickyBarCssVar(hFix);
-    } else {
-      const hTop = Math.max(bar.offsetHeight, 1);
-      setStickyBarCssVar(hTop);
-    }
-
-    activeState = nextState;
-    syncHeroOverlapPadding();
-  }
-
-  function syncLayout() {
-    if (root.classList.contains("sticky-bar-hidden")) {
-      if (activeState !== "hidden") {
-        setStickyBarCssVar(0);
-        syncHeroOverlapPadding();
-        activeState = "hidden";
-      }
-      return;
-    }
-
-    const nextState = computeNextState();
-    if (nextState === activeState) return;
-    applyState(nextState);
-  }
-
-  function forceSync() {
-    activeState = null;
-    syncLayout();
-  }
-
-  const throttledSync = throttle(syncLayout, 50);
-  window.addEventListener("scroll", throttledSync, { passive: true });
-  window.addEventListener("resize", forceSync);
-  window.addEventListener("load", forceSync);
-  syncLayout();
-}
-
 function initStickyHeader() {
   const header = document.getElementById("header");
   const hero = document.querySelector(".section-health");
@@ -477,10 +349,11 @@ function initNavScroll() {
   const getScrollAnchorPx = () => {
     const header = document.getElementById("header");
     const h = header ? header.offsetHeight : 0;
-    const barExtra =
-      typeof window.getStickyBarTopOffsetPx === "function"
-        ? window.getStickyBarTopOffsetPx()
-        : 0;
+    const raw =
+      getComputedStyle(document.documentElement).getPropertyValue(
+        "--sticky-bar-h",
+      ) || "";
+    const barExtra = parseFloat(raw.trim()) || 0;
     return h + barExtra + 24;
   };
 
@@ -525,7 +398,6 @@ function initMobileMenu() {
   const toggler = document.querySelector("[data-nav-toggle]");
   const offcanvas = document.getElementById("offcanvasNavbar");
   const closeBtn = document.querySelector("[data-nav-close]");
-  const stickyBarRoot = document.getElementById("sticky-bar-root");
   const header = document.getElementById("header");
 
   if (!toggler || !offcanvas) return;
@@ -547,23 +419,11 @@ function initMobileMenu() {
     );
   };
 
-  const hidePromoBar = () => {
-    if (!stickyBarRoot) return;
-    stickyBarRoot.classList.add("sticky-bar-hidden");
-    document.documentElement.style.setProperty("--sticky-bar-h", "0px");
-  };
-
-  const restorePromoBar = () => {
-    if (!stickyBarRoot) return;
-    stickyBarRoot.classList.remove("sticky-bar-hidden");
-    window.dispatchEvent(new Event("resize"));
-  };
-
   const finishClose = () => {
     offcanvas.classList.remove("is-closing");
     isClosing = false;
     header?.classList.remove("mobile-nav-open");
-    restorePromoBar();
+    document.dispatchEvent(new CustomEvent("mobilenav:close"));
   };
 
   const open = () => {
@@ -575,7 +435,7 @@ function initMobileMenu() {
     header?.classList.add("mobile-nav-open");
     setTogglerOpen(true);
     document.body.style.overflow = "hidden";
-    hidePromoBar();
+    document.dispatchEvent(new CustomEvent("mobilenav:open"));
   };
 
   const close = () => {
@@ -1295,3 +1155,153 @@ function initFooterAccordion() {
     console.error("initFooterAccordion error:", e);
   }
 }
+
+/* ===== PROMO STICKY BAR - self-contained, safe to delete ===== */
+(function initPromoStickyBar() {
+  function startStickyBar(root) {
+    const bar = document.getElementById("sticky-bar");
+    const placeholder = root.querySelector(".sticky-bar-placeholder");
+    const footer = document.getElementById("footer");
+    const hero = document.querySelector(".section-health");
+    const header = document.getElementById("header");
+
+    if (!bar || !placeholder || !footer || !hero || !header) return;
+
+    const DOCK_BOTTOM_ENTER_PX = 120;
+    const DOCK_BOTTOM_EXIT_PX = 280;
+    let latchBottom = false;
+    let activeState = null;
+
+    function setStickyBarCssVar(px) {
+      document.documentElement.style.setProperty(
+        "--sticky-bar-h",
+        `${Math.max(0, px)}px`,
+      );
+    }
+
+    function computeNextState() {
+      const heroRect = hero.getBoundingClientRect();
+      const docEl = document.documentElement;
+      const vv = window.visualViewport;
+      const vh =
+        vv && typeof vv.height === "number" ? vv.height : window.innerHeight;
+      const scrollBottom = window.scrollY + vh;
+
+      let nearDockBottom =
+        scrollBottom >= docEl.scrollHeight - DOCK_BOTTOM_ENTER_PX;
+
+      const belowDockBottomEscape =
+        scrollBottom < docEl.scrollHeight - DOCK_BOTTOM_EXIT_PX;
+
+      if (latchBottom) {
+        if (belowDockBottomEscape) latchBottom = false;
+      } else if (nearDockBottom) latchBottom = true;
+
+      const atHeroBand = heroRect.top >= -40;
+
+      if (latchBottom) return "bottom";
+      if (atHeroBand) return "top";
+      return "fixed";
+    }
+
+    function applyState(nextState) {
+      placeholder.style.height = "0px";
+      placeholder.classList.remove("is-active");
+      footer.style.paddingBottom = "";
+      footer.classList.remove("footer-sticky-bar-dock");
+      bar.classList.remove("sticky-bar-fixed", "sticky-bar-docked-bottom");
+      root.classList.remove("sticky-bar-root-bottom");
+
+      if (footer.contains(root)) {
+        header.before(root);
+      }
+
+      if (nextState === "bottom") {
+        footer.appendChild(root);
+        root.classList.add("sticky-bar-root-bottom");
+        bar.classList.add("sticky-bar-docked-bottom");
+        footer.classList.add("footer-sticky-bar-dock");
+        setStickyBarCssVar(0);
+      } else if (nextState === "fixed") {
+        bar.classList.add("sticky-bar-fixed");
+        const hFix = Math.max(bar.offsetHeight, 1);
+        placeholder.style.height = `${hFix}px`;
+        placeholder.classList.add("is-active");
+        setStickyBarCssVar(hFix);
+      } else {
+        const hTop = Math.max(bar.offsetHeight, 1);
+        setStickyBarCssVar(hTop);
+      }
+
+      activeState = nextState;
+    }
+
+    function syncLayout() {
+      if (root.classList.contains("sticky-bar-hidden")) {
+        if (activeState !== "hidden") {
+          setStickyBarCssVar(0);
+          activeState = "hidden";
+        }
+        return;
+      }
+
+      const nextState = computeNextState();
+      if (nextState === activeState) return;
+      applyState(nextState);
+    }
+
+    function forceSync() {
+      activeState = null;
+      syncLayout();
+    }
+
+    document.addEventListener("mobilenav:open", () => {
+      root.classList.add("sticky-bar-hidden");
+      setStickyBarCssVar(0);
+      activeState = "hidden";
+    });
+
+    document.addEventListener("mobilenav:close", () => {
+      root.classList.remove("sticky-bar-hidden");
+      forceSync();
+    });
+
+    const throttledSync = throttle(syncLayout, 50);
+    window.addEventListener("scroll", throttledSync, { passive: true });
+    window.addEventListener("resize", forceSync);
+    window.addEventListener("load", forceSync);
+    syncLayout();
+  }
+
+  function boot() {
+    const root = document.getElementById("sticky-bar-root");
+    if (!root) return;
+
+    fetch("assets/config/sections.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load sections.json");
+        }
+        return response.json();
+      })
+      .then((config) => {
+        if (config && config["promo-bar"] === false) {
+          root.remove();
+          document.documentElement.style.setProperty("--sticky-bar-h", "0px");
+          return;
+        }
+        startStickyBar(root);
+      })
+      .catch((error) => {
+        console.error("Promo sticky bar config error:", error);
+        startStickyBar(root);
+      });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+})();
+/* ===== END PROMO STICKY BAR ===== */

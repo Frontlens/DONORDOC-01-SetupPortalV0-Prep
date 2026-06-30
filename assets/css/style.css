@@ -184,6 +184,7 @@ footer {
   background-color: #d7f0db;
   position: absolute;
   width: 100%;
+  /* Self-defaulting hook for promo sticky bar (--sticky-bar-h, 0px when bar absent) */
   top: var(--sticky-bar-h, 0px);
 }
 #header.sticky {
@@ -4736,10 +4737,11 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
   }
 }
 :root {
-  --sticky-bar-h: 0px;
+  --sticky-bar-h: 0px; /* intentional hook: #header top offset; 0 when promo bar removed */
   --header-top-overlap: 2px;
 }
 
+/* ===== PROMO STICKY BAR - safe to delete ===== */
 #sticky-bar-root {
   position: relative;
   z-index: 10050;
@@ -5047,4 +5049,5 @@ main .section-faq .faq-cta-btn:hover svg, main .section-faq .faq-cta-btn:active 
     padding: 12px 18px;
     font-size: 14px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/* ===== END PROMO STICKY BAR ===== *//*# sourceMappingURL=style.css.map */

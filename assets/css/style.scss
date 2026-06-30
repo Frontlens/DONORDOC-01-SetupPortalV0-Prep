@@ -289,6 +289,7 @@ footer {
   background-color: #d7f0db;
   position: absolute;
   width: 100%;
+  /* Self-defaulting hook for promo sticky bar (--sticky-bar-h, 0px when bar absent) */
   top: var(--sticky-bar-h, 0px);
 
   &.sticky {
@@ -5461,10 +5462,11 @@ main {
 }
 
 :root {
-  --sticky-bar-h: 0px;
+  --sticky-bar-h: 0px; /* intentional hook: #header top offset; 0 when promo bar removed */
   --header-top-overlap: 2px;
 }
 
+/* ===== PROMO STICKY BAR - safe to delete ===== */
 #sticky-bar-root {
   position: relative;
   z-index: 10050;
@@ -5799,3 +5801,4 @@ main {
     font-size: 14px;
   }
 }
+/* ===== END PROMO STICKY BAR ===== */
