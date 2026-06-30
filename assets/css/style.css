@@ -714,12 +714,18 @@ main .section-health .hero-float-card-text .hero-float-card-accent {
     font-size: 14px;
   }
   main .section-health .hero-cta-group {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: stretch;
+    gap: 12px;
   }
   main .section-health .hero-cta-group .btn {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
     justify-content: center;
+    font-size: 14px;
+    padding: 14px 12px;
+    white-space: nowrap;
   }
 }
 @media (max-width: 575.98px) {
