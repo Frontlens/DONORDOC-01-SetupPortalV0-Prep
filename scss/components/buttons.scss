@@ -1,0 +1,102 @@
+.button {
+  display: inline-flex;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: $radius-button;
+  transition: all 1s;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  &.button--primary {
+    background: linear-gradient(to right, $color-brand, $color-accent);
+    border: none;
+    color: #fff;
+
+    &:hover,
+    &:active {
+    background: linear-gradient(to right, $color-brand-hover, $color-accent-hover);
+      color: #fff;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 8px;
+      transition: all 0.5s;
+    }
+  }
+
+  &.button--outline {
+    background-color: #fff;
+    color: $color-text;
+    border: 3px solid transparent;
+
+    &:hover,
+    &:active {
+      background-color: $color-brand-soft;
+      border-color: $color-border;
+      color: $color-border;
+    }
+  }
+
+  &.colored-border {
+    border-color: $color-border !important;
+  }
+
+  &.no-effect {
+
+    &:hover svg.icon-tabler-arrow-right,
+    &:active svg.icon-tabler-arrow-right,
+    &:hover svg.button__arrow,
+    &:active svg.button__arrow,
+    &:hover svg.button__icon-arrow,
+    &:active svg.button__icon-arrow {
+      transform: none !important;
+    }
+  }
+
+  svg {
+    height: 20px;
+    width: 20px;
+    color: inherit;
+    flex-shrink: 0;
+  }
+
+  svg.icon-tabler-arrow-right,
+  svg.button__arrow,
+  svg.button__icon-arrow,
+  &.button--nav > svg,
+  &.button--arrow svg {
+    transform: rotate(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg.icon-tabler-arrow-right,
+  &:active svg.icon-tabler-arrow-right,
+  &:hover svg.button__arrow,
+  &:active svg.button__arrow,
+  &:hover svg.button__icon-arrow,
+  &:active svg.button__icon-arrow,
+  &.button--nav:hover > svg,
+  &.button--nav:active > svg,
+  &.button--arrow:hover svg,
+  &.button--arrow:active svg {
+    transform: rotate(90deg);
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    outline: 0;
+    box-shadow: none;
+  }
+}
