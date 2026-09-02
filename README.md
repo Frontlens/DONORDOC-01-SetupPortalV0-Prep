@@ -35,4 +35,4 @@ Swiper loads from the CDN as a global. Date picker stays on `window.FLDatePicker
 
 ## Local preview
 
-Use Live Server (port 5506) or any static HTTP server from the project root. ES modules need HTTP, not `file://`.
+Do not double-click `index.html` to open it. Preview the site with Live Server (port 5506) or another local web preview from this folder. That is how the browser is able to load the split JavaScript files. On a real hosted website this is already handled for you.
