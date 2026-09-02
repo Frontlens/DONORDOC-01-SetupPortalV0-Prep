@@ -1,0 +1,12 @@
+{
+  "name": "donordoc-01",
+  "private": true,
+  "description": "DONORDOC-01 Website System. Sass source lives in scss/; css/style.css is generated output.",
+  "scripts": {
+    "build:css": "sass scss/style.scss css/style.css --style=expanded --source-map",
+    "watch:css": "sass scss/style.scss css/style.css --style=expanded --source-map --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

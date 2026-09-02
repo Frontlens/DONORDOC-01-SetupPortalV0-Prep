@@ -1,0 +1,39 @@
+/*
+Website System Name: DONORDOC-01 V1
+Author: FRONTLENS LLC
+License: For personal/business use only. Redistribution, resale, or sublicensing is strictly Copyright (c) 2026 FRONTLENS LLC. All rights reserved.
+*/
+
+import { initPreloader } from "./components/preloader.js";
+import { initStickyHeader, initNavScroll, initMobileMenu } from "./components/navigation.js";
+import { initBackToTop } from "./components/back-to-top.js";
+import { initLazyImages } from "./utilities/lazy-images.js";
+import { initSectionVisibility } from "./utilities/section-visibility.js";
+import { initPricing } from "./sections/pricing.js";
+import { initTestimonials } from "./sections/testimonials.js";
+import { initServicesReveal } from "./sections/services.js";
+import { initConsultationSection } from "./sections/consultation.js";
+import { initFaqAccordion } from "./sections/faq.js";
+import { initFooterYear, initFooterAccordion } from "./sections/footer.js";
+
+initPreloader();
+
+document.addEventListener("DOMContentLoaded", function () {
+  initStickyHeader();
+  initNavScroll();
+  initMobileMenu();
+  initPricing();
+  initTestimonials();
+  initServicesReveal();
+  initBackToTop();
+  initLazyImages();
+  initFooterYear();
+  initSectionVisibility();
+  initConsultationSection();
+  initFaqAccordion();
+  initFooterAccordion();
+
+  window.addEventListener("load", () => {
+    if (location.hash == "#health-cta") window.scrollTo(0, 0);
+  });
+});
