@@ -3,7 +3,6 @@ Website System Name: DONORDOC-01 V1
 Author: FRONTLENS LLC
 License: For personal/business use only. Redistribution, resale, or sublicensing is strictly Copyright (c) 2026 FRONTLENS LLC. All rights reserved.
 */
-@import url("./vendor/bootstrap.css");
 /*
 Website System Name: DONORDOC-01 V1
 Author: FRONTLENS LLC
@@ -54,7 +53,7 @@ body.loading {
   width: 56px;
   height: 56px;
   border: 4px solid rgba(55, 178, 77, 0.2); /* faint ring using primary */
-  border-top-color: #37b24d; /* primary color */
+  border-top-color: red; /* primary color */
   border-radius: 50%;
   animation: preloader-spin 1s linear infinite;
 }
@@ -212,7 +211,7 @@ footer {
 }
 
 .stroke-primary {
-  stroke: #37b24d;
+  stroke: red;
 }
 
 .logo-img {
@@ -249,7 +248,7 @@ footer {
   align-items: center;
 }
 .button.button--primary {
-  background: linear-gradient(to right, #37b24d, #1ea99d);
+  background: linear-gradient(to right, red, #1ea99d);
   border: none;
   color: #fff;
 }
@@ -334,7 +333,7 @@ footer {
 }
 #header nav.navbar-light .navbar-toggler {
   z-index: 2200;
-  background: linear-gradient(to right, #37b24d, #1ea99d);
+  background: linear-gradient(to right, red, #1ea99d);
   border: none;
   box-shadow: none;
   color: #fff;
@@ -411,7 +410,7 @@ footer {
   transition: color 0.3s ease, opacity 0.3s ease;
 }
 #header nav #navbarSupportedContent .navbar-nav-main > .nav-item > .nav-link.active {
-  color: #37b24d;
+  color: red;
 }
 #header nav #navbarSupportedContent .nav-item-advisor {
   border-left: 1px solid #dee2e6;
@@ -425,7 +424,7 @@ footer {
   white-space: nowrap;
 }
 #header nav #navbarSupportedContent .nav-link-advisor svg {
-  stroke: #37b24d;
+  stroke: red;
   flex-shrink: 0;
 }
 #header nav #navbarSupportedContent .navbar-nav-main:hover > .nav-item > .nav-link {
@@ -434,7 +433,7 @@ footer {
 }
 #header nav #navbarSupportedContent .navbar-nav-main > .nav-item > .nav-link:hover {
   opacity: 1;
-  color: #37b24d;
+  color: red;
 }
 #header nav #navbarSupportedContent .button--nav {
   padding: 10px 20px;
@@ -493,7 +492,7 @@ footer {
   transition: color 0.3s ease;
 }
 #header nav .offcanvas .mobile-nav__link.active, #header nav .offcanvas .mobile-nav__link:hover {
-  color: #37b24d;
+  color: red;
 }
 #header nav .offcanvas .mobile-nav__icon {
   display: flex;
@@ -503,7 +502,7 @@ footer {
   flex-shrink: 0;
 }
 #header nav .offcanvas .mobile-nav__icon svg {
-  stroke: #37b24d;
+  stroke: red;
 }
 #header nav .offcanvas .mobile-nav__text {
   flex: 1;
@@ -532,10 +531,10 @@ footer {
   transition: color 0.3s ease;
 }
 #header nav .offcanvas .mobile-nav__advisor svg {
-  stroke: #37b24d;
+  stroke: red;
 }
 #header nav .offcanvas .mobile-nav__advisor:hover {
-  color: #37b24d;
+  color: red;
 }
 #header nav .offcanvas .button--mobile {
   width: 100%;
@@ -620,7 +619,7 @@ main .hero .hero__eyebrow {
 }
 main .hero .hero__eyebrow svg {
   flex-shrink: 0;
-  stroke: #37b24d;
+  stroke: red;
 }
 main .hero .hero__headline {
   margin: 0 0 20px;
@@ -632,7 +631,7 @@ main .hero .hero__headline {
 }
 main .hero .hero__headline-accent {
   display: block;
-  color: #37b24d;
+  color: red;
 }
 main .hero .hero__description {
   margin: 0 0 28px;
@@ -664,7 +663,7 @@ main .hero .hero__benefit-icon {
   justify-content: center;
   flex-shrink: 0;
   font-size: 24px;
-  color: #37b24d;
+  color: red;
   line-height: 1;
 }
 main .hero .hero__benefit-icon svg {
@@ -678,17 +677,17 @@ main .hero .hero__actions {
   margin-bottom: 20px;
 }
 main .hero .hero__button {
-  border: 2px solid #37b24d !important;
+  border: 2px solid red !important;
   color: #333333 !important;
   background: #fff !important;
   font-weight: 600;
 }
 main .hero .hero__button svg {
-  stroke: #37b24d;
+  stroke: red;
 }
 main .hero .hero__button:hover, main .hero .hero__button:active {
   background: #ebf7ed !important;
-  border-color: #37b24d !important;
+  border-color: red !important;
   color: #333333 !important;
 }
 main .hero .hero__trust {
@@ -761,7 +760,7 @@ main .hero .hero__float-card-icon {
   align-items: flex-start;
   flex-shrink: 0;
   font-size: 56px;
-  color: #37b24d;
+  color: red;
   line-height: 1;
 }
 main .hero .hero__float-card-icon svg {
@@ -783,7 +782,7 @@ main .hero .hero__float-card-text .hero__float-card-lead {
   font-weight: 500;
 }
 main .hero .hero__float-card-text .hero__float-card-accent {
-  color: #37b24d;
+  color: red;
   font-weight: 700;
 }
 @media (max-width: 1023.98px) {
@@ -908,7 +907,7 @@ main .trust .trust__stat-icon {
   align-items: center;
   justify-content: center;
   font-size: 32px;
-  color: #37b24d;
+  color: red;
   line-height: 1;
 }
 main .trust .trust__stat-icon svg {
@@ -955,7 +954,7 @@ main .trust .trust__benefit-icon {
   justify-content: center;
   flex-shrink: 0;
   font-size: 28px;
-  color: #37b24d;
+  color: red;
   line-height: 1;
 }
 main .trust .trust__benefit-icon svg {
@@ -1074,7 +1073,7 @@ main .about .section-header__eyebrow {
   font-weight: 500;
   letter-spacing: 0.75px;
   text-transform: uppercase;
-  color: #37b24d;
+  color: red;
   text-decoration: none;
 }
 main .about .section-header__line {
@@ -1209,7 +1208,7 @@ main .about .icon-wrapping .icons-about {
   gap: 10px;
 }
 main .about .icon-wrapping .icons-about svg {
-  color: #37b24d;
+  color: red;
   font-size: 30px;
   height: 30px;
   width: 30px;
@@ -1226,7 +1225,7 @@ main .about .icon-wrapping .icons-about figcaption .phase--1 {
 }
 main .about .icon-wrapping .icons-about figcaption .phase--2 {
   font-size: 13px;
-  color: #37b24d;
+  color: red;
   font-weight: bold;
   display: inline-block;
 }
@@ -1252,7 +1251,7 @@ main .services .section-header__eyebrow {
   font-weight: 600;
   letter-spacing: 0.75px;
   text-transform: uppercase;
-  color: #37b24d;
+  color: red;
 }
 main .services h1 {
   max-width: 580px;
@@ -1277,7 +1276,7 @@ main .services h1 {
   text-align: center;
 }
 main .services .services__heading-accent {
-  color: #37b24d;
+  color: red;
 }
 main .services .services__break-mobile {
   display: none;
@@ -1327,7 +1326,7 @@ main .services .service-card__icon svg,
 main .services .service-card__icon .service-card__icon-svg {
   width: 44px;
   height: 44px;
-  color: #37b24d;
+  color: red;
   display: block;
 }
 main .services .service-card__icon--lg svg,
@@ -1361,20 +1360,20 @@ main .services .services__cta {
   margin-top: 40px;
 }
 main .services .services__cta-btn {
-  border: 2px solid #37b24d !important;
-  color: #37b24d !important;
+  border: 2px solid red !important;
+  color: red !important;
   background: transparent !important;
   font-weight: 600;
   font-size: 16px;
   padding: 14px 28px;
 }
 main .services .services__cta-btn svg {
-  stroke: #37b24d;
+  stroke: red;
   transition: transform 0.3s ease;
 }
 main .services .services__cta-btn:hover, main .services .services__cta-btn:active, main .services .services__cta-btn:focus-visible {
   background: #ebf7ed !important;
-  border-color: #37b24d !important;
+  border-color: red !important;
   color: #2b8a3e !important;
 }
 main .services .services__cta-btn:hover svg.icon-tabler-arrow-right, main .services .services__cta-btn:active svg.icon-tabler-arrow-right, main .services .services__cta-btn:focus-visible svg.icon-tabler-arrow-right {
@@ -1544,7 +1543,7 @@ main .pricing .section-header__eyebrow {
   font-weight: 500;
   letter-spacing: 0.75px;
   text-transform: uppercase;
-  color: #37b24d;
+  color: red;
 }
 main .pricing .pricing__heading {
   margin: 0 0 20px;
@@ -1573,7 +1572,7 @@ main .pricing .pricing__description-mobile {
   display: none;
 }
 main .pricing .pricing__heading-accent {
-  color: #37b24d;
+  color: red;
 }
 main .pricing .pricing__description {
   margin: 0;
@@ -1621,7 +1620,7 @@ main .pricing .pricing-card {
   text-align: center;
 }
 main .pricing .pricing-card--featured {
-  border-color: #37b24d;
+  border-color: red;
 }
 main .pricing .pricing-card__badge {
   position: absolute;
@@ -1629,7 +1628,7 @@ main .pricing .pricing-card__badge {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 6px 16px;
-  background: linear-gradient(to top, #37b24d, #1ea99d);
+  background: linear-gradient(to top, red, #1ea99d);
   border-radius: 6px;
   font-size: 11px;
   font-weight: 700;
@@ -1647,7 +1646,7 @@ main .pricing .pricing-card__icon {
   margin-bottom: 20px;
   border-radius: 50%;
   background: #ebf7ed;
-  color: #37b24d;
+  color: red;
 }
 main .pricing .pricing-card__icon svg {
   display: block;
@@ -1690,7 +1689,7 @@ main .pricing .pricing-card__features li:last-child {
 main .pricing .pricing-card__features li svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: #37b24d;
+  color: red;
 }
 main .pricing .pricing-card__price {
   width: 100%;
@@ -1710,7 +1709,7 @@ main .pricing .pricing-card__price-label {
   font-weight: 700;
   letter-spacing: 0.75px;
   text-transform: uppercase;
-  color: #37b24d;
+  color: red;
 }
 main .pricing .pricing-card__price-row {
   display: flex;
@@ -1723,7 +1722,7 @@ main .pricing .pricing-card__price-amount {
   font-size: 40px;
   font-weight: 700;
   line-height: 1;
-  color: #37b24d;
+  color: red;
 }
 main .pricing .pricing-card__price-period {
   font-size: 16px;
@@ -1756,16 +1755,16 @@ main .pricing .pricing__nav button {
   height: 44px;
   padding: 0;
   background: #fff;
-  border: 1px solid #37b24d;
+  border: 1px solid red;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 main .pricing .pricing__nav button svg {
-  color: #37b24d;
+  color: red;
 }
 main .pricing .pricing__nav button:hover {
-  background: #37b24d;
+  background: red;
 }
 main .pricing .pricing__nav button:hover svg {
   color: #fff;
@@ -1789,7 +1788,7 @@ main .pricing .pricing__pagination .swiper-pagination-bullet {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 main .pricing .pricing__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: #37b24d;
+  background: red;
   transform: scale(1.25);
 }
 main .pricing .pricing-advisor-cta {
@@ -1809,7 +1808,7 @@ main .pricing .pricing-advisor-cta__icon {
   height: 72px;
   border-radius: 50%;
   background: #d7f0db;
-  color: #37b24d;
+  color: red;
 }
 main .pricing .pricing-advisor-cta__icon svg {
   display: block;
@@ -1840,11 +1839,11 @@ main .pricing .pricing-advisor-cta__btn {
   gap: 8px;
   padding: 14px 24px;
   background: #fff;
-  border: 2px solid #37b24d;
+  border: 2px solid red;
   border-radius: 9px;
   font-size: 16px;
   font-weight: 600;
-  color: #37b24d;
+  color: red;
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -2018,7 +2017,7 @@ main .how-it-works .section-header__eyebrow {
   font-weight: 600;
   letter-spacing: 0.75px;
   text-transform: uppercase;
-  color: #37b24d;
+  color: red;
 }
 main .how-it-works .how-it-works__heading {
   margin: 0 auto 20px;
@@ -2051,7 +2050,7 @@ main .how-it-works .how-it-works__heading-mobile {
   display: none;
 }
 main .how-it-works .how-it-works__heading-part-accent {
-  color: #37b24d;
+  color: red;
 }
 main .how-it-works .how-it-works__heading-divider {
   display: inline-block;
@@ -2154,7 +2153,7 @@ main .how-it-works .how-it-works__bridge-dot {
   flex-shrink: 0;
   width: 10px;
   height: 10px;
-  background: #37b24d;
+  background: red;
   border-radius: 50%;
 }
 main .how-it-works .how-it-works__part-header {
@@ -2167,7 +2166,7 @@ main .how-it-works .how-it-works__part-header-line {
   flex: 1;
   height: 1px;
   min-width: 0;
-  background: #37b24d;
+  background: red;
 }
 main .how-it-works .how-it-works__part-header-line:first-child {
   mask-image: linear-gradient(to right, transparent, #000 45%);
@@ -2185,7 +2184,7 @@ main .how-it-works .how-it-works__part-header-label {
   font-weight: 500;
   letter-spacing: 0.75px;
   text-transform: uppercase;
-  color: #37b24d;
+  color: red;
   white-space: nowrap;
 }
 main .how-it-works .how-it-works__part-header-label svg {
@@ -2208,7 +2207,7 @@ main .how-it-works .how-it-works__step-arrow {
   display: flex;
   justify-content: center;
   padding: 10px 0;
-  color: #37b24d;
+  color: red;
 }
 main .how-it-works .how-it-works__step-arrow svg {
   display: block;
@@ -2240,7 +2239,7 @@ main .how-it-works .how-it-works__card-icon {
 main .how-it-works .how-it-works__card-icon svg {
   width: 36px;
   height: 36px;
-  color: #37b24d;
+  color: red;
   display: block;
 }
 main .how-it-works .how-it-works__card-content {
@@ -2253,7 +2252,7 @@ main .how-it-works .how-it-works__card-number {
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
-  color: #37b24d;
+  color: red;
 }
 main .how-it-works .how-it-works__card-title {
   margin: 0 0 8px;
@@ -2301,7 +2300,7 @@ main .how-it-works .how-it-works__summary-icon {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  color: #37b24d;
+  color: red;
   line-height: 1;
 }
 main .how-it-works .how-it-works__summary-icon svg {
@@ -2404,7 +2403,7 @@ main .how-it-works .how-it-works__summary-lines-mobile {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     font-size: 12px;
     font-weight: 700;
-    color: #37b24d;
+    color: red;
     position: relative;
     z-index: 1;
   }
@@ -2585,7 +2584,7 @@ main .testimonials .testimonials__badge {
   margin-bottom: 20px;
   border-radius: 50%;
   background: #ebf7ed;
-  color: #37b24d;
+  color: red;
 }
 main .testimonials .testimonials__badge svg {
   display: block;
@@ -2619,7 +2618,7 @@ main .testimonials .testimonials__heading-dark {
   color: #1a1a1a;
 }
 main .testimonials .testimonials__heading-accent {
-  color: #37b24d;
+  color: red;
 }
 main .testimonials .testimonials__description {
   margin: 0;
@@ -2665,7 +2664,7 @@ main .testimonials .testimonial-card__stars {
   justify-content: center;
   gap: 4px;
   margin-bottom: 20px;
-  color: #37b24d;
+  color: red;
 }
 main .testimonials .testimonial-card__stars svg {
   display: block;
@@ -2733,7 +2732,7 @@ main .testimonials .testimonial-card__status {
   font-size: 13px;
   line-height: 1.4;
   font-weight: 400;
-  color: #37b24d;
+  color: red;
 }
 main .testimonials .testimonials__nav {
   display: none;
@@ -2750,16 +2749,16 @@ main .testimonials .testimonials__nav button {
   height: 44px;
   padding: 0;
   background: #fff;
-  border: 1px solid #37b24d;
+  border: 1px solid red;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 main .testimonials .testimonials__nav button svg {
-  color: #37b24d;
+  color: red;
 }
 main .testimonials .testimonials__nav button:hover {
-  background: #37b24d;
+  background: red;
 }
 main .testimonials .testimonials__nav button:hover svg {
   color: #fff;
@@ -2783,7 +2782,7 @@ main .testimonials .testimonials__pagination .swiper-pagination-bullet {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 main .testimonials .testimonials__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: #37b24d;
+  background: red;
   transform: scale(1.25);
 }
 @media (max-width: 991.98px) {
@@ -2825,7 +2824,7 @@ main .testimonials .testimonials__pagination .swiper-pagination-bullet.swiper-pa
     height: 40px;
     margin-bottom: 16px;
     background: #ebf7ed;
-    color: #37b24d;
+    color: red;
     box-shadow: none;
   }
   main .testimonials .testimonials__badge svg {
@@ -2974,7 +2973,7 @@ main .faq .faq__header-icon {
   height: 56px;
   border-radius: 50%;
   background: rgba(210, 231, 213, 0.5137254902);
-  color: #37b24d;
+  color: red;
   box-shadow: 0 2px 8px rgba(55, 178, 77, 0.12);
 }
 main .faq .faq__header-icon svg {
@@ -3001,14 +3000,14 @@ main .faq .section-header__eyebrow {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #37b24d;
+  color: red;
 }
 main .faq .section-header__line {
   display: block;
   width: 56px;
   height: 3px;
   border-radius: 2px;
-  background: #37b24d;
+  background: red;
 }
 main .faq .faq__heading {
   margin: 0 0 16px;
@@ -3034,7 +3033,7 @@ main .faq .faq__heading-mobile {
   display: none;
 }
 main .faq .faq__heading-accent {
-  color: #37b24d;
+  color: red;
 }
 main .faq .faq__description {
   margin: 0;
@@ -3093,7 +3092,7 @@ main .faq .faq-item__trigger {
 main .faq .faq-item__number {
   font-size: 15px;
   font-weight: 600;
-  color: #37b24d;
+  color: red;
   min-width: var(--faq-item-number-w);
 }
 main .faq .faq-item__divider {
@@ -3122,7 +3121,7 @@ main .faq .faq-item__toggle-icon {
   font-size: 22px;
   font-weight: 400;
   line-height: 1;
-  color: #37b24d;
+  color: red;
   transition: opacity 250ms ease, transform 250ms ease;
 }
 main .faq .faq-item__toggle-icon-plus {
@@ -3178,7 +3177,7 @@ main .faq .faq-item__panel-icon {
   height: 36px;
   border-radius: 50%;
   background: #d7f0db;
-  color: #37b24d;
+  color: red;
 }
 main .faq .faq__cta {
   position: relative;
@@ -3216,7 +3215,7 @@ main .faq .faq__cta-icon {
   margin-left: 8px;
   border-radius: 50%;
   background: #d7f0db;
-  color: #37b24d;
+  color: red;
 }
 main .faq .faq__cta-icon svg {
   display: block;
@@ -3473,7 +3472,7 @@ main .consultation .consultation__heading {
   color: #1a1a1a;
 }
 main .consultation .consultation__heading-accent {
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__br-mobile {
   display: none;
@@ -3517,10 +3516,10 @@ main .consultation .consultation__benefit-icon {
   height: 48px;
   border-radius: 50%;
   background: #ebf7ed;
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__benefit-icon svg {
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__benefit-text {
   display: flex;
@@ -3624,10 +3623,10 @@ main .consultation .consultation__form-header-icon {
   height: 48px;
   border-radius: 50%;
   background: #ebf7ed;
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__form-header-icon svg {
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__form-title {
   margin: 0 0 6px;
@@ -3670,7 +3669,7 @@ main .consultation .consultation-field__control {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 main .consultation .consultation-field__control:hover, main .consultation .consultation-field__control:focus-within {
-  border-color: #37b24d;
+  border-color: red;
   box-shadow: 0 0 0 3px rgba(55, 178, 77, 0.08);
 }
 main .consultation .consultation-field__control--textarea {
@@ -3686,14 +3685,14 @@ main .consultation .consultation-field__icon {
   top: 50%;
   transform: translateY(-50%);
   display: flex;
-  color: #37b24d;
+  color: red;
   pointer-events: none;
   z-index: 2;
 }
 main .consultation .consultation-field__icon svg {
   width: 18px;
   height: 18px;
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation-field__chevron {
   position: absolute;
@@ -3720,7 +3719,7 @@ main .consultation .consultation-field__control .fl-picker-input {
   padding: 14px 36px 14px 44px;
   font-size: 15px;
   line-height: 1.4;
-  color: #37b24d;
+  color: red;
   outline: none;
   box-shadow: none;
   font-family: inherit;
@@ -3739,7 +3738,7 @@ main .consultation .consultation__select .selected.is-placeholder {
   color: #868e96;
 }
 main .consultation .consultation__select .selected:not(.is-placeholder) {
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__input--textarea {
   min-height: 100px;
@@ -3809,7 +3808,7 @@ main .consultation .consultation__select .option {
 }
 main .consultation .consultation__select .option:hover {
   background: #ebf7ed;
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__submit {
   display: flex;
@@ -3842,7 +3841,7 @@ main .consultation .consultation__secure {
 }
 main .consultation .consultation__secure svg {
   flex-shrink: 0;
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__secure--below {
   display: none;
@@ -3855,12 +3854,12 @@ main .consultation .consultation__secure-icon {
   height: 28px;
   border-radius: 50%;
   background: #ebf7ed;
-  color: #37b24d;
+  color: red;
 }
 main .consultation .consultation__secure-icon svg {
   width: 14px;
   height: 14px;
-  color: #37b24d;
+  color: red;
 }
 @media (max-width: 991.98px) {
   main .consultation {
@@ -3880,7 +3879,7 @@ main .consultation .consultation__secure-icon svg {
     display: block;
     width: 48px;
     height: 4px;
-    background: #37b24d;
+    background: red;
     border-radius: 2px;
     margin-bottom: 16px;
   }
@@ -4029,7 +4028,7 @@ main .consultation .consultation__secure-icon svg {
   height: 28px;
   border-radius: 50%;
   background: #ebf7ed;
-  color: #37b24d;
+  color: red;
   flex-shrink: 0;
 }
 .final-cta .final-cta__badge-icon svg {
@@ -4042,7 +4041,7 @@ main .consultation .consultation__secure-icon svg {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #37b24d;
+  color: red;
 }
 .final-cta .final-cta__heading {
   margin: 0 0 16px;
@@ -4068,7 +4067,7 @@ main .consultation .consultation__secure-icon svg {
   display: none;
 }
 .final-cta .final-cta__heading-accent {
-  color: #37b24d;
+  color: red;
 }
 .final-cta .final-cta__description {
   margin: 0;
@@ -4118,7 +4117,7 @@ main .consultation .consultation__secure-icon svg {
   height: 32px;
   border-radius: 50%;
   background: #ebf7ed;
-  color: #37b24d;
+  color: red;
   flex-shrink: 0;
 }
 .final-cta .final-cta__feature-icon svg {
@@ -4212,7 +4211,7 @@ main .consultation .consultation__secure-icon svg {
   display: block;
   width: 14px;
   height: 14px;
-  color: #37b24d;
+  color: red;
   flex-shrink: 0;
 }
 @media (max-width: 991.98px) {
@@ -4381,13 +4380,13 @@ main .consultation .consultation__secure-icon svg {
   border-radius: 50%;
   background: transparent;
   border: 1px solid #e9ecef;
-  color: #37b24d;
+  color: red;
   text-decoration: none;
   transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 #footer .footer__social a:hover {
   background: #ebf7ed;
-  border-color: #37b24d;
+  border-color: red;
   transform: translateY(-1px);
 }
 #footer .footer__social a svg {
@@ -4441,13 +4440,13 @@ main .consultation .consultation__secure-icon svg {
 }
 #footer .footer__nav-list a:hover,
 #footer .footer__contact-list a:hover {
-  color: #37b24d;
+  color: red;
 }
 #footer .footer__contact-list svg {
   display: block;
   width: 18px;
   height: 18px;
-  color: #37b24d;
+  color: red;
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -4478,7 +4477,7 @@ main .consultation .consultation__secure-icon svg {
   display: block;
   width: 14px;
   height: 14px;
-  color: #37b24d;
+  color: red;
   flex-shrink: 0;
 }
 #footer .site-footer__bar-copy {
@@ -4499,7 +4498,7 @@ main .consultation .consultation__secure-icon svg {
   transition: color 0.2s ease;
 }
 #footer .site-footer__bar-links a:hover {
-  color: #37b24d;
+  color: red;
 }
 #footer .site-footer__bar-links span {
   color: #ccc;
@@ -4574,7 +4573,7 @@ main .consultation .consultation__secure-icon svg {
     height: auto;
     border-radius: 0;
     background: transparent;
-    color: #37b24d;
+    color: red;
     flex-shrink: 0;
   }
   #footer .footer__nav-trigger-icon svg {
@@ -4603,7 +4602,7 @@ main .consultation .consultation__secure-icon svg {
     font-size: 22px;
     font-weight: 400;
     line-height: 1;
-    color: #37b24d;
+    color: red;
     transition: opacity 250ms ease, transform 250ms ease;
   }
   #footer .footer__nav-toggle-plus {
@@ -4673,8 +4672,8 @@ main .consultation .consultation__secure-icon svg {
   right: 40px;
   width: 50px;
   height: 50px;
-  background-color: #37b24d;
-  border: 1px solid #37b24d;
+  background-color: red;
+  border: 1px solid red;
   color: #fff;
   border-radius: 100px;
   display: flex;
@@ -4691,7 +4690,7 @@ main .consultation .consultation__secure-icon svg {
   background-color: #fff;
   border-color: #32a045;
   color: #32a045;
-  box-shadow: 0 0 6px #37b24d;
+  box-shadow: 0 0 6px red;
   transition: 0.3s all;
 }
 #up-arrow svg {
