@@ -4,6 +4,8 @@ Author: FRONTLENS LLC
 License: For personal/business use only. Redistribution, resale, or sublicensing is strictly Copyright (c) 2026 FRONTLENS LLC. All rights reserved.
 */
 
+@use "sass:string";
+
 // Typography
 $font-family-base: "Rubik", sans-serif;
 $fs-section-label: 14px;
@@ -21,6 +23,9 @@ $color-accent: #1ea99d;
 $color-accent-hover: #178f86;
 $color-brand-soft: #ebf7ed;
 $color-brand-muted: #d7f0db;
+$color-brand-line: #c3e6cb;
+$color-brand-tint: #dfe9d8;
+$color-brand-faint: #f2f7f3;
 $color-ink: #1a1a1a;
 $color-ink-soft: #333333;
 $color-text: #555555;
@@ -31,6 +36,9 @@ $color-surface: #fff;
 $color-canvas: #f8f9fa;
 $color-neutral: #e9ecef;
 $color-neutral-strong: #dee2e6;
+$color-surface-soft: #f6f8f5;
+$color-control-muted: #adb5bd;
+$color-line: #ced4da;
 
 // Radii for shared component shapes
 $radius-button: 9px;
@@ -43,6 +51,10 @@ $bp-lg: 1199.98px;
 $bp-nav: 1023.98px;
 $bp-md: 991.98px;
 $bp-sm: 575.98px;
+
+@function svg-fill($color) {
+  @return "%23" + string.slice("#{$color}", 2);
+}
 
 @mixin section-label {
   font-size: $fs-section-label;

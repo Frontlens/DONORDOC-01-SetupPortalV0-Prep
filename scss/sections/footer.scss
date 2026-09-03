@@ -163,7 +163,7 @@
     margin: 0;
     font-size: 13px;
     line-height: 1.4;
-    color: #888;
+    color: $color-gray;
   }
 
   .site-footer__bar-secure {
@@ -374,7 +374,7 @@
       margin-top: 12px;
       border: 1px solid $color-neutral;
       border-radius: $radius-control;
-      background: #f6f8f5;
+      background: $color-surface-soft;
       padding: 24px 20px;
     }
 
@@ -425,8 +425,8 @@
   &:focus,
   &:focus-visible {
     background-color: $color-surface;
-    border-color: #32a045;
-    color: #32a045;
+    border-color: $color-brand-hover;
+    color: $color-brand-hover;
     box-shadow: 0 0 6px $color-brand;
     transition: 0.3s all;
   }

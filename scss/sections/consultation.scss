@@ -132,7 +132,7 @@ main {
       z-index: 2;
       width: 72px;
       height: 108px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='2.5' fill='%2337b24d'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='2.5' fill='#{svg-fill($color-brand)}'/%3E%3C/svg%3E");
       background-size: 14px 14px;
       background-repeat: repeat;
       -webkit-mask-image: linear-gradient(
@@ -255,7 +255,7 @@ main {
       &:hover,
       &:focus-within {
         border-color: $color-brand;
-        box-shadow: 0 0 0 3px rgba(55, 178, 77, 0.08);
+        box-shadow: 0 0 0 3px rgba($color-brand, 0.08);
       }
 
       &--textarea {
@@ -291,7 +291,7 @@ main {
       top: 50%;
       transform: translateY(-50%);
       display: flex;
-      color: #adb5bd;
+      color: $color-control-muted;
       pointer-events: none;
       z-index: 2;
 
@@ -318,7 +318,7 @@ main {
       font-family: inherit;
 
       &::placeholder {
-        color: #adb5bd;
+        color: $color-control-muted;
       }
 
       &:placeholder-shown {

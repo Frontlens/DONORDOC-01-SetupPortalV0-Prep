@@ -110,7 +110,7 @@ License: For personal/business use only. Redistribution, resale, or sublicensing
   }
 }
 
-@media (max-width: 576.98px) {
+@media (max-width: $bp-sm) {
   #header nav .navbar-brand {
     width: auto;
   }

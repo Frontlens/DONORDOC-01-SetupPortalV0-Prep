@@ -140,7 +140,7 @@ main {
       &:focus-visible {
         background: $color-brand-soft !important;
         border-color: $color-brand !important;
-        color: #2b8a3e !important;
+        color: $color-brand-hover !important;
 
         svg.icon-tabler-arrow-right {
           transform: translateX(8px);

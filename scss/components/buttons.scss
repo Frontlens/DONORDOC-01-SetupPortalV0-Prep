@@ -22,7 +22,7 @@
 
     &:hover,
     &:active {
-    background: linear-gradient(to right, $color-brand-hover, $color-accent-hover);
+      background: linear-gradient(to right, $color-brand-hover, $color-accent-hover);
       color: $color-surface;
     }
 
@@ -96,8 +96,7 @@
 
   &:active,
   &:focus,
-  &:focus-visible,
-  &:active {
+  &:focus-visible {
     outline: 0;
     box-shadow: none;
   }

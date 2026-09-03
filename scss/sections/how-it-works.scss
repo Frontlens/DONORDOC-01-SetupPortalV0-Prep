@@ -74,7 +74,7 @@ main {
       grid-row: 2 / 5;
       justify-self: center;
       width: 0;
-      border-left: 2px dashed #ced4da;
+      border-left: 2px dashed $color-line;
       z-index: 0;
       pointer-events: none;
     }
@@ -148,7 +148,7 @@ main {
     .how-it-works__bridge-line {
       flex: 1;
       height: 1px;
-      background: #ced4da;
+      background: $color-line;
     }
 
     .how-it-works__bridge-dot {
@@ -415,7 +415,7 @@ main {
         top: calc(50% + 20px);
         bottom: 0;
         width: 1px;
-        background: #c3e6cb;
+        background: $color-brand-line;
         transform: translateX(-50%);
         z-index: 0;
       }
@@ -427,7 +427,7 @@ main {
         top: 0;
         bottom: calc(50% - 20px);
         width: 1px;
-        background: #c3e6cb;
+        background: $color-brand-line;
         transform: translateX(-50%);
         z-index: 0;
       }
@@ -467,7 +467,7 @@ main {
           top: 0;
           bottom: 0;
           width: 1px;
-          background: #c3e6cb;
+          background: $color-brand-line;
           transform: translateX(-50%);
         }
       }
