@@ -13,7 +13,7 @@
     top: calc(0px - var(--header-top-overlap, 2px));
     z-index: 1020;
     width: 100%;
-    background-color: #fff;
+    background-color: $color-surface;
     box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
 
     &::before {
@@ -23,7 +23,7 @@
       left: 0;
       right: 0;
       height: var(--header-top-overlap, 2px);
-      background-color: #fff;
+      background-color: $color-surface;
       pointer-events: none;
     }
   }
@@ -42,7 +42,7 @@
       background: linear-gradient(to right, $color-brand, $color-accent);
       border: none;
       box-shadow: none;
-      color: #fff;
+      color: $color-surface;
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -67,7 +67,7 @@
           width: 100%;
           height: 2px;
           border-radius: 1px;
-          background: #fff;
+          background: $color-surface;
           transition:
             transform 0.35s ease,
             top 0.35s ease,
@@ -109,7 +109,7 @@
       &:focus,
       &:focus-visible {
         background: linear-gradient(to right, $color-brand-hover, $color-accent-hover);
-        color: #fff;
+        color: $color-surface;
         box-shadow: none;
       }
     }
@@ -144,7 +144,7 @@
       }
 
       .nav-item-advisor {
-        border-left: 1px solid #dee2e6;
+        border-left: 1px solid $color-neutral-strong;
         padding-left: 16px;
         margin-left: 4px;
       }
@@ -180,7 +180,7 @@
 
     .offcanvas {
       backdrop-filter: blur(5px);
-      background-color: #fff;
+      background-color: $color-surface;
       transition: transform 1s ease-in-out;
       z-index: 2100;
 
@@ -221,7 +221,7 @@
         width: 100%;
 
         > li + li {
-          border-top: 1px solid #e9ecef;
+          border-top: 1px solid $color-neutral;
         }
       }
 
@@ -263,13 +263,13 @@
         align-items: center;
 
         svg {
-          stroke: #adb5bd;
+          stroke: $color-control-muted;
         }
       }
 
       .mobile-nav__divider {
         height: 1px;
-        background: #e9ecef;
+        background: $color-neutral;
         margin: 12px 0 16px;
       }
 
@@ -318,7 +318,7 @@
 
     @media (min-width: 1024px) {
       .navbar-inner {
-        background: #fff;
+        background: $color-surface;
         border-radius: $radius-card;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
         padding: 8px 5px;

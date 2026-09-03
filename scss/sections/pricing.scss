@@ -5,7 +5,7 @@ main {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
-    background: #fff;
+    background: $color-surface;
 
     .pricing__bg {
       position: absolute;
@@ -53,7 +53,7 @@ main {
       z-index: 2;
       width: 60px;
       height: 102px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='2' fill='%23ced4da'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='2' fill='#{svg-fill($color-line)}'/%3E%3C/svg%3E");
       background-size: 12px 12px;
       background-repeat: repeat;
     }
@@ -150,8 +150,8 @@ main {
       height: 100%;
       margin: 0 auto;
       padding: 32px 28px 28px;
-      background: #fff;
-      border: 2px solid #e9ecef;
+      background: $color-surface;
+      border: 2px solid $color-neutral;
       border-radius: $radius-card;
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
       text-align: center;
@@ -173,7 +173,7 @@ main {
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      color: #fff;
+      color: $color-surface;
       white-space: nowrap;
     }
 
@@ -315,7 +315,7 @@ main {
         width: 44px;
         height: 44px;
         padding: 0;
-        background: #fff;
+        background: $color-surface;
         border: 1px solid $color-brand;
         border-radius: 50%;
         cursor: pointer;
@@ -329,7 +329,7 @@ main {
           background: $color-brand;
 
           svg {
-            color: #fff;
+            color: $color-surface;
           }
         }
       }
@@ -348,7 +348,7 @@ main {
         width: 8px;
         height: 8px;
         margin: 0;
-        background: #dee2e6;
+        background: $color-neutral-strong;
         border: none;
         border-radius: 50%;
         transition: background-color 0.2s ease, transform 0.2s ease;
@@ -365,7 +365,7 @@ main {
       align-items: center;
       gap: 24px;
       padding: 28px 32px;
-      background: #f2f7f3;
+      background: $color-brand-faint;
       border-radius: $radius-card;
     }
 
@@ -413,7 +413,7 @@ main {
       align-items: center;
       gap: 8px;
       padding: 14px 24px;
-      background: #fff;
+      background: $color-surface;
       border: 2px solid $color-brand;
       border-radius: $radius-button;
       font-size: 16px;

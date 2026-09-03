@@ -1,5 +1,5 @@
 {
-  "liveServer.settings.port": 5506,
+  "liveServer.settings.port": 5508,
   "liveSassCompile.settings.formats": [
     {
       "format": "expanded",
@@ -13,7 +13,8 @@
     "**/scss/sections/**",
     "**/scss/variables.scss",
     "**/scss/global.scss",
-    "**/scss/utilities.scss"
+    "**/scss/utilities.scss",
+    "**/scss/responsive.scss"
   ],
   "liveSassCompile.settings.generateMap": true
 }

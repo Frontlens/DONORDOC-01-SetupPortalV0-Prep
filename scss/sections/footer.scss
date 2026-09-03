@@ -2,12 +2,12 @@
 
 #footer {
   transition: none;
-  background: #fff;
+  background: $color-surface;
   padding: 0 0 64px;
 
   .site-footer__card {
     background: #fcfcfc;
-    border: 1px solid #e9ecef;
+    border: 1px solid $color-neutral;
     border-radius: $radius-card;
     overflow: hidden;
   }
@@ -58,7 +58,7 @@
       height: 40px;
       border-radius: 50%;
       background: transparent;
-      border: 1px solid #e9ecef;
+      border: 1px solid $color-neutral;
       color: $color-brand;
       text-decoration: none;
       transition:
@@ -146,7 +146,7 @@
   }
 
   .site-footer__bar {
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid $color-neutral;
     padding: 20px 40px;
     background: #fcfcfc;
   }
@@ -163,7 +163,7 @@
     margin: 0;
     font-size: 13px;
     line-height: 1.4;
-    color: #888;
+    color: $color-gray;
   }
 
   .site-footer__bar-secure {
@@ -220,7 +220,7 @@
 
     .site-footer__main {
       padding: 0;
-      border: 1px solid #e9ecef;
+      border: 1px solid $color-neutral;
       border-radius: $radius-card;
       background: #fcfcfc;
       overflow: hidden;
@@ -254,12 +254,12 @@
     .footer__nav {
       grid-template-columns: 1fr;
       gap: 0;
-      border-top: 1px solid #e9ecef;
+      border-top: 1px solid $color-neutral;
     }
 
     .footer__nav-group {
       padding: 0 24px;
-      border-bottom: 1px solid #e9ecef;
+      border-bottom: 1px solid $color-neutral;
     }
 
     .footer__nav-heading {
@@ -372,9 +372,9 @@
 
     .site-footer__bar {
       margin-top: 12px;
-      border: 1px solid #e9ecef;
+      border: 1px solid $color-neutral;
       border-radius: $radius-control;
-      background: #f6f8f5;
+      background: $color-surface-soft;
       padding: 24px 20px;
     }
 
@@ -408,7 +408,7 @@
   height: 50px;
   background-color: $color-brand;
   border: 1px solid $color-brand;
-  color: #fff;
+  color: $color-surface;
   border-radius: 100px;
   display: flex;
   align-items: center;
@@ -424,9 +424,9 @@
   &:active,
   &:focus,
   &:focus-visible {
-    background-color: #fff;
-    border-color: #32a045;
-    color: #32a045;
+    background-color: $color-surface;
+    border-color: $color-brand-hover;
+    color: $color-brand-hover;
     box-shadow: 0 0 6px $color-brand;
     transition: 0.3s all;
   }

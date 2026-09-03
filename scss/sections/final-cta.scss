@@ -2,10 +2,10 @@
 
 .final-cta {
   padding: 80px 0 64px;
-  background: #fff;
+  background: $color-surface;
 
   .final-cta__card {
-    background: #f6f8f5;
+    background: $color-surface-soft;
     border-radius: 24px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
     padding: 48px 56px;
@@ -122,7 +122,7 @@
     }
 
     &:not(:first-child) {
-      border-left: 1px solid #dee2e6;
+      border-left: 1px solid $color-neutral-strong;
     }
   }
 
@@ -201,7 +201,7 @@
       to right,
       $color-brand-muted 0%,
       $color-brand-muted 40%,
-      rgba(215, 240, 219, 0.35) 65%,
+      rgba($color-brand-muted, 0.35) 65%,
       transparent 85%
     );
     pointer-events: none;
@@ -249,7 +249,7 @@
     margin: 0;
     font-size: 12px;
     line-height: 1.4;
-    color: #888;
+    color: $color-gray;
     text-align: center;
 
     svg {
@@ -267,8 +267,8 @@
     .final-cta__card {
       padding: 28px 24px 24px;
       border-radius: $radius-card;
-      background: #fff;
-      border: 1px solid #e9ecef;
+      background: $color-surface;
+      border: 1px solid $color-neutral;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
       overflow: hidden;
     }
@@ -366,7 +366,7 @@
       text-align: left;
 
       &:not(:first-child) {
-        border-left: 1px solid #dee2e6;
+        border-left: 1px solid $color-neutral-strong;
       }
     }
 
