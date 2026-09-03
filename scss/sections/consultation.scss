@@ -157,7 +157,7 @@ main {
       border-radius: 58% 72% 48% 82% / 82% 78% 54% 46%;
       clip-path: inset(0 0 10% 0);
       overflow: hidden;
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 16px 48px rgba($color-shadow, 0.08);
     }
 
     .consultation__visual-img {
@@ -177,9 +177,9 @@ main {
     .consultation__form {
       background: $color-surface;
       border-radius: $radius-card;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      box-shadow: $shadow-card-lg;
       padding: 32px 36px 28px;
-      border: 1px solid #f1f3f5;
+      border: 1px solid $color-neutral;
     }
 
     .consultation__form-header {
@@ -384,7 +384,7 @@ main {
         background: $color-surface;
         border: 1px solid $color-neutral-strong;
         border-radius: 10px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 24px rgba($color-shadow, 0.1);
         z-index: 20;
         display: block;
         opacity: 0;
@@ -521,7 +521,7 @@ main {
         border-radius: $radius-control;
         overflow: hidden;
         margin-bottom: 20px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 24px rgba($color-shadow, 0.08);
 
         .consultation__visual-img {
           aspect-ratio: 24 / 10;

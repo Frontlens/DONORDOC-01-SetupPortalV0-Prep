@@ -6,7 +6,7 @@
   padding: 0 0 64px;
 
   .site-footer__card {
-    background: #fcfcfc;
+    background: $color-surface-soft;
     border: 1px solid $color-neutral;
     border-radius: $radius-card;
     overflow: hidden;
@@ -148,7 +148,7 @@
   .site-footer__bar {
     border-top: 1px solid $color-neutral;
     padding: 20px 40px;
-    background: #fcfcfc;
+    background: $color-surface-soft;
   }
 
   .site-footer__bar-inner {
@@ -204,7 +204,7 @@
     }
 
     span {
-      color: #ccc;
+      color: $color-line;
     }
   }
 
@@ -222,7 +222,7 @@
       padding: 0;
       border: 1px solid $color-neutral;
       border-radius: $radius-card;
-      background: #fcfcfc;
+      background: $color-surface-soft;
       overflow: hidden;
     }
 

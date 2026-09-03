@@ -181,7 +181,7 @@ footer {
 #header {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 9999;
-  background-color: #d7f0db;
+  background-color: transparent;
   position: absolute;
   width: 100%;
   top: 0;
@@ -192,7 +192,7 @@ footer {
   z-index: 1020;
   width: 100%;
   background-color: #fff;
-  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 #header.sticky::before {
   content: "";
@@ -608,7 +608,7 @@ main .hero .hero__image-wrap {
   max-width: 460px;
   aspect-ratio: 1;
   border-radius: 58% 72% 48% 82%/82% 78% 54% 46%;
-  border: 1px solid rgba(233, 233, 233, 0.499);
+  border: 1px solid rgba(233, 236, 239, 0.5);
   background-color: #ebf7ed;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
@@ -892,7 +892,7 @@ main .trust .trust__benefit-desc {
     padding: 20px;
     background: #fff;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   }
   main .trust .trust__benefit::after {
     display: none;
@@ -1189,7 +1189,7 @@ main .services .service-card {
   background: #fff;
   border: 1px solid #e9ecef;
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 main .services .service-card__icon {
   flex-shrink: 0;
@@ -2824,6 +2824,9 @@ main .faq .faq__bg-rings svg {
   width: 100%;
   height: 100%;
 }
+main .faq .faq__bg-ring-fill {
+  fill: #ebf7ed;
+}
 main .faq .container {
   position: relative;
   z-index: 1;
@@ -3483,9 +3486,9 @@ main .consultation .consultation__form-col {
 main .consultation .consultation__form {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   padding: 32px 36px 28px;
-  border: 1px solid #f1f3f5;
+  border: 1px solid #e9ecef;
 }
 main .consultation .consultation__form-header {
   display: flex;
@@ -3863,7 +3866,7 @@ main .consultation .consultation__secure-icon svg {
 .final-cta .final-cta__card {
   background: #f6f8f5;
   border-radius: 24px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   padding: 48px 56px;
   overflow: hidden;
 }
@@ -4102,7 +4105,7 @@ main .consultation .consultation__secure-icon svg {
     border-radius: 16px;
     background: #fff;
     border: 1px solid #e9ecef;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     overflow: hidden;
   }
   .final-cta .final-cta__layout {
@@ -4212,7 +4215,7 @@ main .consultation .consultation__secure-icon svg {
   padding: 0 0 64px;
 }
 #footer .site-footer__card {
-  background: #fcfcfc;
+  background: #f6f8f5;
   border: 1px solid #e9ecef;
   border-radius: 16px;
   overflow: hidden;
@@ -4332,7 +4335,7 @@ main .consultation .consultation__secure-icon svg {
 #footer .site-footer__bar {
   border-top: 1px solid #e9ecef;
   padding: 20px 40px;
-  background: #fcfcfc;
+  background: #f6f8f5;
 }
 #footer .site-footer__bar-inner {
   display: grid;
@@ -4380,7 +4383,7 @@ main .consultation .consultation__secure-icon svg {
   color: #37b24d;
 }
 #footer .site-footer__bar-links span {
-  color: #ccc;
+  color: #ced4da;
 }
 @media (max-width: 991.98px) {
   #footer {
@@ -4396,7 +4399,7 @@ main .consultation .consultation__secure-icon svg {
     padding: 0;
     border: 1px solid #e9ecef;
     border-radius: 16px;
-    background: #fcfcfc;
+    background: #f6f8f5;
     overflow: hidden;
   }
   #footer .footer__grid {

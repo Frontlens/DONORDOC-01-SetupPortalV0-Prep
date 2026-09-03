@@ -237,7 +237,7 @@ main {
       background: $color-surface;
       border: 1px solid $color-neutral;
       border-radius: $radius-control;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-shadow: $shadow-card-sm;
     }
 
     .how-it-works__card-icon {
@@ -441,7 +441,7 @@ main {
         border: 2px solid $color-surface;
         border-radius: 50%;
         background: $color-brand-soft;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 4px rgba($color-shadow, 0.1);
         font-size: 12px;
         font-weight: 700;
         color: $color-brand;

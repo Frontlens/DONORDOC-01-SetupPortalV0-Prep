@@ -39,11 +39,17 @@ $color-neutral-strong: #dee2e6;
 $color-surface-soft: #f6f8f5;
 $color-control-muted: #adb5bd;
 $color-line: #ced4da;
+$color-shadow: #000;
 
 // Radii for shared component shapes
 $radius-button: 9px;
 $radius-control: 12px;
 $radius-card: 16px;
+
+// Card elevation
+$shadow-card-sm: 0 2px 8px rgba($color-shadow, 0.04);
+$shadow-card: 0 4px 24px rgba($color-shadow, 0.06);
+$shadow-card-lg: 0 8px 32px rgba($color-shadow, 0.06);
 
 // Repeated breakpoints
 $bp-xl: 1399.98px;

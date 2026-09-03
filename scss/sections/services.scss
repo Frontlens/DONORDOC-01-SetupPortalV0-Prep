@@ -62,7 +62,7 @@ main {
       background: $color-surface;
       border: 1px solid $color-neutral;
       border-radius: $radius-control;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      box-shadow: $shadow-card-sm;
     }
 
     .service-card__icon {
