@@ -17,7 +17,7 @@ export function initFooterYear() {
 }
 
 function wireFooterAccordion(footer) {
-  const groups = Array.from(footer.querySelectorAll(".footer__nav-group"));
+  const groups = Array.from(footer.querySelectorAll("[data-footer-nav-group]"));
   if (!groups.length) return;
 
   const mq = window.matchMedia("(max-width: 991.98px)");
@@ -75,8 +75,8 @@ function wireFooterAccordion(footer) {
 
   const resetDesktopPanels = () => {
     groups.forEach((group) => {
-      const trigger = group.querySelector(".footer__nav-trigger");
-      const panel = group.querySelector(".footer__nav-panel");
+      const trigger = group.querySelector("[data-footer-nav-trigger]");
+      const panel = group.querySelector("[data-footer-nav-panel]");
       if (!trigger || !panel) return;
 
       group.classList.remove("is-open");
@@ -90,8 +90,8 @@ function wireFooterAccordion(footer) {
 
   const bindAccordion = () => {
     groups.forEach((group) => {
-      const trigger = group.querySelector(".footer__nav-trigger");
-      const panel = group.querySelector(".footer__nav-panel");
+      const trigger = group.querySelector("[data-footer-nav-trigger]");
+      const panel = group.querySelector("[data-footer-nav-panel]");
       if (!trigger || !panel) return;
 
       if (trigger.dataset.footerBound === "true") return;
@@ -109,8 +109,8 @@ function wireFooterAccordion(footer) {
 
         groups.forEach((otherGroup) => {
           if (otherGroup === group) return;
-          const otherTrigger = otherGroup.querySelector(".footer__nav-trigger");
-          const otherPanel = otherGroup.querySelector(".footer__nav-panel");
+          const otherTrigger = otherGroup.querySelector("[data-footer-nav-trigger]");
+          const otherPanel = otherGroup.querySelector("[data-footer-nav-panel]");
           if (otherTrigger && otherPanel) {
             closePanel(otherGroup, otherPanel, otherTrigger);
           }
@@ -124,8 +124,8 @@ function wireFooterAccordion(footer) {
   const syncMode = () => {
     if (mq.matches) {
       groups.forEach((group) => {
-        const trigger = group.querySelector(".footer__nav-trigger");
-        const panel = group.querySelector(".footer__nav-panel");
+        const trigger = group.querySelector("[data-footer-nav-trigger]");
+        const panel = group.querySelector("[data-footer-nav-panel]");
         if (!trigger || !panel || group.classList.contains("is-open")) return;
         panel.hidden = true;
         panel.style.height = "0px";

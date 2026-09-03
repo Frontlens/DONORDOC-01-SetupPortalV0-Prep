@@ -7,8 +7,11 @@ License: For personal/business use only. Redistribution, resale, or sublicensing
 import { initSwiperAutoplayInView } from "../utilities/swiper-inview.js";
 
 export function initTestimonials() {
-  const root = document.querySelector(".testimonials__swiper");
-  if (!root || typeof window.Swiper !== "function") return;
+  const section = document.querySelector('[data-section="reviews"]');
+  if (!section || typeof window.Swiper !== "function") return;
+
+  const root = section.querySelector('[data-swiper="reviews"]');
+  if (!root) return;
 
   const testimonialsSwiper = new window.Swiper(root, {
     slidesPerView: 1,
@@ -23,12 +26,12 @@ export function initTestimonials() {
       enabled: false,
     },
     pagination: {
-      el: ".testimonials__pagination",
+      el: section.querySelector("[data-swiper-pagination]"),
       clickable: true,
     },
     navigation: {
-      nextEl: ".testimonials__next",
-      prevEl: ".testimonials__prev",
+      nextEl: section.querySelector("[data-swiper-next]"),
+      prevEl: section.querySelector("[data-swiper-prev]"),
     },
     passiveListeners: true,
     breakpoints: {

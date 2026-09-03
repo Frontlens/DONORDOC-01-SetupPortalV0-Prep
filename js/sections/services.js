@@ -4,10 +4,10 @@ Author: FRONTLENS LLC
 License: For personal/business use only. Redistribution, resale, or sublicensing is strictly Copyright (c) 2026 FRONTLENS LLC. All rights reserved.
 */
 export function initServicesReveal() {
-  const section = document.querySelector(".services");
+  const section = document.querySelector('[data-section="services"]');
   if (!section) return;
 
-  const cards = Array.from(section.querySelectorAll(".service-card"));
+  const cards = Array.from(section.querySelectorAll("[data-reveal]"));
   if (!cards.length) return;
 
   const mq = window.matchMedia("(max-width: 1023.98px)");

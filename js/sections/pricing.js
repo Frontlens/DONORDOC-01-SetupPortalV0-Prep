@@ -7,8 +7,11 @@ License: For personal/business use only. Redistribution, resale, or sublicensing
 import { initSwiperAutoplayInView } from "../utilities/swiper-inview.js";
 
 export function initPricing() {
-  const root = document.querySelector(".pricing__swiper");
-  if (!root || typeof window.Swiper !== "function") return;
+  const section = document.querySelector('[data-section="pricing"]');
+  if (!section || typeof window.Swiper !== "function") return;
+
+  const root = section.querySelector('[data-swiper="pricing"]');
+  if (!root) return;
 
   const pricingSwiper = new window.Swiper(root, {
     slidesPerView: 3,
@@ -24,12 +27,12 @@ export function initPricing() {
       enabled: false,
     },
     pagination: {
-      el: ".pricing__pagination",
+      el: section.querySelector("[data-swiper-pagination]"),
       clickable: true,
     },
     navigation: {
-      nextEl: ".pricing__next",
-      prevEl: ".pricing__prev",
+      nextEl: section.querySelector("[data-swiper-next]"),
+      prevEl: section.querySelector("[data-swiper-prev]"),
     },
     passiveListeners: true,
     breakpoints: {

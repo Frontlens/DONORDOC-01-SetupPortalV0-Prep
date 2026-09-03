@@ -7,7 +7,7 @@ import { throttle } from "../utilities/throttle.js";
 
 export function initStickyHeader() {
   const header = document.getElementById("header");
-  const hero = document.querySelector(".hero");
+  const hero = document.querySelector('[data-section="hero"]');
 
   if (!header) return;
   if (!hero) return;

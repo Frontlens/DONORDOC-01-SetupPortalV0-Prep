@@ -21,11 +21,12 @@ function renderFaqItem(item, index) {
   const answer = escapeHtml(item.answer || "");
 
   return `
-    <div class="faq-item${isOpen ? " is-open" : ""}">
+    <div class="faq-item${isOpen ? " is-open" : ""}" data-faq-item>
       <h3 class="faq-item__heading">
         <button
           type="button"
           class="faq-item__trigger"
+          data-faq-trigger
           id="${triggerId}"
           aria-expanded="${isOpen ? "true" : "false"}"
           aria-controls="${panelId}"
@@ -41,6 +42,7 @@ function renderFaqItem(item, index) {
       </h3>
       <div
         class="faq-item__panel"
+        data-faq-panel
         id="${panelId}"
         role="region"
         aria-labelledby="${triggerId}"
@@ -57,7 +59,7 @@ function renderFaqItem(item, index) {
 }
 
 function wireFaqAccordion(section) {
-  const items = Array.from(section.querySelectorAll(".faq-item"));
+  const items = Array.from(section.querySelectorAll("[data-faq-item]"));
   if (!items.length) return;
 
   const closePanel = (item, panel, trigger) => {
@@ -113,8 +115,8 @@ function wireFaqAccordion(section) {
   };
 
   items.forEach((item) => {
-    const trigger = item.querySelector(".faq-item__trigger");
-    const panel = item.querySelector(".faq-item__panel");
+    const trigger = item.querySelector("[data-faq-trigger]");
+    const panel = item.querySelector("[data-faq-panel]");
     if (!trigger || !panel) return;
 
     if (item.classList.contains("is-open")) {
@@ -134,8 +136,8 @@ function wireFaqAccordion(section) {
 
       items.forEach((otherItem) => {
         if (otherItem === item) return;
-        const otherTrigger = otherItem.querySelector(".faq-item__trigger");
-        const otherPanel = otherItem.querySelector(".faq-item__panel");
+        const otherTrigger = otherItem.querySelector("[data-faq-trigger]");
+        const otherPanel = otherItem.querySelector("[data-faq-panel]");
         if (otherTrigger && otherPanel) {
           closePanel(otherItem, otherPanel, otherTrigger);
         }
@@ -148,7 +150,7 @@ function wireFaqAccordion(section) {
 
 export function initFaqAccordion() {
   try {
-    const section = document.querySelector(".faq");
+    const section = document.querySelector('[data-section="faq"]');
     const faqList = document.getElementById("faq-list");
     if (!section || !faqList) return;
 

@@ -534,8 +534,10 @@
     </header>
 
     <main>
+      <!-- FRONTLENS:SECTION:HERO:START -->
       <section
         class="hero"
+        data-section="hero"
         id="health-cta"
         data-section-key="health-cta"
         aria-labelledby="health-heading"
@@ -745,9 +747,12 @@
           </div>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:HERO:END -->
 
+      <!-- FRONTLENS:SECTION:TRUST:START -->
       <section
         class="trust"
+        data-section="trust"
         id="featured"
         data-section-key="featured"
         aria-label="Trust and proof"
@@ -919,9 +924,12 @@
           </div>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:TRUST:END -->
 
+      <!-- FRONTLENS:SECTION:ABOUT:START -->
       <section
         class="about"
+        data-section="about"
         id="about-cta"
         data-section-key="about-cta"
         aria-labelledby="about-heading"
@@ -954,9 +962,12 @@
           </div>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:ABOUT:END -->
 
+      <!-- FRONTLENS:SECTION:SERVICES:START -->
       <section
         class="services"
+        data-section="services"
         id="services-cta"
         data-section-key="services-cta"
         aria-labelledby="services-heading"
@@ -982,7 +993,7 @@
           </header>
 
           <div class="services__grid">
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <div class="service-card__icon" aria-hidden="true">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1020,7 +1031,7 @@
               </div>
             </article>
 
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <div class="service-card__icon" aria-hidden="true">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1052,7 +1063,7 @@
               </div>
             </article>
 
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <div class="service-card__icon" aria-hidden="true">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1080,7 +1091,7 @@
               </div>
             </article>
 
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <div class="service-card__icon" aria-hidden="true">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1114,7 +1125,7 @@
               </div>
             </article>
 
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <div class="service-card__icon" aria-hidden="true">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1146,7 +1157,7 @@
               </div>
             </article>
 
-            <article class="service-card">
+            <article class="service-card" data-reveal>
               <div
                 class="service-card__icon service-card__icon--lg"
                 aria-hidden="true"
@@ -1208,9 +1219,12 @@
           </div>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:SERVICES:END -->
 
+      <!-- FRONTLENS:SECTION:PRICING:START -->
       <section
         class="pricing"
+        data-section="pricing"
         id="pricing-cta"
         data-section-key="pricing-cta"
         aria-labelledby="solution-heading"
@@ -1257,7 +1271,7 @@
           </header>
 
           <div class="pricing__carousel">
-            <div class="swiper pricing__swiper">
+            <div class="swiper pricing__swiper" data-swiper="pricing">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <article class="pricing-card">
@@ -1663,7 +1677,7 @@
             <div class="pricing__nav">
               <button
                 type="button"
-                class="pricing__prev"
+                class="pricing__prev" data-swiper-prev
                 aria-label="Previous pricing plan"
               >
                 <svg
@@ -1684,10 +1698,10 @@
                   <path d="M5 12l6 -6" />
                 </svg>
               </button>
-              <div class="swiper-pagination pricing__pagination"></div>
+              <div class="swiper-pagination pricing__pagination" data-swiper-pagination></div>
               <button
                 type="button"
-                class="pricing__next"
+                class="pricing__next" data-swiper-next
                 aria-label="Next pricing plan"
               >
                 <svg
@@ -1758,9 +1772,12 @@
           </aside>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:PRICING:END -->
       
+      <!-- FRONTLENS:SECTION:HOWITWORKS:START -->
       <section
         class="how-it-works"
+        data-section="howItWorks"
         id="how-it-works-cta"
         data-section-key="how-it-works-cta"
         aria-labelledby="how-it-works-heading"
@@ -2120,10 +2137,13 @@
           </div>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:HOWITWORKS:END -->
 
       
+      <!-- FRONTLENS:SECTION:REVIEWS:START -->
       <section
         class="testimonials"
+        data-section="reviews"
         id="testimonials-cta"
         data-section-key="testimonials-cta"
         aria-labelledby="testimonials-heading"
@@ -2199,7 +2219,7 @@
           </header>
 
           <div class="testimonials__carousel">
-            <div class="swiper testimonials__swiper">
+            <div class="swiper testimonials__swiper" data-swiper="reviews">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <article class="testimonial-card">
@@ -2537,7 +2557,7 @@
             <div class="testimonials__nav">
               <button
                 type="button"
-                class="testimonials__prev"
+                class="testimonials__prev" data-swiper-prev
                 aria-label="Previous testimonial"
               >
                 <svg
@@ -2558,10 +2578,10 @@
                   <path d="M5 12l6 -6" />
                 </svg>
               </button>
-              <div class="swiper-pagination testimonials__pagination"></div>
+              <div class="swiper-pagination testimonials__pagination" data-swiper-pagination></div>
               <button
                 type="button"
-                class="testimonials__next"
+                class="testimonials__next" data-swiper-next
                 aria-label="Next testimonial"
               >
                 <svg
@@ -2586,9 +2606,12 @@
           </div>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:REVIEWS:END -->
 
+      <!-- FRONTLENS:SECTION:FAQ:START -->
       <section
       class="faq"
+      data-section="faq"
       id="faq-cta"
       data-section-key="faq-cta"
       aria-labelledby="faq-heading"
@@ -2757,9 +2780,12 @@
         </aside>
       </div>
     </section>
+      <!-- FRONTLENS:SECTION:FAQ:END -->
 
+      <!-- FRONTLENS:SECTION:CONSULTATION:START -->
       <section
         class="consultation"
+        data-section="consultation"
         id="consultation-cta"
         data-section-key="consultation-cta"
         aria-labelledby="consultation-heading"
@@ -2918,7 +2944,7 @@
                 />
               </figure>
 
-              <form class="consultation__form" novalidate>
+              <form class="consultation__form" data-consultation-form novalidate>
                 <header class="consultation__form-header">
                   <span
                     class="consultation__form-header-icon"
@@ -3119,25 +3145,27 @@
                         </span>
                         <div
                           class="consultation__select"
+                          data-select
                           id="consultation-coverage"
                         >
                           <div
                             class="selected is-placeholder"
+                            data-select-value
                             role="button"
                             tabindex="0"
                             aria-haspopup="listbox"
                           >
                             Select coverage type
                           </div>
-                          <div class="options" role="listbox">
-                            <div class="option">Health Insurance</div>
-                            <div class="option">Preventive Care</div>
-                            <div class="option">Hospital Coverage</div>
-                            <div class="option">Prescription Coverage</div>
-                            <div class="option">Emergency Coverage</div>
-                            <div class="option">Mental Health Coverage</div>
-                            <div class="option">Specialist Care</div>
-                            <div class="option">Not Sure Yet</div>
+                          <div class="options" data-select-options role="listbox">
+                            <div class="option" data-select-option>Health Insurance</div>
+                            <div class="option" data-select-option>Preventive Care</div>
+                            <div class="option" data-select-option>Hospital Coverage</div>
+                            <div class="option" data-select-option>Prescription Coverage</div>
+                            <div class="option" data-select-option>Emergency Coverage</div>
+                            <div class="option" data-select-option>Mental Health Coverage</div>
+                            <div class="option" data-select-option>Specialist Care</div>
+                            <div class="option" data-select-option>Not Sure Yet</div>
                           </div>
                         </div>
                         <span
@@ -3189,21 +3217,23 @@
                         </span>
                         <div
                           class="consultation__select"
+                          data-select
                           id="consultation-contact"
                         >
                           <div
                             class="selected is-placeholder"
+                            data-select-value
                             role="button"
                             tabindex="0"
                             aria-haspopup="listbox"
                           >
                             Select contact method
                           </div>
-                          <div class="options" role="listbox">
-                            <div class="option">Phone Call</div>
-                            <div class="option">Video Call</div>
-                            <div class="option">Email</div>
-                            <div class="option">No Preference</div>
+                          <div class="options" data-select-options role="listbox">
+                            <div class="option" data-select-option>Phone Call</div>
+                            <div class="option" data-select-option>Video Call</div>
+                            <div class="option" data-select-option>Email</div>
+                            <div class="option" data-select-option>No Preference</div>
                           </div>
                         </div>
                         <span
@@ -3490,10 +3520,13 @@
           </div>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:CONSULTATION:END -->
 
 
+      <!-- FRONTLENS:SECTION:FINALCTA:START -->
       <section
         class="final-cta"
+        data-section="finalCta"
         id="final-cta"
         data-section-key="final-cta"
         aria-labelledby="final-cta-heading"
@@ -3692,9 +3725,11 @@
           </div>
         </div>
       </section>
+      <!-- FRONTLENS:SECTION:FINALCTA:END -->
     </main>
 
-    <footer id="footer">
+    <!-- FRONTLENS:SECTION:FOOTER:START -->
+    <footer id="footer" data-section="footer">
       <div class="container">
         <div class="site-footer__card">
           <div
@@ -3801,11 +3836,12 @@
             </div>
 
             <nav class="footer__nav" aria-label="Footer navigation">
-              <div class="footer__nav-group">
+              <div class="footer__nav-group" data-footer-nav-group>
                 <h3 class="footer__nav-heading">Company</h3>
                 <button
                   type="button"
                   class="footer__nav-trigger"
+                  data-footer-nav-trigger
                   aria-expanded="false"
                 >
                   <span class="footer__nav-trigger-icon" aria-hidden="true">
@@ -3835,7 +3871,7 @@
                     <span class="footer__nav-toggle-minus">&minus;</span>
                   </span>
                 </button>
-                <div class="footer__nav-panel" hidden>
+                <div class="footer__nav-panel" data-footer-nav-panel hidden>
                   <ul class="footer__nav-list">
                     <li><a href="#about-cta">About Us</a></li>
                     <li><a href="#how-it-works-cta">How It Works</a></li>
@@ -3846,11 +3882,12 @@
                 </div>
               </div>
 
-              <div class="footer__nav-group">
+              <div class="footer__nav-group" data-footer-nav-group>
                 <h3 class="footer__nav-heading">Coverage</h3>
                 <button
                   type="button"
                   class="footer__nav-trigger"
+                  data-footer-nav-trigger
                   aria-expanded="false"
                 >
                   <span class="footer__nav-trigger-icon" aria-hidden="true">
@@ -3876,7 +3913,7 @@
                     <span class="footer__nav-toggle-minus">&minus;</span>
                   </span>
                 </button>
-                <div class="footer__nav-panel" hidden>
+                <div class="footer__nav-panel" data-footer-nav-panel hidden>
                   <ul class="footer__nav-list">
                     <li><a href="#">Individual &amp; Family</a></li>
                     <li><a href="#">Medicare Options</a></li>
@@ -3887,11 +3924,12 @@
                 </div>
               </div>
 
-              <div class="footer__nav-group">
+              <div class="footer__nav-group" data-footer-nav-group>
                 <h3 class="footer__nav-heading">Resources</h3>
                 <button
                   type="button"
                   class="footer__nav-trigger"
+                  data-footer-nav-trigger
                   aria-expanded="false"
                 >
                   <span class="footer__nav-trigger-icon" aria-hidden="true">
@@ -3921,7 +3959,7 @@
                     <span class="footer__nav-toggle-minus">&minus;</span>
                   </span>
                 </button>
-                <div class="footer__nav-panel" hidden>
+                <div class="footer__nav-panel" data-footer-nav-panel hidden>
                   <ul class="footer__nav-list">
                     <li><a href="#">Health Insurance Basics</a></li>
                     <li><a href="#">Glossary</a></li>
@@ -3932,11 +3970,12 @@
                 </div>
               </div>
 
-              <div class="footer__nav-group">
+              <div class="footer__nav-group" data-footer-nav-group>
                 <h3 class="footer__nav-heading">Contact Us</h3>
                 <button
                   type="button"
                   class="footer__nav-trigger"
+                  data-footer-nav-trigger
                   aria-expanded="false"
                 >
                   <span class="footer__nav-trigger-icon" aria-hidden="true">
@@ -3962,7 +4001,7 @@
                     <span class="footer__nav-toggle-minus">&minus;</span>
                   </span>
                 </button>
-                <div class="footer__nav-panel" hidden>
+                <div class="footer__nav-panel" data-footer-nav-panel hidden>
                   <ul class="footer__contact-list">
                     <li>
                       <a href="tel:+17866163592">
@@ -4088,6 +4127,7 @@
         </div>
       </div>
     </footer>
+    <!-- FRONTLENS:SECTION:FOOTER:END -->
     <button
       id="up-arrow"
       class="go-top"

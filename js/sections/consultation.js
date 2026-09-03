@@ -45,7 +45,7 @@ const DISABLED_APPOINTMENT_TIMES = [
 function closeAllDropdowns(allDropdowns, exceptThis = null) {
   allDropdowns.forEach((select) => {
     if (select !== exceptThis) {
-      const options = select.querySelector(".options");
+      const options = select.querySelector("[data-select-options]");
       options.classList.remove("show-drop");
     }
   });
@@ -82,12 +82,12 @@ export function initConsultationSection() {
       }
     }
 
-    const selects = section.querySelectorAll(".consultation__select");
+    const selects = section.querySelectorAll("[data-select]");
     let activeSelect = null;
 
     selects.forEach((select) => {
-      const selected = select.querySelector(".selected");
-      const options = select.querySelector(".options");
+      const selected = select.querySelector("[data-select-value]");
+      const options = select.querySelector("[data-select-options]");
       if (!selected || !options) return;
 
       selected.addEventListener("click", function (e) {
@@ -111,7 +111,7 @@ export function initConsultationSection() {
         }
       });
 
-      select.querySelectorAll(".option").forEach((option) => {
+      select.querySelectorAll("[data-select-option]").forEach((option) => {
         option.addEventListener("click", function (e) {
           e.stopPropagation();
           selected.textContent = this.textContent;
@@ -124,23 +124,23 @@ export function initConsultationSection() {
 
     document.addEventListener("click", function () {
       if (!activeSelect) return;
-      const options = activeSelect.querySelector(".options");
+      const options = activeSelect.querySelector("[data-select-options]");
       if (options) options.classList.remove("show-drop");
       activeSelect = null;
     });
 
-    const form = section.querySelector(".consultation__form");
+    const form = section.querySelector("[data-consultation-form]");
     if (form) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const coverage =
           section
-            .querySelector("#consultation-coverage .selected")
+            .querySelector("#consultation-coverage [data-select-value]")
             ?.textContent.trim() || "";
         const contactMethod =
           section
-            .querySelector("#consultation-contact .selected")
+            .querySelector("#consultation-contact [data-select-value]")
             ?.textContent.trim() || "";
 
         const payload = {
