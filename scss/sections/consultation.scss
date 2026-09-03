@@ -3,7 +3,7 @@
 main {
   .consultation {
     padding: 80px 0;
-    background: #fff;
+    background: $color-surface;
 
     .consultation__grid {
       display: grid;
@@ -175,7 +175,7 @@ main {
     }
 
     .consultation__form {
-      background: #fff;
+      background: $color-surface;
       border-radius: $radius-card;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
       padding: 32px 36px 28px;
@@ -247,9 +247,9 @@ main {
       position: relative;
       display: flex;
       align-items: center;
-      border: 1px solid #dee2e6;
+      border: 1px solid $color-neutral-strong;
       border-radius: 10px;
-      background: #fff;
+      background: $color-surface;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
       &:hover,
@@ -381,8 +381,8 @@ main {
         right: -36px;
         margin: 0;
         padding: 6px 0;
-        background: #fff;
-        border: 1px solid #dee2e6;
+        background: $color-surface;
+        border: 1px solid $color-neutral-strong;
         border-radius: 10px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         z-index: 20;

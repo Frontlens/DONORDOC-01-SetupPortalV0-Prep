@@ -3,7 +3,7 @@
 main {
   .hero {
     padding: 80px 0 100px;
-    background: #fff;
+    background: $color-surface;
     transition: none;
     position: relative;
     overflow: hidden;
@@ -108,7 +108,7 @@ main {
     .hero__button {
       border: 2px solid $color-brand !important;
       color: $color-ink-soft !important;
-      background: #fff !important;
+      background: $color-surface !important;
       font-weight: 600;
 
       svg {
@@ -190,7 +190,7 @@ main {
       gap: 14px;
       max-width: 280px;
       padding: 16px 20px;
-      background: #fff;
+      background: $color-surface;
       border-radius: $radius-control;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }

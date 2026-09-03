@@ -5,7 +5,7 @@ main {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
-    background: #fff;
+    background: $color-surface;
 
     .faq__bg {
       position: absolute;
@@ -60,7 +60,7 @@ main {
       right: -120px;
       width: 420px;
       height: 420px;
-      color: #dee2e6;
+      color: $color-neutral-strong;
       opacity: 0.55;
 
       svg {
@@ -166,8 +166,8 @@ main {
     .faq__list {
       max-width: 860px;
       margin: 0 auto 32px;
-      background: #fff;
-      border: 1px solid #e9ecef;
+      background: $color-surface;
+      border: 1px solid $color-neutral;
       border-radius: $radius-card;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
       overflow: hidden;
@@ -179,7 +179,7 @@ main {
       --faq-item-gap: 16px;
       --faq-item-number-w: 28px;
       --faq-item-toggle-w: 24px;
-      border-bottom: 1px solid #e9ecef;
+      border-bottom: 1px solid $color-neutral;
       transition: background-color 200ms ease;
 
       &:last-child {
@@ -217,7 +217,7 @@ main {
       display: block;
       width: 1px;
       height: 28px;
-      background: #dee2e6;
+      background: $color-neutral-strong;
     }
 
     .faq-item__question {

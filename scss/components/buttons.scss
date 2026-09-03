@@ -18,12 +18,12 @@
   &.button--primary {
     background: linear-gradient(to right, $color-brand, $color-accent);
     border: none;
-    color: #fff;
+    color: $color-surface;
 
     &:hover,
     &:active {
     background: linear-gradient(to right, $color-brand-hover, $color-accent-hover);
-      color: #fff;
+      color: $color-surface;
     }
 
     &::before,
@@ -37,7 +37,7 @@
   }
 
   &.button--outline {
-    background-color: #fff;
+    background-color: $color-surface;
     color: $color-text;
     border: 3px solid transparent;
 

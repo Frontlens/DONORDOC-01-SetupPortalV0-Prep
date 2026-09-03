@@ -3,7 +3,7 @@
 main {
   .about {
     padding: 64px 0 80px;
-    background: #fff;
+    background: $color-surface;
 
     .about__grid {
       display: grid;
@@ -45,7 +45,7 @@ main {
       display: block;
       width: 72px;
       height: 4px;
-      background: #dee2e6;
+      background: $color-neutral-strong;
       border-radius: 2px;
     }
 

@@ -3,7 +3,7 @@
 main {
   .how-it-works {
     padding: 80px 0;
-    background: #fff;
+    background: $color-surface;
 
     .how-it-works__header {
       text-align: center;
@@ -48,7 +48,7 @@ main {
       display: inline-block;
       width: 1px;
       height: 36px;
-      background: #dee2e6;
+      background: $color-neutral-strong;
       flex-shrink: 0;
     }
 
@@ -234,8 +234,8 @@ main {
       flex: 1;
       min-width: 0;
       padding: 24px;
-      background: #fff;
-      border: 1px solid #e9ecef;
+      background: $color-surface;
+      border: 1px solid $color-neutral;
       border-radius: $radius-control;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
@@ -314,7 +314,7 @@ main {
         top: 12%;
         bottom: 12%;
         width: 1px;
-        background: #dee2e6;
+        background: $color-neutral-strong;
       }
     }
 
@@ -438,7 +438,7 @@ main {
         justify-content: center;
         width: 40px;
         height: 40px;
-        border: 2px solid #fff;
+        border: 2px solid $color-surface;
         border-radius: 50%;
         background: $color-brand-soft;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
