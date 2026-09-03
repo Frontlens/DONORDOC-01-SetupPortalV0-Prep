@@ -3,11 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Default DONORDOC-01 Title</title>
     <meta
       name="description"
-      content="Stay healthy with our health insurance plan"
+      content="Default DONORDOC-01 description"
     />
-    <title>DONORDOC-01 V1</title>
+    <link
+      rel="canonical"
+      href="https://example.com/"
+    />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Default Social Title" />
+    <meta property="og:description" content="Default Social Description" />
+    <meta property="og:image" content="https://example.com/social-image.jpg" />
+    <meta property="og:url" content="https://example.com/" />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Default Social Title" />
+    <meta name="twitter:description" content="Default Social Description" />
+    <meta name="twitter:image" content="https://example.com/social-image.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -748,6 +763,7 @@
         </div>
       </section>
       <!-- FRONTLENS:SECTION:HERO:END -->
+      <div data-extension-slot="after-hero"></div>
 
       <!-- FRONTLENS:SECTION:TRUST:START -->
       <section
@@ -925,6 +941,7 @@
         </div>
       </section>
       <!-- FRONTLENS:SECTION:TRUST:END -->
+      <div data-extension-slot="after-trust"></div>
 
       <!-- FRONTLENS:SECTION:ABOUT:START -->
       <section
@@ -1773,7 +1790,8 @@
         </div>
       </section>
       <!-- FRONTLENS:SECTION:PRICING:END -->
-      
+      <div data-extension-slot="after-pricing"></div>
+
       <!-- FRONTLENS:SECTION:HOWITWORKS:START -->
       <section
         class="how-it-works"
@@ -2138,8 +2156,8 @@
         </div>
       </section>
       <!-- FRONTLENS:SECTION:HOWITWORKS:END -->
+      <div data-extension-slot="after-how-it-works"></div>
 
-      
       <!-- FRONTLENS:SECTION:REVIEWS:START -->
       <section
         class="testimonials"
@@ -2607,6 +2625,7 @@
         </div>
       </section>
       <!-- FRONTLENS:SECTION:REVIEWS:END -->
+      <div data-extension-slot="after-reviews"></div>
 
       <!-- FRONTLENS:SECTION:FAQ:START -->
       <section
