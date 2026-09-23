@@ -8,12 +8,29 @@ import { themeRegistry } from "../../config/themeRegistry.js";
 const VISIBILITY_SECTIONS = [
   "hero",
   "trust",
+  "about",
   "services",
   "pricing",
   "howItWorks",
   "reviews",
+  "faq",
   "consultation",
 ];
+
+const NAV_LINK_SECTION = {
+  about: "about",
+  coverage: "services",
+  howItWorks: "howItWorks",
+  reviews: "reviews",
+  faq: "faq",
+};
+
+const COMPANY_LINK_SECTION = {
+  about: "about",
+  howItWorks: "howItWorks",
+  advisors: "consultation",
+  faq: "faq",
+};
 
 const THEME_CSS_VARS = [
   ["brand", "--color-brand"],
@@ -180,10 +197,30 @@ function applyBranding(config) {
   }
 }
 
+function sectionIsEnabled(config, sectionId) {
+  if (!sectionId) return true;
+  return config.sections?.[sectionId]?.enabled !== false;
+}
+
+function hasText(value) {
+  return value != null && String(value).trim() !== "";
+}
+
+function removeConfigRow(el) {
+  const row = el && el.closest("li");
+  if (row) row.remove();
+  else if (el) el.remove();
+}
+
 function applyNavigation(config) {
   const nav = config.navigation || {};
   (nav.items || []).forEach(function (item) {
+    const visible = sectionIsEnabled(config, NAV_LINK_SECTION[item.id]);
     document.querySelectorAll('[data-nav-item="' + item.id + '"]').forEach(function (el) {
+      if (!visible) {
+        removeConfigRow(el);
+        return;
+      }
       if (item.href) el.setAttribute("href", item.href);
       setTextPreserveChildren(el, item.label);
     });
@@ -420,30 +457,144 @@ function applySectionLists(config) {
       el.setAttribute("href", item.href);
       el.setAttribute("aria-label", item.label);
     });
-    applyIndexed(footer, "[data-footer-nav-group]", sections.footer.linkGroups, function (el, group) {
-      configFields(el, "title").forEach(function (node) {
-        node.textContent = group.title;
-      });
-      applyIndexed(el, "[data-footer-nav-panel] a", group.links, function (link, item) {
-        link.setAttribute("href", item.href);
-        link.textContent = item.label;
-      });
-    });
-    applyIndexed(footer, '[data-config-item="footerLegal"]', sections.footer.legalLinks, function (el, item) {
-      el.setAttribute("href", item.href);
-      el.textContent = item.label;
-    });
-    const phone = configField(footer, "phone");
-    const email = configField(footer, "email");
-    if (phone && sections.footer.contact?.phone) {
-      phone.setAttribute("href", sections.footer.contact.phone.href);
-      setTextPreserveChildren(phone, sections.footer.contact.phone.display);
+    applyFooterGroups(footer, config);
+    syncLegalLinks(footer, sections.footer.legalLinks);
+    applyFooterContact(footer, sections.footer.contact || {});
+  }
+}
+
+function visibleFooterLinks(group, config) {
+  const sectionByLink = group.id === "company" ? COMPANY_LINK_SECTION : null;
+  return (group.links || []).filter(function (link) {
+    if (!link || !link.id) return false;
+    if (!sectionByLink || !sectionByLink[link.id]) return true;
+    return sectionIsEnabled(config, sectionByLink[link.id]);
+  });
+}
+
+function syncFooterLinkList(groupEl, links) {
+  const list = groupEl.querySelector(".footer__nav-list");
+  if (!list) return;
+
+  const anchors = {};
+  list.querySelectorAll("[data-footer-link]").forEach(function (anchor) {
+    anchors[anchor.getAttribute("data-footer-link")] = anchor;
+  });
+
+  const visibleIds = {};
+  links.forEach(function (link) {
+    const anchor = anchors[link.id];
+    if (!anchor) return;
+    visibleIds[link.id] = true;
+    if (link.href) anchor.setAttribute("href", link.href);
+    anchor.textContent = link.label;
+    list.appendChild(anchor.parentElement);
+  });
+
+  list.querySelectorAll("[data-footer-link]").forEach(function (anchor) {
+    if (!visibleIds[anchor.getAttribute("data-footer-link")]) {
+      removeConfigRow(anchor);
     }
-    if (email && sections.footer.contact?.email) {
-      email.setAttribute("href", "mailto:" + sections.footer.contact.email);
-      setTextPreserveChildren(email, sections.footer.contact.email);
+  });
+}
+
+function applyFooterGroups(footer, config) {
+  const linkGroups = config.sections?.footer?.linkGroups || [];
+  const byId = {};
+  linkGroups.forEach(function (group) {
+    if (group && group.id) byId[group.id] = group;
+  });
+
+  footer.querySelectorAll("[data-footer-group]").forEach(function (groupEl) {
+    const id = groupEl.getAttribute("data-footer-group");
+    if (id === "contact") return;
+
+    const group = byId[id];
+    const links = group ? visibleFooterLinks(group, config) : [];
+    if (!group || !links.length) {
+      groupEl.remove();
+      return;
+    }
+
+    configFields(groupEl, "title").forEach(function (node) {
+      node.textContent = group.title;
+    });
+    syncFooterLinkList(groupEl, links);
+  });
+
+  const nav = footer.querySelector(".footer__nav");
+  if (!nav) return;
+  const count = nav.querySelectorAll("[data-footer-group]").length;
+  if (count === 4) nav.removeAttribute("data-footer-cols");
+  else if (count > 0) nav.setAttribute("data-footer-cols", String(count));
+}
+
+function syncLegalLinks(footer, links) {
+  const nav = footer.querySelector(".site-footer__bar-links");
+  if (!nav) return;
+
+  const items = Array.isArray(links) ? links : [];
+  const anchors = {};
+  nav.querySelectorAll("[data-footer-link]").forEach(function (anchor) {
+    anchors[anchor.getAttribute("data-footer-link")] = anchor;
+  });
+
+  nav.querySelectorAll("span").forEach(function (sep) {
+    sep.remove();
+  });
+
+  const visible = [];
+  const keep = {};
+  items.forEach(function (item) {
+    const anchor = item && anchors[item.id];
+    if (!anchor) return;
+    keep[item.id] = true;
+    if (item.href) anchor.setAttribute("href", item.href);
+    anchor.textContent = item.label;
+    visible.push(anchor);
+  });
+
+  Object.keys(anchors).forEach(function (id) {
+    if (!keep[id]) anchors[id].remove();
+  });
+
+  visible.forEach(function (anchor, index) {
+    if (index > 0) {
+      const sep = document.createElement("span");
+      sep.setAttribute("aria-hidden", "true");
+      sep.textContent = "|";
+      nav.appendChild(sep);
+    }
+    nav.appendChild(anchor);
+  });
+}
+
+function applyFooterContact(footer, contact) {
+  const phone = configField(footer, "phone");
+  const email = configField(footer, "email");
+  const address = footer.querySelector('[data-config="sections.footer.contact.address"]');
+  const hours = footer.querySelector('[data-config="sections.footer.contact.hours"]');
+
+  if (phone) {
+    if (hasText(contact.phone?.display)) {
+      if (contact.phone.href) phone.setAttribute("href", contact.phone.href);
+      setTextPreserveChildren(phone, contact.phone.display);
+    } else {
+      removeConfigRow(phone);
     }
   }
+
+  if (email) {
+    if (hasText(contact.email)) {
+      email.setAttribute("href", "mailto:" + contact.email);
+      setTextPreserveChildren(email, contact.email);
+    } else {
+      removeConfigRow(email);
+    }
+  }
+
+  if (address && !hasText(contact.address)) removeConfigRow(address);
+  if (hours && !hasText(contact.hours)) removeConfigRow(hours);
 }
 
 function applyConsultationOptions(config) {

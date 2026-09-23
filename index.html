@@ -4320,7 +4320,7 @@
               </div>
 
               <nav class="footer__nav" aria-label="Footer navigation">
-                <div class="footer__nav-group" data-footer-nav-group>
+                <div class="footer__nav-group" data-footer-nav-group data-footer-group="company">
                   <h3 class="footer__nav-heading" data-config-field="title">Company</h3>
                   <button
                     type="button"
@@ -4357,16 +4357,16 @@
                   </button>
                   <div class="footer__nav-panel" data-footer-nav-panel hidden>
                     <ul class="footer__nav-list">
-                      <li><a href="#about">About Us</a></li>
-                      <li><a href="#howItWorks">How It Works</a></li>
-                      <li><a href="#consultation">Our Advisors</a></li>
-                      <li><a href="#faq">FAQ</a></li>
-                      <li><a href="#footer">Contact Us</a></li>
+                      <li><a href="#about" data-footer-link="about">About Us</a></li>
+                      <li><a href="#howItWorks" data-footer-link="howItWorks">How It Works</a></li>
+                      <li><a href="#consultation" data-footer-link="advisors">Our Advisors</a></li>
+                      <li><a href="#faq" data-footer-link="faq">FAQ</a></li>
+                      <li><a href="#footer" data-footer-link="contact">Contact Us</a></li>
                     </ul>
                   </div>
                 </div>
 
-                <div class="footer__nav-group" data-footer-nav-group>
+                <div class="footer__nav-group" data-footer-nav-group data-footer-group="coverage">
                   <h3 class="footer__nav-heading" data-config-field="title">Coverage</h3>
                   <button
                     type="button"
@@ -4399,16 +4399,16 @@
                   </button>
                   <div class="footer__nav-panel" data-footer-nav-panel hidden>
                     <ul class="footer__nav-list">
-                      <li><a href="#">Individual &amp; Family</a></li>
-                      <li><a href="#">Medicare Options</a></li>
-                      <li><a href="#">Supplemental Plans</a></li>
-                      <li><a href="#">Prescription Plans</a></li>
-                      <li><a href="#">Short-Term Plans</a></li>
+                      <li><a href="#" data-footer-link="individualFamily">Individual &amp; Family</a></li>
+                      <li><a href="#" data-footer-link="medicare">Medicare Options</a></li>
+                      <li><a href="#" data-footer-link="supplemental">Supplemental Plans</a></li>
+                      <li><a href="#" data-footer-link="prescription">Prescription Plans</a></li>
+                      <li><a href="#" data-footer-link="shortTerm">Short-Term Plans</a></li>
                     </ul>
                   </div>
                 </div>
 
-                <div class="footer__nav-group" data-footer-nav-group>
+                <div class="footer__nav-group" data-footer-nav-group data-footer-group="resources">
                   <h3 class="footer__nav-heading" data-config-field="title">Resources</h3>
                   <button
                     type="button"
@@ -4445,16 +4445,16 @@
                   </button>
                   <div class="footer__nav-panel" data-footer-nav-panel hidden>
                     <ul class="footer__nav-list">
-                      <li><a href="#">Health Insurance Basics</a></li>
-                      <li><a href="#">Glossary</a></li>
-                      <li><a href="#faq">FAQ</a></li>
-                      <li><a href="#">Helpful Guides</a></li>
-                      <li><a href="#">Support Center</a></li>
+                      <li><a href="#" data-footer-link="healthInsuranceBasics">Health Insurance Basics</a></li>
+                      <li><a href="#" data-footer-link="glossary">Glossary</a></li>
+                      <li><a href="#faq" data-footer-link="faq">FAQ</a></li>
+                      <li><a href="#" data-footer-link="helpfulGuides">Helpful Guides</a></li>
+                      <li><a href="#" data-footer-link="supportCenter">Support Center</a></li>
                     </ul>
                   </div>
                 </div>
 
-                <div class="footer__nav-group" data-footer-nav-group>
+                <div class="footer__nav-group" data-footer-nav-group data-footer-group="contact">
                   <h3 class="footer__nav-heading" data-config-field="title">Contact Us</h3>
                   <button
                     type="button"
@@ -4604,16 +4604,15 @@
               <p class="site-footer__bar-copy">
                 &copy;
                 <time id="footer-year" datetime="2025">2025</time>
-                <span data-config="sections.footer.copyrightText"
-                  >DONORDOC. All rights reserved.</span
-                >
+                <span data-config="sections.footer.businessName">DONORDOC</span>.
+                <span data-config="sections.footer.copyrightText">All rights reserved.</span>
               </p>
               <nav class="site-footer__bar-links" aria-label="Legal links">
-                <a href="#" data-config-item="footerLegal">Privacy Policy</a>
+                <a href="#" data-config-item="footerLegal" data-footer-link="privacy">Privacy Policy</a>
                 <span aria-hidden="true">|</span>
-                <a href="#" data-config-item="footerLegal">Terms of Service</a>
+                <a href="#" data-config-item="footerLegal" data-footer-link="terms">Terms of Service</a>
                 <span aria-hidden="true">|</span>
-                <a href="#" data-config-item="footerLegal">Site Map</a>
+                <a href="#" data-config-item="footerLegal" data-footer-link="siteMap">Site Map</a>
               </nav>
             </div>
           </div>

@@ -90,6 +90,7 @@
       ]
     },
     "about": {
+      "enabled": true,
       "eyebrow": "About DONORDOC",
       "headline": "Coverage Guidance You Can Trust",
       "description": "Our mission is simple: help individuals and families understand their options, compare plans with clarity, and receive support before, during, and after enrollment.",
@@ -304,6 +305,7 @@
       ]
     },
     "faq": {
+      "enabled": true,
       "eyebrow": "QUESTIONS?",
       "headline": {
         "before": "Let's",
@@ -493,33 +495,33 @@
           "id": "company",
           "title": "Company",
           "links": [
-            { "label": "About Us", "href": "#about" },
-            { "label": "How It Works", "href": "#howItWorks" },
-            { "label": "Our Advisors", "href": "#consultation" },
-            { "label": "FAQ", "href": "#faq" },
-            { "label": "Contact Us", "href": "#footer" }
+            { "id": "about", "label": "About Us", "href": "#about" },
+            { "id": "howItWorks", "label": "How It Works", "href": "#howItWorks" },
+            { "id": "advisors", "label": "Our Advisors", "href": "#consultation" },
+            { "id": "faq", "label": "FAQ", "href": "#faq" },
+            { "id": "contact", "label": "Contact Us", "href": "#footer" }
           ]
         },
         {
           "id": "coverage",
           "title": "Coverage",
           "links": [
-            { "label": "Individual & Family", "href": "#" },
-            { "label": "Medicare Options", "href": "#" },
-            { "label": "Supplemental Plans", "href": "#" },
-            { "label": "Prescription Plans", "href": "#" },
-            { "label": "Short-Term Plans", "href": "#" }
+            { "id": "individualFamily", "label": "Individual & Family", "href": "#" },
+            { "id": "medicare", "label": "Medicare Options", "href": "#" },
+            { "id": "supplemental", "label": "Supplemental Plans", "href": "#" },
+            { "id": "prescription", "label": "Prescription Plans", "href": "#" },
+            { "id": "shortTerm", "label": "Short-Term Plans", "href": "#" }
           ]
         },
         {
           "id": "resources",
           "title": "Resources",
           "links": [
-            { "label": "Health Insurance Basics", "href": "#" },
-            { "label": "Glossary", "href": "#" },
-            { "label": "FAQ", "href": "#faq" },
-            { "label": "Helpful Guides", "href": "#" },
-            { "label": "Support Center", "href": "#" }
+            { "id": "healthInsuranceBasics", "label": "Health Insurance Basics", "href": "#" },
+            { "id": "glossary", "label": "Glossary", "href": "#" },
+            { "id": "faq", "label": "FAQ", "href": "#faq" },
+            { "id": "helpfulGuides", "label": "Helpful Guides", "href": "#" },
+            { "id": "supportCenter", "label": "Support Center", "href": "#" }
           ]
         }
       ],
@@ -530,11 +532,11 @@
         "hours": "Mon - Fri: 9:00 AM - 6:00 PM EST"
       },
       "secureNote": "Your information is secure and will never be shared.",
-      "copyrightText": "DONORDOC. All rights reserved.",
+      "copyrightText": "All rights reserved.",
       "legalLinks": [
-        { "label": "Privacy Policy", "href": "#" },
-        { "label": "Terms of Service", "href": "#" },
-        { "label": "Site Map", "href": "#" }
+        { "id": "privacy", "label": "Privacy Policy", "href": "#" },
+        { "id": "terms", "label": "Terms of Service", "href": "#" },
+        { "id": "siteMap", "label": "Site Map", "href": "#" }
       ]
     }
   },

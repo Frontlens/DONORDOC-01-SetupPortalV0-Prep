@@ -85,6 +85,18 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
+
+    &[data-footer-cols="1"] {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &[data-footer-cols="2"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &[data-footer-cols="3"] {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   .footer__nav-heading {
@@ -251,7 +263,8 @@
       justify-content: center;
     }
 
-    .footer__nav {
+    .footer__nav,
+    .footer__nav[data-footer-cols] {
       grid-template-columns: 1fr;
       gap: 0;
       border-top: 1px solid $color-neutral;

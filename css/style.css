@@ -629,7 +629,8 @@ main .hero .hero__image {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main .hero .hero__float-card {
   position: absolute;
@@ -708,12 +709,14 @@ main .hero .hero__float-card-text .hero__float-card-accent {
     border-radius: 0;
     box-shadow: none;
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, transparent 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
-    mask-composite: intersect;
+    -webkit-mask-composite: source-in, xor;
+            mask-composite: intersect;
     -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, transparent 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
     -webkit-mask-composite: source-in;
   }
   main .hero .hero__image {
-    object-position: center top;
+    -o-object-position: center top;
+       object-position: center top;
   }
   main .hero .hero__headline {
     font-size: 36px;
@@ -1014,8 +1017,10 @@ main .about .about__image {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 @media (min-width: 1024px) {
   main .about .about__content {
@@ -1032,7 +1037,8 @@ main .about .about__image {
     width: 100%;
     height: 100%;
     aspect-ratio: 5/4;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (min-width: 1200px) {
@@ -2588,7 +2594,8 @@ main .testimonials .testimonial-card__avatar {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main .testimonials .testimonial-card__author-info {
   display: flex;
@@ -3483,8 +3490,10 @@ main .consultation .consultation__visual-img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 main .consultation .consultation__form-col {
   display: flex;
@@ -3614,10 +3623,16 @@ main .consultation .consultation-field__control .fl-picker-input {
   box-shadow: none;
   font-family: inherit;
 }
+main .consultation .consultation__input::-moz-placeholder, main .consultation .consultation__select .selected::-moz-placeholder, main .consultation .consultation-field__control .fl-picker-input::-moz-placeholder {
+  color: #adb5bd;
+}
 main .consultation .consultation__input::placeholder,
 main .consultation .consultation__select .selected::placeholder,
 main .consultation .consultation-field__control .fl-picker-input::placeholder {
   color: #adb5bd;
+}
+main .consultation .consultation__input:-moz-placeholder, main .consultation .consultation__select .selected:-moz-placeholder, main .consultation .consultation-field__control .fl-picker-input:-moz-placeholder {
+  color: #868e96;
 }
 main .consultation .consultation__input:placeholder-shown,
 main .consultation .consultation__select .selected:placeholder-shown,
@@ -3656,7 +3671,9 @@ main .consultation .consultation__select {
   position: relative;
   flex: 1;
   min-width: 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 main .consultation .consultation__select .selected {
   cursor: pointer;
@@ -3787,7 +3804,8 @@ main .consultation .consultation__secure-icon svg {
   }
   main .consultation .consultation__visual--mobile .consultation__visual-img {
     aspect-ratio: 24/10;
-    object-position: top;
+    -o-object-position: top;
+       object-position: top;
   }
   main .consultation .consultation__form {
     padding: 24px 20px 20px;
@@ -3878,7 +3896,8 @@ main .consultation .consultation__secure-icon svg {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   grid-template-rows: auto auto;
   grid-template-areas: "copy side" "features side";
-  column-gap: 56px;
+  -moz-column-gap: 56px;
+       column-gap: 56px;
   row-gap: 36px;
   align-items: start;
 }
@@ -4037,8 +4056,10 @@ main .consultation .consultation__secure-icon svg {
 .final-cta .half-circle img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
   position: absolute;
   top: 0;
   left: 0;
@@ -4115,7 +4136,8 @@ main .consultation .consultation__secure-icon svg {
     grid-template-columns: minmax(0, 1fr) minmax(0, 150px);
     grid-template-rows: auto auto auto;
     grid-template-areas: "copy visual" "features features" "action action";
-    column-gap: 16px;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
     row-gap: 24px;
   }
   .final-cta .final-cta__side {
@@ -4285,6 +4307,15 @@ main .consultation .consultation__secure-icon svg {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 }
+#footer .footer__nav[data-footer-cols="1"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+#footer .footer__nav[data-footer-cols="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#footer .footer__nav[data-footer-cols="3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 #footer .footer__nav-heading {
   margin: 0 0 18px;
   font-size: 13px;
@@ -4425,7 +4456,8 @@ main .consultation .consultation__secure-icon svg {
   #footer .footer__social {
     justify-content: center;
   }
-  #footer .footer__nav {
+  #footer .footer__nav,
+  #footer .footer__nav[data-footer-cols] {
     grid-template-columns: 1fr;
     gap: 0;
     border-top: 1px solid #e9ecef;
@@ -4712,6 +4744,4 @@ License: For personal/business use only. Redistribution, resale, or sublicensing
   main .hero {
     padding-top: 140px !important;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
