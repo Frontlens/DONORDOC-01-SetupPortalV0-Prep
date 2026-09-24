@@ -466,8 +466,8 @@ html.is-no-hero #header {
     gap: 24px;
   }
   #header nav #navbarSupportedContent .navbar-nav-main {
-    flex: 1;
-    justify-content: center;
+    flex: 0 1 auto;
+    justify-content: flex-end;
     gap: 30px;
   }
   #header nav #navbarSupportedContent .navbar-nav-actions {
@@ -475,10 +475,6 @@ html.is-no-hero #header {
   }
   #header nav #navbarSupportedContent .navbar-nav-actions:not(:has(.nav-item)) {
     display: none;
-  }
-  #header nav #navbarSupportedContent:not(:has(.navbar-nav-actions .nav-item)) .navbar-nav-main {
-    flex: 0 1 auto;
-    justify-content: flex-end;
   }
 }
 

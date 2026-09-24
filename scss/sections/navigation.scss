@@ -338,8 +338,8 @@
         gap: 24px;
 
         .navbar-nav-main {
-          flex: 1;
-          justify-content: center;
+          flex: 0 1 auto;
+          justify-content: flex-end;
           gap: 30px;
         }
 
@@ -349,11 +349,6 @@
           &:not(:has(.nav-item)) {
             display: none;
           }
-        }
-
-        &:not(:has(.navbar-nav-actions .nav-item)) .navbar-nav-main {
-          flex: 0 1 auto;
-          justify-content: flex-end;
         }
       }
     }
