@@ -10,7 +10,10 @@ export function initStickyHeader() {
   const hero = document.querySelector('[data-section="hero"]');
 
   if (!header) return;
-  if (!hero) return;
+  if (!hero) {
+    document.documentElement.classList.add("is-no-hero");
+    return;
+  }
 
   const updateHeroPadding = () => {
     hero.style.paddingTop = `${header.offsetHeight}px`;

@@ -18,11 +18,17 @@ const VISIBILITY_SECTIONS = [
 ];
 
 const NAV_LINK_SECTION = {
+  home: "hero",
   about: "about",
   coverage: "services",
   howItWorks: "howItWorks",
   reviews: "reviews",
   faq: "faq",
+};
+
+const NAV_ACTION_SECTION = {
+  primary: "pricing",
+  secondary: "consultation",
 };
 
 const COMPANY_LINK_SECTION = {
@@ -216,28 +222,44 @@ function applyNavigation(config) {
   const nav = config.navigation || {};
   (nav.items || []).forEach(function (item) {
     const visible = sectionIsEnabled(config, NAV_LINK_SECTION[item.id]);
-    document.querySelectorAll('[data-nav-item="' + item.id + '"]').forEach(function (el) {
-      if (!visible) {
-        removeConfigRow(el);
-        return;
-      }
-      if (item.href) el.setAttribute("href", item.href);
-      setTextPreserveChildren(el, item.label);
-    });
+    document
+      .querySelectorAll('[data-nav-item="' + item.id + '"]')
+      .forEach(function (el) {
+        if (!visible) {
+          removeConfigRow(el);
+          return;
+        }
+        if (item.href) el.setAttribute("href", item.href);
+        setTextPreserveChildren(el, item.label);
+      });
   });
 
-  if (nav.primaryAction) {
-    document.querySelectorAll("[data-nav-primary]").forEach(function (el) {
-      if (nav.primaryAction.href) el.setAttribute("href", nav.primaryAction.href);
-      setTextPreserveChildren(el, nav.primaryAction.label);
-    });
-  }
+  applyNavAction(config, nav.primaryAction, "primary", "[data-nav-primary]");
+  applyNavAction(
+    config,
+    nav.secondaryAction,
+    "secondary",
+    "[data-nav-secondary]",
+  );
+}
 
-  if (nav.secondaryAction) {
-    document.querySelectorAll("[data-nav-secondary]").forEach(function (el) {
-      if (nav.secondaryAction.href) el.setAttribute("href", nav.secondaryAction.href);
-      setTextPreserveChildren(el, nav.secondaryAction.label);
-    });
+function applyNavAction(config, action, key, selector) {
+  if (!action) return;
+  const visible = sectionIsEnabled(config, NAV_ACTION_SECTION[key]);
+  document.querySelectorAll("#header " + selector).forEach(function (el) {
+    if (!visible) {
+      removeConfigRow(el);
+      return;
+    }
+    if (action.href) el.setAttribute("href", action.href);
+    setTextPreserveChildren(el, action.label);
+  });
+  if (!visible && key === "secondary") {
+    document
+      .querySelectorAll("#header [data-nav-divider]")
+      .forEach(function (el) {
+        el.remove();
+      });
   }
 }
 
@@ -351,39 +373,59 @@ function applySectionLists(config) {
         if (item.cta?.href) cta.setAttribute("href", item.cta.href);
         setTextPreserveChildren(cta, item.cta?.label);
       }
-      applyIndexed(el, '[data-config-item="pricingFeatures"]', item.features, function (li, feature) {
-        const texts = Array.from(li.childNodes).filter(function (node) {
-          return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
-        });
-        if (texts[0]) texts[0].textContent = " " + feature;
-      });
+      applyIndexed(
+        el,
+        '[data-config-item="pricingFeatures"]',
+        item.features,
+        function (li, feature) {
+          const texts = Array.from(li.childNodes).filter(function (node) {
+            return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
+          });
+          if (texts[0]) texts[0].textContent = " " + feature;
+        },
+      );
     },
   );
 
   const how = document.querySelector('[data-section="howItWorks"]');
   if (how && sections.howItWorks) {
     const groups = sections.howItWorks.groups || [];
-    applyIndexed(how, '[data-config-item="howItWorksGroup"]', groups, function (el, group) {
-      const text = Array.from(el.childNodes).filter(function (node) {
-        return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
-      });
-      if (text[0]) text[0].textContent = " " + group.label;
-    });
+    applyIndexed(
+      how,
+      '[data-config-item="howItWorksGroup"]',
+      groups,
+      function (el, group) {
+        const text = Array.from(el.childNodes).filter(function (node) {
+          return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
+        });
+        if (text[0]) text[0].textContent = " " + group.label;
+      },
+    );
 
     const steps = groups.reduce(function (all, group) {
       return all.concat(group.steps || []);
     }, []);
-    applyIndexed(how, '[data-config-item="howItWorks"]', steps, function (el, step) {
-      const number = configField(el, "number");
-      const title = configField(el, "title");
-      const desc = configField(el, "description");
-      if (number) number.textContent = step.number;
-      if (title) title.textContent = step.title;
-      if (desc) desc.textContent = step.description;
-    });
-    applyIndexed(how, '[data-config-item="howItWorksMarkers"]', steps, function (el, step) {
-      el.textContent = step.number;
-    });
+    applyIndexed(
+      how,
+      '[data-config-item="howItWorks"]',
+      steps,
+      function (el, step) {
+        const number = configField(el, "number");
+        const title = configField(el, "title");
+        const desc = configField(el, "description");
+        if (number) number.textContent = step.number;
+        if (title) title.textContent = step.title;
+        if (desc) desc.textContent = step.description;
+      },
+    );
+    applyIndexed(
+      how,
+      '[data-config-item="howItWorksMarkers"]',
+      steps,
+      function (el, step) {
+        el.textContent = step.number;
+      },
+    );
   }
 
   const advisor = document.querySelector('[data-config-item="advisorCta"]');
@@ -397,7 +439,10 @@ function applySectionLists(config) {
       if (sections.pricing.advisorCta.button?.href) {
         button.setAttribute("href", sections.pricing.advisorCta.button.href);
       }
-      setTextPreserveChildren(button, sections.pricing.advisorCta.button?.label);
+      setTextPreserveChildren(
+        button,
+        sections.pricing.advisorCta.button?.label,
+      );
     }
   }
 
@@ -453,10 +498,15 @@ function applySectionLists(config) {
 
   const footer = document.querySelector('[data-section="footer"]');
   if (footer && sections.footer) {
-    applyIndexed(footer, '[data-config-item="footerSocial"]', sections.footer.socialLinks, function (el, item) {
-      el.setAttribute("href", item.href);
-      el.setAttribute("aria-label", item.label);
-    });
+    applyIndexed(
+      footer,
+      '[data-config-item="footerSocial"]',
+      sections.footer.socialLinks,
+      function (el, item) {
+        el.setAttribute("href", item.href);
+        el.setAttribute("aria-label", item.label);
+      },
+    );
     applyFooterGroups(footer, config);
     syncLegalLinks(footer, sections.footer.legalLinks);
     applyFooterContact(footer, sections.footer.contact || {});
@@ -522,6 +572,10 @@ function applyFooterGroups(footer, config) {
     syncFooterLinkList(groupEl, links);
   });
 
+  syncFooterColumns(footer);
+}
+
+function syncFooterColumns(footer) {
   const nav = footer.querySelector(".footer__nav");
   if (!nav) return;
   const count = nav.querySelectorAll("[data-footer-group]").length;
@@ -572,8 +626,12 @@ function syncLegalLinks(footer, links) {
 function applyFooterContact(footer, contact) {
   const phone = configField(footer, "phone");
   const email = configField(footer, "email");
-  const address = footer.querySelector('[data-config="sections.footer.contact.address"]');
-  const hours = footer.querySelector('[data-config="sections.footer.contact.hours"]');
+  const address = footer.querySelector(
+    '[data-config="sections.footer.contact.address"]',
+  );
+  const hours = footer.querySelector(
+    '[data-config="sections.footer.contact.hours"]',
+  );
 
   if (phone) {
     if (hasText(contact.phone?.display)) {
@@ -595,6 +653,12 @@ function applyFooterContact(footer, contact) {
 
   if (address && !hasText(contact.address)) removeConfigRow(address);
   if (hours && !hasText(contact.hours)) removeConfigRow(hours);
+
+  const group = footer.querySelector('[data-footer-group="contact"]');
+  if (!group) return;
+  if (group.querySelector(".footer__contact-list > li")) return;
+  group.remove();
+  syncFooterColumns(footer);
 }
 
 function applyConsultationOptions(config) {
@@ -610,7 +674,8 @@ function fillSelect(rootId, field) {
   if (!root) return;
   const placeholder = root.querySelector("[data-select-value]");
   const box = root.querySelector("[data-select-options]");
-  if (placeholder && field.placeholder) placeholder.textContent = field.placeholder;
+  if (placeholder && field.placeholder)
+    placeholder.textContent = field.placeholder;
   if (!box || !field.options) return;
   box.innerHTML = field.options
     .map(function (option) {
@@ -626,6 +691,15 @@ export function applySectionVisibility(config) {
     const section = document.querySelector('[data-section="' + key + '"]');
     if (section) section.remove();
   });
+  applySectionLayout(config);
+}
+
+function applySectionLayout(config) {
+  const root = document.documentElement;
+  const heroOn = sectionIsEnabled(config, "hero");
+  const trustOn = sectionIsEnabled(config, "trust");
+  root.classList.toggle("is-no-hero", !heroOn);
+  root.classList.toggle("is-trust-off", heroOn && !trustOn);
 }
 
 function applySiteConfig(config) {

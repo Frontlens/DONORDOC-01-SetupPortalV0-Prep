@@ -9,6 +9,16 @@ main {
       padding-top: 0;
     }
 
+    html.is-no-hero & {
+      @media (min-width: 1024px) {
+        padding-top: 48px;
+
+        .trust__stats-card {
+          margin-top: 0;
+        }
+      }
+    }
+
     .trust__stats-card {
       display: grid;
       grid-template-columns: repeat(4, 1fr);

@@ -198,6 +198,12 @@ footer {
   width: 100%;
   top: 0;
 }
+html.is-no-hero #header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
 #header.sticky {
   position: fixed;
   top: calc(0px - var(--header-top-overlap, 2px));
@@ -486,6 +492,11 @@ main .hero {
     padding-bottom: 150px;
   }
 }
+@media (min-width: 1024px) {
+  html.is-trust-off main .hero {
+    padding-bottom: 0;
+  }
+}
 main .hero .hero__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -761,6 +772,14 @@ main .trust {
 @media (min-width: 1024px) {
   main .trust {
     padding-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  html.is-no-hero main .trust {
+    padding-top: 48px;
+  }
+  html.is-no-hero main .trust .trust__stats-card {
+    margin-top: 0;
   }
 }
 main .trust .trust__stats-card {

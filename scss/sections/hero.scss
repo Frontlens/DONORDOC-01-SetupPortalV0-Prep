@@ -12,6 +12,12 @@ main {
       padding-bottom: 150px;
     }
 
+    html.is-trust-off & {
+      @media (min-width: 1024px) {
+        padding-bottom: 0;
+      }
+    }
+
     .hero__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;

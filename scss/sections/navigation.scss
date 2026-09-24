@@ -8,6 +8,13 @@
   width: 100%;
   top: 0;
 
+  html.is-no-hero & {
+    position: sticky;
+    top: 0;
+    background-color: $color-surface;
+    box-shadow: 0 1px 2px 0 rgba($color-shadow, 0.05);
+  }
+
   &.sticky {
     position: fixed;
     top: calc(0px - var(--header-top-overlap, 2px));
