@@ -345,6 +345,15 @@
 
         .navbar-nav-actions {
           gap: 20px;
+
+          &:not(:has(.nav-item)) {
+            display: none;
+          }
+        }
+
+        &:not(:has(.navbar-nav-actions .nav-item)) .navbar-nav-main {
+          flex: 0 1 auto;
+          justify-content: flex-end;
         }
       }
     }
