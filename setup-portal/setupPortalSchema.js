@@ -11,24 +11,24 @@ export const setupPortalSchema = {
     formats: {
       bareAnchor: "^#$",
       internalAnchor: "^#[A-Za-z][A-Za-z0-9_-]*$",
-      absoluteWebUrl: "^https?:\\/\\/[A-Za-z0-9.-]+(?::\\d+)?(?:\\/[^\\s]*)?$",
+      absoluteWebUrl: "^https?:\\/\\/[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*(?::\\d+)?(?:\\/[^\\s?#]*)?(?:\\?[^\\s#]*)?(?:#[^\\s]*)?$",
       relativePath: "^(?:\\/(?!\\/)\\S*|\\.\\.?\\/\\S*|(?![A-Za-z][A-Za-z0-9+.-]*:)(?![#/])\\S+)$",
-      tel: "^tel:\\+?[0-9][0-9().\\- ]*$",
+      tel: "^tel:\\+?[0-9]+(?:[.\\- ][0-9]+| ?\\([0-9]+\\)(?:[.\\- ][0-9]+)*)*$",
     },
     linkDestination: {
       accept: ["bareAnchor", "internalAnchor", "absoluteWebUrl", "relativePath"],
-      valid: ["#", "#about", "#pricing", "#consultation", "/privacy", "page.html", "https://example.com/", "http://example.com/path"],
-      invalid: ["tel:+17866163592", "mailto:support@donordoc.com", "javascript:alert(1)"],
+      valid: ["#", "#about", "#pricing", "#consultation", "/privacy", "page.html", "https://example.com/", "https://example.com?x=1", "https://example.com#about", "http://example.com/path"],
+      invalid: ["https://example..com/", "tel:+17866163592", "mailto:support@donordoc.com", "javascript:alert(1)"],
     },
     phoneDestination: {
       accept: ["tel"],
       valid: ["tel:+17866163592", "tel:17866163592", "tel:+1-786-616-3592"],
-      invalid: ["#footer", "https://example.com/", "(786) 616-3592"],
+      invalid: ["tel:1---", "#footer", "https://example.com/", "(786) 616-3592"],
     },
     absoluteWebUrl: {
       accept: ["absoluteWebUrl"],
-      valid: ["https://example.com/", "http://example.com/path"],
-      invalid: ["#about", "#", "/privacy", "page.html", "tel:+17866163592", "example.com"],
+      valid: ["https://example.com/", "https://example.com?x=1", "https://example.com#about", "http://example.com/path"],
+      invalid: ["https://example..com/", "#about", "#", "/privacy", "page.html", "tel:+17866163592", "example.com"],
     },
   },
   groups: [

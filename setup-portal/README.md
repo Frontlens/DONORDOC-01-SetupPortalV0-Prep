@@ -10,7 +10,9 @@ A group contains `groups` or `fields`. Branding, Theme, SEO & Social Sharing, an
 
 Version 1 used six legal-link fields: `footer-privacy-label`, `footer-privacy-href`, `footer-terms-label`, `footer-terms-href`, `footer-site-map-label`, `footer-site-map-href`. Version 2 uses the collection `footer-legal-links` on `sections.footer.legalLinks`, with `itemKey` `id`. Item ids stay `privacy`, `terms`, and `siteMap`. `itemRules` is keyed by those ids. The collection does not grant add, remove, reorder, or edit. That stays Step 3.
 
-Phone, email, address, hours, and Site Map may be absent. Absence is a missing key, null, or a blank string, which is how the footer already drops the row. Phone is one item: a missing phone or a blank display drops the display and href requirements together. A present phone requires both. A present Site Map item requires label and href, and the label max length stays 13. Privacy and Terms items stay required. Their labels have no max length.
+Phone, email, address, and hours may be absent. For those contact values, absence is a missing key, null, or a blank string, which is how the footer drops the row. Phone is one item: a missing phone or a blank display drops the display and href requirements together. A present phone requires both.
+
+Site Map is removed by deleting the whole `sections.footer.legalLinks` item whose `id` is `siteMap`. Blanking that item's label or href is not removal. A Site Map item that is still in the array requires its label and href, and the label max length stays 13. Privacy and Terms items stay required. Their labels have no max length.
 
 A `url` field names a `destinationRule`. Patterns live on `destinationRules.formats`. A value is valid when it matches one accepted format. Canonical and social URLs use `absoluteWebUrl` only.
 
