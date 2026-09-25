@@ -300,6 +300,28 @@ function configFields(el, name) {
   return el.querySelectorAll('[data-config-field="' + name + '"]');
 }
 
+function applyServiceCards(section, items) {
+  if (!section || !items) return;
+  const cards = {};
+  let parent = null;
+  section.querySelectorAll('[data-config-item="services"]').forEach(function (card) {
+    const id = card.getAttribute("data-service-id");
+    if (!id) return;
+    cards[id] = card;
+    if (!parent) parent = card.parentElement;
+  });
+  if (!parent) return;
+  items.forEach(function (item) {
+    const card = item && cards[item.id];
+    if (!card) return;
+    parent.appendChild(card);
+    const title = configField(card, "title");
+    const desc = configField(card, "description");
+    if (title) title.textContent = item.title;
+    if (desc) desc.textContent = item.description;
+  });
+}
+
 function applySectionLists(config) {
   const sections = config.sections || {};
 
@@ -339,16 +361,9 @@ function applySectionLists(config) {
     },
   );
 
-  applyIndexed(
+  applyServiceCards(
     document.querySelector('[data-section="services"]'),
-    '[data-config-item="services"]',
     sections.services?.items,
-    function (el, item) {
-      const title = configField(el, "title");
-      const desc = configField(el, "description");
-      if (title) title.textContent = item.title;
-      if (desc) desc.textContent = item.description;
-    },
   );
 
   applyIndexed(

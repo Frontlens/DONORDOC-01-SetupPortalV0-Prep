@@ -1654,6 +1654,15 @@ export const setupPortalSchema = {
                   required: true,
                 },
               ],
+              itemRules: {
+                contact: {
+                  required: false,
+                  permissions: { removable: true },
+                  fields: {
+                    href: { permissions: { editable: true } },
+                  },
+                },
+              },
             },
             {
               id: "footer-coverage-title",
