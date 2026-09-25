@@ -523,7 +523,7 @@ function visibleFooterLinks(group, config) {
 }
 
 function syncFooterLinkList(groupEl, links) {
-  const list = groupEl.querySelector(".footer__nav-list");
+  const list = groupEl.querySelector("[data-footer-link-list]");
   if (!list) return;
 
   const anchors = {};
@@ -576,7 +576,7 @@ function applyFooterGroups(footer, config) {
 }
 
 function syncFooterColumns(footer) {
-  const nav = footer.querySelector(".footer__nav");
+  const nav = footer.querySelector("[data-footer-columns]");
   if (!nav) return;
   const count = nav.querySelectorAll("[data-footer-group]").length;
   if (count === 4) nav.removeAttribute("data-footer-cols");
@@ -584,7 +584,7 @@ function syncFooterColumns(footer) {
 }
 
 function syncLegalLinks(footer, links) {
-  const nav = footer.querySelector(".site-footer__bar-links");
+  const nav = footer.querySelector("[data-footer-legal-links]");
   if (!nav) return;
 
   const items = Array.isArray(links) ? links : [];
@@ -656,7 +656,7 @@ function applyFooterContact(footer, contact) {
 
   const group = footer.querySelector('[data-footer-group="contact"]');
   if (!group) return;
-  if (group.querySelector(".footer__contact-list > li")) return;
+  if (group.querySelector("[data-footer-contact-list] > li")) return;
   group.remove();
   syncFooterColumns(footer);
 }
