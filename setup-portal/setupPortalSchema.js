@@ -1427,7 +1427,6 @@ export const setupPortalSchema = {
               label: "Business Name",
               type: "text",
               required: true,
-              validation: { maxLength: 18 },
             },
             {
               id: "footer-description",

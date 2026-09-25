@@ -16,6 +16,6 @@ Site Map is removed by deleting the whole `sections.footer.legalLinks` item whos
 
 A `url` field names a `destinationRule`. Patterns live on `destinationRules.formats`. A value is valid when it matches one accepted format. Canonical and social URLs use `absoluteWebUrl` only.
 
-No approved limit is on record for image file type, file size, image dimensions, collection `minItems` / `maxItems`, or `sections.howItWorks.headline.mobile`. Those stay unset.
+`sections.footer.businessName` has no max length. No approved limit is on record for image file type, file size, image dimensions, collection `minItems` / `maxItems`, or `sections.howItWorks.headline.mobile`. Those stay unset.
 
 `sections.reviews.items[].rating` is an integer from 1 to 5.
