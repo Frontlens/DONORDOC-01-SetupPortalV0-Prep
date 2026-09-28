@@ -14,6 +14,12 @@ function closeAllDropdowns(allDropdowns, exceptThis = null) {
   });
 }
 
+function closePickers(pickers) {
+  pickers.forEach((picker) => {
+    if (picker && picker.isOpen) picker.close(false);
+  });
+}
+
 export function initConsultationSection() {
   try {
     const section = document.querySelector('[data-section="consultation"]');
@@ -22,34 +28,48 @@ export function initConsultationSection() {
     const scheduling = getSiteConfig()?.sections?.consultation?.scheduling || {};
     const fields = getSiteConfig()?.sections?.consultation?.form?.fields || {};
 
+    const pickers = [];
+    const selects = section.querySelectorAll("[data-select]");
+    let activeSelect = null;
+
+    const closeDropdowns = () => {
+      closeAllDropdowns(selects);
+      activeSelect = null;
+    };
+
     if (typeof window.FLDatePicker === "function") {
       const dateEl = document.getElementById("consultation-date");
       const timeEl = document.getElementById("consultation-time");
 
       if (dateEl) {
-        new window.FLDatePicker(dateEl, {
-          type: "date",
-          placeholder: fields.preferredDate?.placeholder || "Select date",
-          disablePast: true,
-          closeOnSelect: false,
-          closeOnSelectDelay: 400,
-        });
+        pickers.push(
+          new window.FLDatePicker(dateEl, {
+            type: "date",
+            placeholder: fields.preferredDate?.placeholder || "Select date",
+            disablePast: true,
+            closeOnSelect: false,
+            closeOnSelectDelay: 400,
+            onOpen: closeDropdowns,
+          }),
+        );
       }
 
       if (timeEl) {
-        new window.FLDatePicker(timeEl, {
-          type: "time",
-          timeStep: scheduling.timeStepMinutes || 15,
-          placeholder: fields.preferredTime?.placeholder || "Select time",
-          closeOnSelect: false,
-          closeOnSelectDelay: 400,
-          disabledTimes: scheduling.disabledTimes || [],
-        });
+        pickers.push(
+          new window.FLDatePicker(timeEl, {
+            type: "time",
+            timeStep: scheduling.timeStepMinutes || 15,
+            timeStartMinutes: 9 * 60,
+            timeEndMinutes: 23 * 60 + 45,
+            placeholder: fields.preferredTime?.placeholder || "Select time",
+            closeOnSelect: false,
+            closeOnSelectDelay: 400,
+            disabledTimes: scheduling.disabledTimes || [],
+            onOpen: closeDropdowns,
+          }),
+        );
       }
     }
-
-    const selects = section.querySelectorAll("[data-select]");
-    let activeSelect = null;
 
     selects.forEach((select) => {
       const selected = select.querySelector("[data-select-value]");
@@ -65,6 +85,7 @@ export function initConsultationSection() {
           return;
         }
 
+        closePickers(pickers);
         closeAllDropdowns(selects, select);
         options.classList.add("show-drop");
         activeSelect = select;

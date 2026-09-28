@@ -75,6 +75,16 @@ License: For personal/business use only. Redistribution, resale, or sublicensing
   main .final-cta .final-cta__card {
     padding: 24px 20px;
   }
+
+  #up-arrow:hover,
+  #up-arrow:active,
+  #up-arrow:focus,
+  #up-arrow:focus-visible {
+    background-color: $color-brand;
+    border-color: $color-brand;
+    color: $color-surface;
+    box-shadow: none;
+  }
 }
 
 @media (max-width: 799.98px) {

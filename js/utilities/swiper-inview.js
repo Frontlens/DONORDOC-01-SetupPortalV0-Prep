@@ -11,7 +11,7 @@ export function initSwiperAutoplayInView(swipers) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        const swiper = active.find((item) => item.el === entry.target);
+        const swiper = entry.target.swiper;
         if (!swiper || !swiper.autoplay) return;
         if (entry.isIntersecting) {
           swiper.autoplay.start();

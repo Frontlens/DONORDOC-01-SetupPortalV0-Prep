@@ -351,14 +351,6 @@ main {
         margin-bottom: 36px;
       }
 
-      .how-it-works__heading-desktop {
-        display: none;
-      }
-
-      .how-it-works__heading-mobile {
-        display: block;
-      }
-
       .how-it-works__description {
         max-width: none;
       }
@@ -553,6 +545,18 @@ main {
       .how-it-works__summary-text {
         font-size: 11px;
         line-height: 1.35;
+      }
+    }
+
+    @media (max-width: $bp-md) {
+      .how-it-works__heading-desktop {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .how-it-works__heading-divider {
+        width: 56px;
+        height: 1px;
       }
     }
   }

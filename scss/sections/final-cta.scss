@@ -397,4 +397,12 @@
       font-size: 11px;
     }
   }
+
+  @media (max-width: 767.98px) {
+    .final-cta__btn {
+      width: 100%;
+      font-size: 17px;
+      padding: 16px 22px;
+    }
+  }
 }

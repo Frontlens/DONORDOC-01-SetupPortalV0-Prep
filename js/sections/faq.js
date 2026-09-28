@@ -63,14 +63,20 @@ function wireFaqAccordion(section) {
   const items = Array.from(section.querySelectorAll("[data-faq-item]"));
   if (!items.length) return;
 
+  const clearHeightEnd = (panel) => {
+    if (!panel._onHeightEnd) return;
+    panel.removeEventListener("transitionend", panel._onHeightEnd);
+    panel._onHeightEnd = null;
+  };
+
   const closePanel = (item, panel, trigger) => {
     if (!item.classList.contains("is-open")) return;
 
+    clearHeightEnd(panel);
     item.classList.remove("is-open");
     trigger.setAttribute("aria-expanded", "false");
 
-    panel.style.transition =
-      "height 300ms ease-in-out, opacity 280ms ease-in-out";
+    panel.style.transition = "height 300ms ease-out, opacity 300ms ease-out";
     panel.style.height = `${panel.scrollHeight}px`;
     panel.style.opacity = "1";
 
@@ -81,20 +87,22 @@ function wireFaqAccordion(section) {
 
     const onCloseEnd = (event) => {
       if (event.propertyName !== "height") return;
-      panel.removeEventListener("transitionend", onCloseEnd);
+      clearHeightEnd(panel);
       panel.hidden = true;
       panel.style.height = "";
       panel.style.opacity = "";
       panel.style.transition = "";
     };
 
+    panel._onHeightEnd = onCloseEnd;
     panel.addEventListener("transitionend", onCloseEnd);
   };
 
   const openPanel = (item, panel, trigger) => {
+    clearHeightEnd(panel);
     item.classList.add("is-open");
     panel.hidden = false;
-    panel.style.transition = "height 350ms ease-out, opacity 350ms ease-out";
+    panel.style.transition = "height 300ms ease-out, opacity 300ms ease-out";
     panel.style.height = "0px";
     panel.style.opacity = "0";
 
@@ -107,11 +115,12 @@ function wireFaqAccordion(section) {
 
     const onOpenEnd = (event) => {
       if (event.propertyName !== "height") return;
-      panel.removeEventListener("transitionend", onOpenEnd);
+      clearHeightEnd(panel);
       panel.style.height = "auto";
       trigger.setAttribute("aria-expanded", "true");
     };
 
+    panel._onHeightEnd = onOpenEnd;
     panel.addEventListener("transitionend", onOpenEnd);
   };
 

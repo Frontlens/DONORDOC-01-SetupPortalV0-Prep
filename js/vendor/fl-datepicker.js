@@ -33,8 +33,11 @@
     // briefly sees the selected date/time. Use with closeOnSelect: false.
     closeOnSelectDelay: 0,
     timeStep: 15,
+    timeStartMinutes: null,
+    timeEndMinutes: null,
     errorMessage: "This field is required.",
     disabledTimes: [],
+    onOpen: null,
   };
 
   /* ── Helpers ────────────────────────────────────────────────────── */
@@ -371,35 +374,42 @@
   FLDatePicker.prototype._renderTimeList = function () {
     this.timeListEl.innerHTML = "";
     var step = this.opts.timeStep;
+    var start =
+      this.opts.timeStartMinutes != null ? this.opts.timeStartMinutes : 0;
+    var end =
+      this.opts.timeEndMinutes != null
+        ? this.opts.timeEndMinutes
+        : 24 * 60 - step;
     var self = this;
 
-    for (var h = 0; h < 24; h++) {
-      for (var m = 0; m < 60; m += step) {
-        var label = formatTime(h, m);
-        var btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "fl-timelist-option";
-        btn.textContent = label;
-        btn.setAttribute("role", "option");
-        btn.dataset.value = label;
+    for (var mins = start; mins <= end; mins += step) {
+      var h = Math.floor(mins / 60);
+      var m = mins % 60;
+      if (h > 23) break;
+      var label = formatTime(h, m);
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "fl-timelist-option";
+      btn.textContent = label;
+      btn.setAttribute("role", "option");
+      btn.dataset.value = label;
 
-        var disabled =
-          Array.isArray(this.opts.disabledTimes) &&
-          this.opts.disabledTimes.indexOf(label) !== -1;
+      var disabled =
+        Array.isArray(this.opts.disabledTimes) &&
+        this.opts.disabledTimes.indexOf(label) !== -1;
 
-        if (!disabled && this.selectedTimeValue === label) {
-          btn.classList.add("fl-timelist-option--selected");
-          btn.setAttribute("aria-selected", "true");
-        }
-
-        if (disabled) {
-          btn.classList.add("fl-timelist-option--disabled");
-          btn.setAttribute("aria-disabled", "true");
-          btn.disabled = true;
-        }
-
-        this.timeListEl.appendChild(btn);
+      if (!disabled && this.selectedTimeValue === label) {
+        btn.classList.add("fl-timelist-option--selected");
+        btn.setAttribute("aria-selected", "true");
       }
+
+      if (disabled) {
+        btn.classList.add("fl-timelist-option--disabled");
+        btn.setAttribute("aria-disabled", "true");
+        btn.disabled = true;
+      }
+
+      this.timeListEl.appendChild(btn);
     }
 
     // Click delegation
@@ -623,7 +633,11 @@
   FLDatePicker.prototype.open = function () {
     // Close any other open instance
     if (_activeInstance && _activeInstance !== this) {
-      _activeInstance.close();
+      _activeInstance.close(false);
+    }
+
+    if (typeof this.opts.onOpen === "function") {
+      this.opts.onOpen(this);
     }
 
     if (this.opts.type === "date") {
@@ -679,12 +693,12 @@
     });
   };
 
-  FLDatePicker.prototype.close = function () {
+  FLDatePicker.prototype.close = function (restoreFocus) {
     this.popover.classList.remove("fl-picker-popover--open");
     this.wrapper.classList.remove("fl-picker--focused");
     this.isOpen = false;
     this.input.setAttribute("aria-expanded", "false");
-    this.input.focus();
+    if (restoreFocus !== false) this.input.focus();
 
     if (_activeInstance === this) {
       _activeInstance = null;
