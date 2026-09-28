@@ -56,12 +56,13 @@ export function initNavScroll() {
     finalCta: "#finalCta",
   };
 
-  const sections = Array.from(document.querySelectorAll("[data-section]")).filter(
-    (s) =>
-      Object.prototype.hasOwnProperty.call(
-        sectionToNavHash,
-        s.getAttribute("data-section"),
-      ),
+  const sections = Array.from(
+    document.querySelectorAll("[data-section]"),
+  ).filter((s) =>
+    Object.prototype.hasOwnProperty.call(
+      sectionToNavHash,
+      s.getAttribute("data-section"),
+    ),
   );
 
   const navLinks = document.querySelectorAll(
@@ -189,11 +190,22 @@ export function initMobileMenu() {
     document.dispatchEvent(new CustomEvent("mobilenav:close"));
   };
 
+  const primeLinkReveal = () => {
+    offcanvas
+      .querySelectorAll(
+        ".mobile-nav__list > li, .mobile-nav__divider, .mobile-nav__advisor, .button--mobile",
+      )
+      .forEach((row, index) => {
+        row.style.setProperty("--nav-stagger", String(index));
+      });
+  };
+
   const open = () => {
     if (isOpen || isClosing) return;
 
     isOpen = true;
     offcanvas.classList.remove("is-closing");
+    primeLinkReveal();
     offcanvas.classList.add("show");
     header?.classList.add("mobile-nav__open");
     setTogglerOpen(true);
@@ -221,7 +233,7 @@ export function initMobileMenu() {
       finishClose();
     };
 
-    closeFallback = setTimeout(() => onCloseEnd(null), 1100);
+    closeFallback = setTimeout(() => onCloseEnd(null), 400);
     offcanvas.addEventListener("transitionend", onCloseEnd);
   };
 

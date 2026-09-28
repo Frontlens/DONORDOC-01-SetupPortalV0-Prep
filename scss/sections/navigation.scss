@@ -188,7 +188,7 @@
     .offcanvas {
       backdrop-filter: blur(5px);
       background-color: $color-surface;
-      transition: transform 1s ease-in-out;
+      transition: transform 0.28s ease-out;
       z-index: 2100;
 
       &.offcanvas-end {
@@ -234,6 +234,12 @@
         > li {
           opacity: 0;
         }
+      }
+
+      .mobile-nav__divider,
+      .mobile-nav__advisor,
+      .button--mobile {
+        opacity: 0;
       }
 
       .mobile-nav__link {
@@ -286,7 +292,7 @@
       .mobile-nav__divider {
         height: 1px;
         background: $color-neutral;
-        margin: 12px 0 16px;
+        margin: 0 0 28px;
       }
 
       .mobile-nav__advisor {
@@ -381,19 +387,34 @@
   }
 }
 
-.offcanvas.show .mobile-nav__list > li {
-  animation: mobile-nav-link-in 160ms ease-out forwards;
+.offcanvas.show .mobile-nav__list > li,
+.offcanvas.show .mobile-nav__divider,
+.offcanvas.show .mobile-nav__advisor,
+.offcanvas.show .button--mobile {
+  animation: mobile-nav-link-in 170ms ease-out both;
+  animation-delay: calc(50ms + var(--nav-stagger, 0) * 48ms);
 }
 
-@for $i from 1 through 6 {
-  .offcanvas.show .mobile-nav__list > li:nth-child(#{$i}) {
-    animation-delay: #{($i - 1) * 28}ms;
-  }
+#header nav .offcanvas.is-closing .mobile-nav__list > li,
+#header nav .offcanvas.is-closing .mobile-nav__divider,
+#header nav .offcanvas.is-closing .mobile-nav__advisor,
+#header nav .offcanvas.is-closing .button--mobile {
+  opacity: 1;
+  transform: none;
+  animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #header nav .offcanvas .mobile-nav__list > li {
+  #header nav .offcanvas {
+    transition: none;
+  }
+
+  #header nav .offcanvas .mobile-nav__list > li,
+  #header nav .offcanvas .mobile-nav__divider,
+  #header nav .offcanvas .mobile-nav__advisor,
+  #header nav .offcanvas .button--mobile {
     opacity: 1;
+    transform: none;
     animation: none;
   }
 }

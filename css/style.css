@@ -340,7 +340,7 @@ html.is-no-hero #header {
 #header nav .offcanvas {
   backdrop-filter: blur(5px);
   background-color: #fff;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.28s ease-out;
   z-index: 2100;
 }
 #header nav .offcanvas.offcanvas-end {
@@ -378,6 +378,11 @@ html.is-no-hero #header {
   border-top: 1px solid #e9ecef;
 }
 #header nav .offcanvas .mobile-nav__list > li {
+  opacity: 0;
+}
+#header nav .offcanvas .mobile-nav__divider,
+#header nav .offcanvas .mobile-nav__advisor,
+#header nav .offcanvas .button--mobile {
   opacity: 0;
 }
 #header nav .offcanvas .mobile-nav__link {
@@ -422,7 +427,7 @@ html.is-no-hero #header {
 #header nav .offcanvas .mobile-nav__divider {
   height: 1px;
   background: #e9ecef;
-  margin: 12px 0 16px;
+  margin: 0 0 28px;
 }
 #header nav .offcanvas .mobile-nav__advisor {
   display: inline-flex;
@@ -501,37 +506,33 @@ html.is-no-hero #header {
     transform: none;
   }
 }
-.offcanvas.show .mobile-nav__list > li {
-  animation: mobile-nav-link-in 160ms ease-out forwards;
+.offcanvas.show .mobile-nav__list > li,
+.offcanvas.show .mobile-nav__divider,
+.offcanvas.show .mobile-nav__advisor,
+.offcanvas.show .button--mobile {
+  animation: mobile-nav-link-in 170ms ease-out both;
+  animation-delay: calc(50ms + var(--nav-stagger, 0) * 48ms);
 }
 
-.offcanvas.show .mobile-nav__list > li:nth-child(1) {
-  animation-delay: 0ms;
-}
-
-.offcanvas.show .mobile-nav__list > li:nth-child(2) {
-  animation-delay: 28ms;
-}
-
-.offcanvas.show .mobile-nav__list > li:nth-child(3) {
-  animation-delay: 56ms;
-}
-
-.offcanvas.show .mobile-nav__list > li:nth-child(4) {
-  animation-delay: 84ms;
-}
-
-.offcanvas.show .mobile-nav__list > li:nth-child(5) {
-  animation-delay: 112ms;
-}
-
-.offcanvas.show .mobile-nav__list > li:nth-child(6) {
-  animation-delay: 140ms;
+#header nav .offcanvas.is-closing .mobile-nav__list > li,
+#header nav .offcanvas.is-closing .mobile-nav__divider,
+#header nav .offcanvas.is-closing .mobile-nav__advisor,
+#header nav .offcanvas.is-closing .button--mobile {
+  opacity: 1;
+  transform: none;
+  animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #header nav .offcanvas .mobile-nav__list > li {
+  #header nav .offcanvas {
+    transition: none;
+  }
+  #header nav .offcanvas .mobile-nav__list > li,
+  #header nav .offcanvas .mobile-nav__divider,
+  #header nav .offcanvas .mobile-nav__advisor,
+  #header nav .offcanvas .button--mobile {
     opacity: 1;
+    transform: none;
     animation: none;
   }
 }
