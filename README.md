@@ -10,7 +10,8 @@ Do not change visual design, copy, or interactions unless Frontlens asks.
 - `scss/` — style source of truth (`style.scss` imports partials)
 - `css/style.css` — compiled output. Do not edit by hand.
 - `css/vendor/` — Bootstrap utilities and the date picker stylesheet
-- `js/app.js` — JavaScript entry (`type="module"`)
+- `js/app.js` — JavaScript entry
+- `js/app.min.js` — bundled output. Do not edit by hand.
 - `js/components/`, `js/sections/`, `js/utilities/` — feature modules
 - `js/vendor/` — FLDatePicker (global)
 - `config/` — `siteConfig.json` and `themeRegistry.js`
@@ -29,10 +30,14 @@ npm run build:css
 
 ## JavaScript
 
-`js/app.js` loads modules. A module initializes only when its DOM exists, so a missing section does not break navigation, forms, or other features.
+```bash
+npm run build:js
+```
 
-Swiper loads from the CDN as a global. Date picker stays on `window.FLDatePicker`.
+`npm run watch:js` rebuilds while you edit `js/`. `index.html` loads `js/app.min.js`. Modules still initialize only when their DOM exists.
+
+Swiper and the date picker stay vendor files, loaded when those sections are near the viewport.
 
 ## Local preview
 
-Do not double-click `index.html` to open it. Preview the site with Live Server (port 5506) or another local web preview from this folder. That is how the browser is able to load the split JavaScript files. On a real hosted website this is already handled for you.
+Do not double-click `index.html` to open it. Preview the site with Live Server (port 5506) or another local web preview from this folder so `config/siteConfig.json` can load.
