@@ -7,8 +7,6 @@ export function initLazyImages() {
   document.querySelectorAll("header img").forEach((img) => {
     img.loading = "eager";
     img.decoding = "async";
-    if (!img.hasAttribute("fetchpriority")) {
-      img.setAttribute("fetchpriority", "high");
-    }
+    img.removeAttribute("fetchpriority");
   });
 }

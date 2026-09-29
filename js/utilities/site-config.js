@@ -275,8 +275,11 @@ function applyHero(config) {
     img.setAttribute("fetchpriority", "high");
     img.setAttribute("decoding", "async");
   });
-  const preload = document.querySelector('link[rel="preload"][href*="hero"]');
-  if (preload) preload.setAttribute("href", src);
+  const preload = document.querySelector('link[rel="preload"][as="image"]');
+  if (preload) {
+    preload.setAttribute("href", src);
+    preload.setAttribute("fetchpriority", "high");
+  }
 }
 
 function applyImage(selector, image) {

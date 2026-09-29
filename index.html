@@ -6,6 +6,12 @@
     <title>Default DONORDOC-01 Title</title>
     <meta name="description" content="Default DONORDOC-01 description" />
     <link rel="canonical" href="https://example.com/" />
+    <link
+      rel="preload"
+      href="assets/images/hero-image.webp"
+      as="image"
+      fetchpriority="high"
+    />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Default Social Title" />
@@ -30,12 +36,6 @@
       type="font/woff2"
       crossorigin
     />
-    <link
-      rel="preload"
-      href="assets/images/donordoc-new-logo.webp"
-      as="image"
-    />
-    <link rel="preload" href="assets/images/hero-image.webp" as="image" />
 
     <!-- Standard favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -55,7 +55,6 @@
             <a href="#hero" class="navbar-brand"
               ><img
                 loading="eager"
-                fetchpriority="high"
                 decoding="async"
                 width="424"
                 height="84"
