@@ -2,7 +2,7 @@
   "liveServer.settings.port": 5508,
   "liveSassCompile.settings.formats": [
     {
-      "format": "expanded",
+      "format": "compressed",
       "extensionName": ".css",
       "savePath": "/css"
     }
@@ -12,6 +12,7 @@
     "**/scss/components/**",
     "**/scss/sections/**",
     "**/scss/variables.scss",
+    "**/scss/fonts.scss",
     "**/scss/global.scss",
     "**/scss/utilities.scss",
     "**/scss/responsive.scss"

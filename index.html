@@ -17,37 +17,25 @@
     <meta name="twitter:title" content="Default Social Title" />
     <meta name="twitter:description" content="Default Social Description" />
     <meta name="twitter:image" content="https://example.com/social-image.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/vendor/fl-datepicker.css" />
+    <noscript>
+      <link rel="stylesheet" href="./css/vendor/fl-datepicker.css" />
+      <link rel="stylesheet" href="./css/vendor/swiper-bundle.min.css" />
+    </noscript>
     <link
       rel="preload"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
+      href="assets/fonts/rubik-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    /></noscript>
     <link
       rel="preload"
       href="assets/images/donordoc-new-logo.webp"
       as="image"
     />
     <link rel="preload" href="assets/images/hero-image.webp" as="image" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
 
     <!-- Standard favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -66,7 +54,11 @@
           <div class="p-0 container-fluid navbar-inner">
             <a href="#hero" class="navbar-brand"
               ><img
-                loading="lazy"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="424"
+                height="84"
                 src="assets/images/donordoc-new-logo.webp"
                 alt="Health plan logo"
                 class="logo-img"
@@ -185,6 +177,9 @@
                 <a href="#hero" class="logo-link">
                   <img
                     loading="lazy"
+                    decoding="async"
+                    width="424"
+                    height="84"
                     src="assets/images/donordoc-new-logo.webp"
                     alt="Health plan logo"
                     class="logo-img"
@@ -791,6 +786,8 @@
               <div class="hero__image-wrap">
                 <img
                   loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
                   src="assets/images/hero-image.webp"
                   class="hero__image"
                   alt=""
@@ -4928,13 +4925,6 @@
       &uarr;
     </button>
 
-    <!-- Scripts -->
-    <!-- Swiper JS -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-    ></script>
-    <script defer src="js/vendor/fl-datepicker.js"></script>
     <script type="module" src="js/app.js"></script>
   </body>
 </html>

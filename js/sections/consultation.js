@@ -4,6 +4,11 @@ Author: FRONTLENS LLC
 License: For personal/business use only. Redistribution, resale, or sublicensing is strictly Copyright (c) 2026 FRONTLENS LLC. All rights reserved.
 */
 import { getSiteConfig } from "../utilities/site-config.js";
+import {
+  loadScript,
+  loadStylesheet,
+  whenNear,
+} from "../utilities/swiper-inview.js";
 
 function stillShowing(el) {
   if (!el) return false;
@@ -53,39 +58,45 @@ export function initConsultationSection() {
       dismissOthers(null, picker);
     };
 
-    if (typeof window.FLDatePicker === "function") {
-      const dateEl = document.getElementById("consultation-date");
-      const timeEl = document.getElementById("consultation-time");
+    whenNear(section, function () {
+      Promise.all([
+        loadStylesheet("css/vendor/fl-datepicker.css"),
+        loadScript("js/vendor/fl-datepicker.js"),
+      ]).then(function () {
+        if (typeof window.FLDatePicker !== "function") return;
+        const dateEl = document.getElementById("consultation-date");
+        const timeEl = document.getElementById("consultation-time");
 
-      if (dateEl) {
-        pickers.push(
-          new window.FLDatePicker(dateEl, {
-            type: "date",
-            placeholder: fields.preferredDate?.placeholder || "Select date",
-            disablePast: true,
-            closeOnSelect: false,
-            closeOnSelectDelay: 400,
-            onOpen: holdForOthers,
-          }),
-        );
-      }
+        if (dateEl) {
+          pickers.push(
+            new window.FLDatePicker(dateEl, {
+              type: "date",
+              placeholder: fields.preferredDate?.placeholder || "Select date",
+              disablePast: true,
+              closeOnSelect: false,
+              closeOnSelectDelay: 400,
+              onOpen: holdForOthers,
+            }),
+          );
+        }
 
-      if (timeEl) {
-        pickers.push(
-          new window.FLDatePicker(timeEl, {
-            type: "time",
-            timeStep: scheduling.timeStepMinutes || 15,
-            timeStartMinutes: 9 * 60,
-            timeEndMinutes: 23 * 60 + 45,
-            placeholder: fields.preferredTime?.placeholder || "Select time",
-            closeOnSelect: false,
-            closeOnSelectDelay: 400,
-            disabledTimes: scheduling.disabledTimes || [],
-            onOpen: holdForOthers,
-          }),
-        );
-      }
-    }
+        if (timeEl) {
+          pickers.push(
+            new window.FLDatePicker(timeEl, {
+              type: "time",
+              timeStep: scheduling.timeStepMinutes || 15,
+              timeStartMinutes: 9 * 60,
+              timeEndMinutes: 23 * 60 + 45,
+              placeholder: fields.preferredTime?.placeholder || "Select time",
+              closeOnSelect: false,
+              closeOnSelectDelay: 400,
+              disabledTimes: scheduling.disabledTimes || [],
+              onOpen: holdForOthers,
+            }),
+          );
+        }
+      });
+    });
 
     selects.forEach((select) => {
       const selected = select.querySelector("[data-select-value]");

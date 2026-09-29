@@ -4,14 +4,31 @@ Author: FRONTLENS LLC
 License: For personal/business use only. Redistribution, resale, or sublicensing is strictly Copyright (c) 2026 FRONTLENS LLC. All rights reserved.
 */
 
-import { initSwiperAutoplayInView } from "../utilities/swiper-inview.js";
+import {
+  initSwiperAutoplayInView,
+  loadSwiper,
+  whenNear,
+} from "../utilities/swiper-inview.js";
 
 export function initPricing() {
   const section = document.querySelector('[data-section="pricing"]');
-  if (!section || typeof window.Swiper !== "function") return;
+  if (!section) return;
 
   const root = section.querySelector('[data-swiper="pricing"]');
   if (!root) return;
+
+  let started = false;
+  whenNear(section, function () {
+    if (started) return;
+    started = true;
+    loadSwiper().then(function () {
+      mountPricing(section, root);
+    });
+  });
+}
+
+function mountPricing(section, root) {
+  if (typeof window.Swiper !== "function") return;
 
   const compact = window.matchMedia("(max-width: 991.98px)");
   let pricingSwiper = null;

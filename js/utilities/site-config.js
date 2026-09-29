@@ -271,6 +271,9 @@ function applyHero(config) {
   hero.querySelectorAll("[data-hero-image]").forEach(function (img) {
     img.setAttribute("src", src);
     img.setAttribute("alt", alt);
+    img.setAttribute("loading", "eager");
+    img.setAttribute("fetchpriority", "high");
+    img.setAttribute("decoding", "async");
   });
   const preload = document.querySelector('link[rel="preload"][href*="hero"]');
   if (preload) preload.setAttribute("href", src);
