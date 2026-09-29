@@ -5,19 +5,68 @@ License: For personal/business use only. Redistribution, resale, or sublicensing
 */
 import { getSiteConfig } from "../utilities/site-config.js";
 
-function closeAllDropdowns(allDropdowns, exceptThis = null) {
-  allDropdowns.forEach((select) => {
-    if (select !== exceptThis) {
-      const options = select.querySelector("[data-select-options]");
-      options.classList.remove("show-drop");
+const DROP_CLOSE_MS = 360;
+const PICKER_CLOSE_MS = 200;
+
+function stillShowing(el) {
+  if (!el) return false;
+  const style = getComputedStyle(el);
+  return style.visibility !== "hidden" && parseFloat(style.opacity) > 0.02;
+}
+
+function afterClose(el, fallbackMs) {
+  return new Promise((resolve) => {
+    if (!el) {
+      resolve();
+      return;
     }
+    const duration = getComputedStyle(el).transitionDuration || "";
+    if (duration.split(",").every((part) => parseFloat(part) === 0)) {
+      resolve();
+      return;
+    }
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      el.removeEventListener("transitionend", onEnd);
+      resolve();
+    };
+    const seen = new Set();
+    const onEnd = (event) => {
+      if (event.target !== el) return;
+      seen.add(event.propertyName);
+      const dropDone = seen.has("opacity") && seen.has("max-height");
+      const pickerDone = seen.has("opacity") && seen.has("transform");
+      if (dropDone || pickerDone) finish();
+    };
+    el.addEventListener("transitionend", onEnd);
+    window.setTimeout(finish, fallbackMs);
   });
 }
 
-function closePickers(pickers) {
-  pickers.forEach((picker) => {
-    if (picker && picker.isOpen) picker.close(false);
+function closeOpenControls(selects, pickers) {
+  const waits = [];
+  selects.forEach((select) => {
+    const options = select.querySelector("[data-select-options]");
+    if (!options) return;
+    if (options.classList.contains("show-drop")) {
+      options.classList.remove("show-drop");
+      waits.push(afterClose(options, DROP_CLOSE_MS));
+    } else if (stillShowing(options)) {
+      waits.push(afterClose(options, DROP_CLOSE_MS));
+    }
   });
+  pickers.forEach((picker) => {
+    if (!picker || !picker.popover) return;
+    if (picker.isOpen) {
+      picker.close(false);
+      waits.push(afterClose(picker.popover, PICKER_CLOSE_MS));
+    } else if (stillShowing(picker.popover)) {
+      waits.push(afterClose(picker.popover, PICKER_CLOSE_MS));
+    }
+  });
+  return Promise.all(waits);
 }
 
 export function initConsultationSection() {
@@ -31,10 +80,36 @@ export function initConsultationSection() {
     const pickers = [];
     const selects = section.querySelectorAll("[data-select]");
     let activeSelect = null;
+    let switchToken = 0;
 
-    const closeDropdowns = () => {
-      closeAllDropdowns(selects);
+    const armSwitch = () => {
+      switchToken += 1;
+      return switchToken;
+    };
+
+    const outgoing = (exceptPicker) => {
+      if (activeSelect) return true;
+      return pickers.some((item) => {
+        if (item === exceptPicker) return false;
+        return item.isOpen || stillShowing(item.popover);
+      }) || [...selects].some((select) => {
+        const options = select.querySelector("[data-select-options]");
+        return options?.classList.contains("show-drop") || stillShowing(options);
+      });
+    };
+
+    const holdForOthers = (picker) => {
+      if (!outgoing(picker)) return;
+      const token = armSwitch();
       activeSelect = null;
+      closeOpenControls(
+        selects,
+        pickers.filter((item) => item !== picker),
+      ).then(() => {
+        if (token !== switchToken) return;
+        picker.open();
+      });
+      return false;
     };
 
     if (typeof window.FLDatePicker === "function") {
@@ -49,7 +124,7 @@ export function initConsultationSection() {
             disablePast: true,
             closeOnSelect: false,
             closeOnSelectDelay: 400,
-            onOpen: closeDropdowns,
+            onOpen: holdForOthers,
           }),
         );
       }
@@ -65,7 +140,7 @@ export function initConsultationSection() {
             closeOnSelect: false,
             closeOnSelectDelay: 400,
             disabledTimes: scheduling.disabledTimes || [],
-            onOpen: closeDropdowns,
+            onOpen: holdForOthers,
           }),
         );
       }
@@ -79,16 +154,20 @@ export function initConsultationSection() {
       selected.addEventListener("click", function (e) {
         e.stopPropagation();
 
+        const token = armSwitch();
+
         if (select === activeSelect) {
           options.classList.remove("show-drop");
           activeSelect = null;
           return;
         }
 
-        closePickers(pickers);
-        closeAllDropdowns(selects, select);
-        options.classList.add("show-drop");
-        activeSelect = select;
+        activeSelect = null;
+        closeOpenControls(selects, pickers).then(() => {
+          if (token !== switchToken) return;
+          options.classList.add("show-drop");
+          activeSelect = select;
+        });
       });
 
       selected.addEventListener("keydown", function (e) {
@@ -110,6 +189,7 @@ export function initConsultationSection() {
     });
 
     document.addEventListener("click", function () {
+      armSwitch();
       if (!activeSelect) return;
       const options = activeSelect.querySelector("[data-select-options]");
       if (options) options.classList.remove("show-drop");

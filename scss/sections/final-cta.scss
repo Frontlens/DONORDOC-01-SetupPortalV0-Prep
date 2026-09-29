@@ -13,11 +13,12 @@
   }
 
   .final-cta__layout {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     grid-template-rows: auto auto;
     grid-template-areas:
-      "copy side"
+      "copy copy"
       "features side";
     column-gap: 56px;
     row-gap: 36px;
@@ -26,6 +27,15 @@
 
   .final-cta__copy {
     grid-area: copy;
+    display: grid;
+    grid-template-columns: subgrid;
+    column-gap: 56px;
+  }
+
+  .final-cta__badge,
+  .final-cta__heading,
+  .final-cta__description {
+    grid-column: 1;
   }
 
   .final-cta__side {
@@ -162,6 +172,11 @@
 
   .final-cta__visual {
     position: relative;
+    z-index: 1;
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    justify-self: center;
+    align-self: start;
     margin: 0;
     width: 400px;
     max-width: 100%;
@@ -274,31 +289,35 @@
     }
 
     .final-cta__layout {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 150px);
-      grid-template-rows: auto auto auto;
-      grid-template-areas:
-        "copy visual"
-        "features features"
-        "action action";
-      column-gap: 16px;
+      display: flex;
+      flex-direction: column;
       row-gap: 24px;
     }
 
-    .final-cta__side {
-      display: contents;
+    .final-cta__copy {
+      display: flow-root;
+      order: 1;
     }
 
-    .final-cta__copy {
-      align-self: start;
+    .final-cta__features {
+      order: 2;
+    }
+
+    .final-cta__side {
+      display: block;
+      order: 3;
+      max-width: none;
+      padding-top: 0;
     }
 
     .final-cta__visual {
-      grid-area: visual;
+      position: relative;
+      top: auto;
+      right: auto;
+      float: right;
       width: 150px;
       max-width: none;
-      margin: -28px -24px 0 0;
-      justify-self: end;
-      align-self: start;
+      margin: -28px -24px 12px 16px;
     }
 
     .final-cta__action {

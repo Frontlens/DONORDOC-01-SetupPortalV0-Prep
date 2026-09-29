@@ -28,7 +28,7 @@ export function initPricing() {
       initialSlide: 1,
       grabCursor: true,
       allowTouchMove: true,
-      speed: 600,
+      speed: 280,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,

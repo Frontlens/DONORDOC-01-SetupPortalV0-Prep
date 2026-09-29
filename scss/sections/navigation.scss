@@ -296,22 +296,31 @@
       }
 
       .mobile-nav__advisor {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 0 16px;
+        width: 100%;
+        margin: 0;
+        padding: 14px 20px;
+        border: 2px solid $color-brand;
+        border-radius: $radius-button;
+        background: $color-surface;
         color: $color-ink-soft;
-        font-size: 15px;
-        font-weight: 500;
-        text-decoration: none;
-        transition: color 0.3s ease;
+        font-size: 17px;
+        font-weight: 600;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease;
 
         svg {
+          width: 20px;
+          height: 20px;
           stroke: $color-brand;
         }
 
-        &:hover {
-          color: $color-brand;
+        &:hover,
+        &:active {
+          background: $color-brand-soft;
+          border-color: $color-brand;
+          color: $color-ink-soft;
         }
       }
 

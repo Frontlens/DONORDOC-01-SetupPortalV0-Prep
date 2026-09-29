@@ -19,7 +19,7 @@ export function initTestimonials() {
     loop: true,
     grabCursor: true,
     allowTouchMove: true,
-    speed: 600,
+    speed: 280,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,

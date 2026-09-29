@@ -129,6 +129,7 @@ main {
       overflow: visible;
 
       .swiper-wrapper {
+        transition-timing-function: ease-out;
         align-items: stretch;
       }
     }

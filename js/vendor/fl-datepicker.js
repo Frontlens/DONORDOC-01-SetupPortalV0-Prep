@@ -631,13 +631,12 @@
 
   /* ── Open / Close ───────────────────────────────────────────────── */
   FLDatePicker.prototype.open = function () {
-    // Close any other open instance
-    if (_activeInstance && _activeInstance !== this) {
-      _activeInstance.close(false);
+    if (typeof this.opts.onOpen === "function" && this.opts.onOpen(this) === false) {
+      return;
     }
 
-    if (typeof this.opts.onOpen === "function") {
-      this.opts.onOpen(this);
+    if (_activeInstance && _activeInstance !== this) {
+      _activeInstance.close(false);
     }
 
     if (this.opts.type === "date") {
