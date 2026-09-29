@@ -69,6 +69,89 @@ export function resolveHeroImage(config) {
   return getTheme(config).heroImage;
 }
 
+const HERO_SIZES = "(max-width: 1023.98px) 75vw, 560px";
+
+const SYSTEM_SRCSET = {
+  "assets/images/hero-image.webp": {
+    srcset:
+      "assets/images/hero-image-742w.webp 742w, assets/images/hero-image.webp 1024w",
+    sizes: HERO_SIZES,
+  },
+  "assets/images/hero-professional-blue.webp": {
+    srcset:
+      "assets/images/hero-professional-blue-742w.webp 742w, assets/images/hero-professional-blue.webp 1254w",
+    sizes: HERO_SIZES,
+  },
+  "assets/images/hero-executive-navy.webp": {
+    srcset:
+      "assets/images/hero-executive-navy-742w.webp 742w, assets/images/hero-executive-navy.webp 1254w",
+    sizes: HERO_SIZES,
+  },
+  "assets/images/hero-healthcare-teal.webp": {
+    srcset:
+      "assets/images/hero-healthcare-teal-742w.webp 742w, assets/images/hero-healthcare-teal.webp 1254w",
+    sizes: HERO_SIZES,
+  },
+  "assets/images/about-image.webp": {
+    srcset:
+      "assets/images/about-image-1050w.webp 1050w, assets/images/about-image.webp 1536w",
+    sizes: "(max-width: 1023.98px) 100vw, 50vw",
+  },
+  "assets/images/advisor-image.webp": {
+    srcset:
+      "assets/images/advisor-image-1040w.webp 1040w, assets/images/advisor-image.webp 1536w",
+    sizes: "(max-width: 1023.98px) 100vw, 520px",
+  },
+  "assets/images/final-cta-image.webp": {
+    srcset:
+      "assets/images/final-cta-image-640w.webp 640w, assets/images/final-cta-image.webp 1536w",
+    sizes: "320px",
+  },
+  "assets/images/testimonial-1.webp": {
+    srcset:
+      "assets/images/testimonial-1-156w.webp 156w, assets/images/testimonial-1.webp 640w",
+    sizes: "52px",
+  },
+  "assets/images/testimonial-2.webp": {
+    srcset:
+      "assets/images/testimonial-2-156w.webp 156w, assets/images/testimonial-2.webp 640w",
+    sizes: "52px",
+  },
+  "assets/images/testimonial-3.webp": {
+    srcset:
+      "assets/images/testimonial-3-156w.webp 156w, assets/images/testimonial-3.webp 640w",
+    sizes: "52px",
+  },
+};
+
+function applyResponsiveSrc(img, src) {
+  if (!src) return;
+  img.setAttribute("src", src);
+  const spec = SYSTEM_SRCSET[src];
+  if (spec) {
+    img.setAttribute("srcset", spec.srcset);
+    img.setAttribute("sizes", spec.sizes);
+    return;
+  }
+  img.removeAttribute("srcset");
+  img.removeAttribute("sizes");
+}
+
+function applyHeroPreload(src) {
+  const preload = document.querySelector('link[rel="preload"][as="image"]');
+  if (!preload) return;
+  preload.setAttribute("href", src);
+  preload.setAttribute("fetchpriority", "high");
+  const spec = SYSTEM_SRCSET[src];
+  if (spec) {
+    preload.setAttribute("imagesrcset", spec.srcset);
+    preload.setAttribute("imagesizes", spec.sizes);
+    return;
+  }
+  preload.removeAttribute("imagesrcset");
+  preload.removeAttribute("imagesizes");
+}
+
 function getPath(object, path) {
   return path.split(".").reduce(function (current, key) {
     if (current == null) return undefined;
@@ -269,23 +352,19 @@ function applyHero(config) {
   const src = resolveHeroImage(config);
   const alt = config.sections?.hero?.image?.alt ?? "";
   hero.querySelectorAll("[data-hero-image]").forEach(function (img) {
-    img.setAttribute("src", src);
+    applyResponsiveSrc(img, src);
     img.setAttribute("alt", alt);
     img.setAttribute("loading", "eager");
     img.setAttribute("fetchpriority", "high");
     img.setAttribute("decoding", "async");
   });
-  const preload = document.querySelector('link[rel="preload"][as="image"]');
-  if (preload) {
-    preload.setAttribute("href", src);
-    preload.setAttribute("fetchpriority", "high");
-  }
+  applyHeroPreload(src);
 }
 
 function applyImage(selector, image) {
   if (!image) return;
   document.querySelectorAll(selector).forEach(function (img) {
-    if (image.src) img.setAttribute("src", image.src);
+    if (image.src) applyResponsiveSrc(img, image.src);
     if (image.alt != null) img.setAttribute("alt", image.alt);
   });
 }
@@ -483,7 +562,7 @@ function applySectionLists(config) {
       if (role) role.textContent = item.clientType;
       if (status) status.textContent = item.enrollmentText;
       if (img && item.image) {
-        img.setAttribute("src", item.image.src);
+        applyResponsiveSrc(img, item.image.src);
         img.setAttribute("alt", item.image.alt || item.name);
       }
       if (stars && item.rating) {
