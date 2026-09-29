@@ -21,7 +21,7 @@ export function initTestimonials() {
     allowTouchMove: true,
     speed: 280,
     autoplay: {
-      delay: 5000,
+      delay: 3000,
       disableOnInteraction: false,
       enabled: false,
     },
