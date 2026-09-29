@@ -702,8 +702,7 @@ main .hero .hero__image {
   z-index: 1;
   display: block;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: translate(-25px, calc(-25% + 80px));
   scale: 0.8;
 }
@@ -785,14 +784,12 @@ main .hero .hero__float-card-text .hero__float-card-accent {
     box-shadow: none;
     background-color: var(--color-brand-soft);
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, transparent 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
-    -webkit-mask-composite: source-in, xor;
-            mask-composite: intersect;
+    mask-composite: intersect;
     -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, transparent 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
     -webkit-mask-composite: source-in;
   }
   main .hero .hero__image {
-    -o-object-position: center top;
-       object-position: center top;
+    object-position: center top;
     transform: none;
     scale: none;
   }
@@ -1103,10 +1100,8 @@ main .about .about__image {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 @media (min-width: 1024px) {
   main .about .about__content {
@@ -1123,8 +1118,7 @@ main .about .about__image {
     width: 100%;
     height: 100%;
     aspect-ratio: 5/4;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 @media (min-width: 1200px) {
@@ -2021,9 +2015,6 @@ main .how-it-works .how-it-works__heading-desktop {
   flex-wrap: wrap;
   gap: 20px;
 }
-main .how-it-works .how-it-works__heading-mobile {
-  display: none;
-}
 main .how-it-works .how-it-works__heading-part-accent {
   color: var(--color-brand);
 }
@@ -2466,15 +2457,10 @@ main .how-it-works .how-it-works__summary-lines-mobile {
 }
 @media (max-width: 991.98px) {
   main .how-it-works .how-it-works__heading-desktop {
-    display: none;
-  }
-  main .how-it-works .how-it-works__heading-mobile {
-    display: inline-flex;
     flex-direction: column;
-    align-items: center;
     gap: 18px;
   }
-  main .how-it-works .how-it-works__heading-mobile .how-it-works__heading-divider {
+  main .how-it-works .how-it-works__heading-divider {
     width: 56px;
     height: 1px;
   }
@@ -2691,8 +2677,7 @@ main .testimonials .testimonial-card__avatar {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .testimonials .testimonial-card__author-info {
   display: flex;
@@ -3587,10 +3572,8 @@ main .consultation .consultation__visual-img {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 main .consultation .consultation__form-col {
   display: flex;
@@ -3720,16 +3703,10 @@ main .consultation .consultation-field__control .fl-picker-input {
   box-shadow: none;
   font-family: inherit;
 }
-main .consultation .consultation__input::-moz-placeholder, main .consultation .consultation__select .selected::-moz-placeholder, main .consultation .consultation-field__control .fl-picker-input::-moz-placeholder {
-  color: #adb5bd;
-}
 main .consultation .consultation__input::placeholder,
 main .consultation .consultation__select .selected::placeholder,
 main .consultation .consultation-field__control .fl-picker-input::placeholder {
   color: #adb5bd;
-}
-main .consultation .consultation__input:-moz-placeholder, main .consultation .consultation__select .selected:-moz-placeholder, main .consultation .consultation-field__control .fl-picker-input:-moz-placeholder {
-  color: #868e96;
 }
 main .consultation .consultation__input:placeholder-shown,
 main .consultation .consultation__select .selected:placeholder-shown,
@@ -3768,9 +3745,7 @@ main .consultation .consultation__select {
   position: relative;
   flex: 1;
   min-width: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 main .consultation .consultation__select .selected {
   cursor: pointer;
@@ -3901,8 +3876,7 @@ main .consultation .consultation__secure-icon svg {
   }
   main .consultation .consultation__visual--mobile .consultation__visual-img {
     aspect-ratio: 24/10;
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
   main .consultation .consultation__form {
     padding: 24px 20px 20px;
@@ -3994,8 +3968,7 @@ main .consultation .consultation__secure-icon svg {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   grid-template-rows: auto auto;
   grid-template-areas: "copy copy" "features side";
-  -moz-column-gap: 56px;
-       column-gap: 56px;
+  column-gap: 56px;
   row-gap: 36px;
   align-items: start;
 }
@@ -4003,8 +3976,7 @@ main .consultation .consultation__secure-icon svg {
   grid-area: copy;
   display: grid;
   grid-template-columns: subgrid;
-  -moz-column-gap: 56px;
-       column-gap: 56px;
+  column-gap: 56px;
 }
 .final-cta .final-cta__badge,
 .final-cta .final-cta__heading,
@@ -4168,10 +4140,8 @@ main .consultation .consultation__secure-icon svg {
 .final-cta .half-circle img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center top;
-     object-position: center top;
+  object-fit: cover;
+  object-position: center top;
   position: absolute;
   top: 0;
   left: 0;
@@ -4877,4 +4847,6 @@ License: For personal/business use only. Redistribution, resale, or sublicensing
   main .hero {
     padding-top: 140px !important;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

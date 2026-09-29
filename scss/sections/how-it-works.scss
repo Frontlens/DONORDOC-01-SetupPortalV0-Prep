@@ -36,10 +36,6 @@ main {
       gap: 20px;
     }
 
-    .how-it-works__heading-mobile {
-      display: none;
-    }
-
     .how-it-works__heading-part-accent {
       color: $color-brand;
     }
@@ -550,17 +546,11 @@ main {
 
     @media (max-width: $bp-md) {
       .how-it-works__heading-desktop {
-        display: none;
-      }
-
-      .how-it-works__heading-mobile {
-        display: inline-flex;
         flex-direction: column;
-        align-items: center;
         gap: 18px;
       }
 
-      .how-it-works__heading-mobile .how-it-works__heading-divider {
+      .how-it-works__heading-divider {
         width: 56px;
         height: 1px;
       }

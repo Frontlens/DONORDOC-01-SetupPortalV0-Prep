@@ -839,22 +839,6 @@ export const setupPortalSchema = {
               validation: { maxLength: 26 },
             },
             {
-              id: "how-it-works-headline-mobile-first",
-              path: "sections.howItWorks.headline.mobile.first",
-              label: "Mobile Headline",
-              type: "text",
-              permissions: { editable: true },
-              required: true,
-            },
-            {
-              id: "how-it-works-headline-mobile-accent",
-              path: "sections.howItWorks.headline.mobile.accent",
-              label: "Mobile Highlighted Headline",
-              type: "text",
-              permissions: { editable: true },
-              required: true,
-            },
-            {
               id: "how-it-works-description",
               path: "sections.howItWorks.description",
               label: "Description",
