@@ -105,7 +105,7 @@ const SYSTEM_SRCSET = {
   "assets/images/final-cta-image.webp": {
     srcset:
       "assets/images/final-cta-image-640w.webp 640w, assets/images/final-cta-image.webp 1536w",
-    sizes: "320px",
+    sizes: "(max-width: 991.98px) 150px, 400px", // $bp-md
   },
   "assets/images/testimonial-1.webp": {
     srcset:
@@ -124,10 +124,10 @@ const SYSTEM_SRCSET = {
   },
 };
 
-function applyResponsiveSrc(img, src) {
+function applyResponsiveSrc(img, src, single) {
   if (!src) return;
   img.setAttribute("src", src);
-  const spec = SYSTEM_SRCSET[src];
+  const spec = single ? null : SYSTEM_SRCSET[src];
   if (spec) {
     img.setAttribute("srcset", spec.srcset);
     img.setAttribute("sizes", spec.sizes);
@@ -137,12 +137,19 @@ function applyResponsiveSrc(img, src) {
   img.removeAttribute("sizes");
 }
 
-function applyHeroPreload(src) {
-  const preload = document.querySelector('link[rel="preload"][as="image"]');
-  if (!preload) return;
+function applyHeroPreload(src, single) {
+  let preload = document.querySelector('link[rel="preload"][as="image"]');
+  if (!preload) {
+    preload = document.createElement("link");
+    preload.rel = "preload";
+    preload.as = "image";
+    const css = document.querySelector('link[rel="stylesheet"]');
+    if (css) document.head.insertBefore(preload, css);
+    else document.head.appendChild(preload);
+  }
   preload.setAttribute("href", src);
   preload.setAttribute("fetchpriority", "high");
-  const spec = SYSTEM_SRCSET[src];
+  const spec = single ? null : SYSTEM_SRCSET[src];
   if (spec) {
     preload.setAttribute("imagesrcset", spec.srcset);
     preload.setAttribute("imagesizes", spec.sizes);
@@ -350,15 +357,16 @@ function applyHero(config) {
   const hero = document.querySelector('[data-section="hero"]');
   if (!hero) return;
   const src = resolveHeroImage(config);
+  const single = config.sections?.hero?.image?.mode === "custom";
   const alt = config.sections?.hero?.image?.alt ?? "";
   hero.querySelectorAll("[data-hero-image]").forEach(function (img) {
-    applyResponsiveSrc(img, src);
+    applyResponsiveSrc(img, src, single);
     img.setAttribute("alt", alt);
     img.setAttribute("loading", "eager");
     img.setAttribute("fetchpriority", "high");
     img.setAttribute("decoding", "async");
   });
-  applyHeroPreload(src);
+  applyHeroPreload(src, single);
 }
 
 function applyImage(selector, image) {
@@ -820,13 +828,21 @@ function applySiteConfig(config) {
   applySectionVisibility(config);
 }
 
+function loadSiteConfig() {
+  if (window.__donordocConfigReady) return window.__donordocConfigReady;
+  return fetch("config/siteConfig.json").then(function (response) {
+    if (!response.ok) throw new Error("Failed to load siteConfig.json");
+    return response.json();
+  });
+}
+
 export function initSiteConfig() {
-  return fetch("config/siteConfig.json")
-    .then(function (response) {
-      if (!response.ok) throw new Error("Failed to load siteConfig.json");
-      return response.json();
-    })
+  return loadSiteConfig()
     .then(function (config) {
+      if (!config) {
+        siteConfig = null;
+        return null;
+      }
       siteConfig = config;
       applySiteConfig(config);
       return config;
