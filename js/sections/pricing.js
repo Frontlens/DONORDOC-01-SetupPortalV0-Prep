@@ -40,7 +40,6 @@ function mountPricing(section, root) {
     pricingSwiper = new window.Swiper(root, {
       slidesPerView: loop ? 1 : 3,
       spaceBetween: loop ? 16 : 24,
-      centeredSlides: loop,
       loop,
       initialSlide: 1,
       grabCursor: true,

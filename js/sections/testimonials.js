@@ -48,12 +48,10 @@ export function initTestimonials() {
           0: {
             slidesPerView: 1,
             spaceBetween: 16,
-            centeredSlides: true,
           },
           992: {
             slidesPerView: 3,
             spaceBetween: 24,
-            centeredSlides: false,
           },
         },
       });

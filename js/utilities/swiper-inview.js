@@ -57,9 +57,11 @@ export function whenNear(el, onNear, rootMargin) {
 
   const observer = new IntersectionObserver(
     function (entries) {
-      if (!entries.some(function (entry) {
-        return entry.isIntersecting;
-      })) {
+      if (
+        !entries.some(function (entry) {
+          return entry.isIntersecting;
+        })
+      ) {
         return;
       }
       observer.disconnect();
