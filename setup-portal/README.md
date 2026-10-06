@@ -19,3 +19,5 @@ A `url` field names a `destinationRule`. Patterns live on `destinationRules.form
 `sections.footer.businessName` has no max length. No approved limit is on record for image file type, file size, image dimensions, or collection `minItems` / `maxItems`. Those stay unset.
 
 `sections.reviews.items[].rating` is an integer from 1 to 5.
+
+`sections.consultation.scheduling.timeStepMinutes` and `disabledTimes` stay out of the schema. They are Frontlens runtime settings in siteConfig. The Consultation date picker reads them from there. They are not customer-editable.
